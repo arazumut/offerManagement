@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teklif Sistemi</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        /* Responsive tasarım için ek stiller */
+        .nav-btn {
+            padding: 8px 16px;
+            margin: 5px;
+            border-radius: 20px;
+            transition: all 0.3s ease;
+            width: 100%; /* Mobil görünümde tam genişlik */
+        }
+        
+        @media (min-width: 768px) {
+            .nav-btn {
+                width: auto; /* Masaüstünde normal genişlik */
+            }
+        }
+        
+        .nav-btn-primary {
+            background-color: #fff;
+            color: #0d6efd;
+            border: 2px solid #fff;
+        }
+        
+        .nav-btn-primary:hover {
+            background-color: #0d6efd;
+            color: #fff;
+        }
+        
+        .nav-btn-outline {
+            background-color: transparent;
+            color: #fff;
+            border: 2px solid #fff;
+        }
+        
+        .nav-btn-outline:hover {
+            background-color: #fff;
+            color: #0d6efd;
+        }
+
+        .navbar {
+            padding: 15px 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .navbar-brand {
+            font-size: 1.2rem; /* Mobil için küçük font */
+            font-weight: bold;
+        }
+
+        @media (min-width: 768px) {
+            .navbar-brand {
+                font-size: 1.5rem; /* Masaüstü için normal font */
+            }
+        }
+
+        /* Mobil menü için özel stiller */
+        @media (max-width: 767px) {
+            .navbar-collapse {
+                padding: 15px 0;
+            }
+            
+            .nav-item {
+                margin: 5px 0;
+                width: 100%;
+            }
+
+            .nav-item form {
+                width: 100%;
+            }
+        }
+
+        /* Tablo responsive düzenlemesi */
+        .table-responsive {
+            margin-bottom: 1rem;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        /* Card responsive düzenlemesi */
+        .card {
+            margin-bottom: 1rem;
+        }
+
+        /* Form responsive düzenlemesi */
+        .form-group {
+            margin-bottom: 1rem;
+        }
+
+        /* Alert responsive düzenlemesi */
+        .alert {
+            margin: 1rem 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+            <a class="navbar-brand" href="/">
+                <i class="fas fa-file-invoice-dollar me-2"></i>
+                Teklif Sistemi
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-center">
+                    {% if user.is_authenticated %}
+                        {% if user.profile.is_firma_sahibi %}
+                            <li class="nav-item">
+                                <a class="nav-btn nav-btn-primary" href="{% url 'firma_sahibi_paneli' %}">
+                                    <i class="fas fa-desktop me-1"></i>
+                                    Firma Paneli
+                                </a>
+                            </li>
+                        {% endif %}
+                        <li class="nav-item">
+                            <form method="post" action="{% url 'logout' %}" class="d-inline">
+                                {% csrf_token %}
+                                <button type="submit" class="nav-btn nav-btn-outline">
+                                    <i class="fas fa-sign-out-alt me-1"></i>
+                                    Çıkış Yap
+                                </button>
+                            </form>
+                        </li>
+                    {% else %}
+                        <li class="nav-item">
+                            <a class="nav-btn nav-btn-primary" href="{% url 'login' %}">
+                                <i class="fas fa-sign-in-alt me-1"></i>
+                                Giriş Yap
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-btn nav-btn-outline" href="{% url 'register' %}">
+                                <i class="fas fa-user-plus me-1"></i>
+                                Kayıt Ol
+                            </a>
+                        </li>
+                    {% endif %}
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    {% if messages %}
+    <div class="container mt-3">
+        {% for message in messages %}
+        <div class="alert alert-{{ message.tags }} alert-dismissible fade show">
+            {{ message }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+        {% endfor %}
+    </div>
+    {% endif %}
+
+    {% block content %}
+    {% endblock %}
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html> 

@@ -1,0 +1,9 @@
+Django>=4.2.0
+djangorestframework
+django-cors-headers
+weasyprint
+python-decouple
+psycopg2-binary
+pillow
+django-crispy-forms
+crispy-bootstrap4 

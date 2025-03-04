@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="alert alert-success">
+        <h4>Teklif Talebiniz Alındı!</h4>
+        <p>En kısa sürede sizinle iletişime geçeceğiz.</p>
+    </div>
+    <a href="{% url 'musteri_talep_formu' %}" class="btn btn-primary">Yeni Talep Oluştur</a>
+</div>
+{% endblock %} 

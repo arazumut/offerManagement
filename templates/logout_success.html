@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="alert alert-info">
+        <h4>Çıkış Yaptınız</h4>
+        <p>Başarıyla çıkış yaptınız. Tekrar giriş yapmak veya yeni bir hesap oluşturmak için aşağıdaki butonları kullanabilirsiniz.</p>
+    </div>
+    <a href="{% url 'login' %}" class="btn btn-success">Giriş Yap</a>
+    <a href="{% url 'register' %}" class="btn btn-info">Kayıt Ol</a>
+</div>
+{% endblock %} 
