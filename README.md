@@ -60,7 +60,8 @@ Bu proje, firmaların müşterilerine teklif verme sürecini dijitalleştiren ve
 1. Projeyi klonlayın:
 
 bash
-git clone https://github.com/kullanici/teklif-sistemi.git
+git clone https://github.com/arazumut/offerManagement.git
+
 cd teklif-sistemi
 
 
