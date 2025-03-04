@@ -3,16 +3,21 @@ from django.contrib import messages
 from .forms import MusteriTalepFormu, UserRegistrationForm
 from teklifler.models import Teklif
 from django.contrib.auth import login
-from .models import Profile, Musteri
+from .models import Profile, Musteri, Bildirim
 from django.contrib.auth.decorators import login_required
 from django.db.models import Count, Sum, Avg, Q, F
 from django.db.models.functions import TruncMonth
 import pandas as pd
-from django.http import HttpResponse
+from django.http import HttpResponse, JsonResponse
 import json
 from django.core.serializers.json import DjangoJSONEncoder
+from django.views.decorators.http import require_POST
+from django.shortcuts import get_object_or_404
+import logging
 
 # Create your views here.
+
+logger = logging.getLogger(__name__)
 
 def anasayfa(request):
     return render(request, 'anasayfa.html')
@@ -146,3 +151,65 @@ def export_rapor(request):
     
     df.to_excel(response, index=False)
     return response
+
+@login_required
+@require_POST
+def teklif_islem(request, teklif_id, islem_tipi):
+    logger.debug(f"Teklif işlem başladı: {teklif_id} - {islem_tipi}")
+    try:
+        if not request.user.profile.is_firma_sahibi:
+            return JsonResponse({'error': 'Yetkisiz erişim'}, status=403)
+        
+        teklif = get_object_or_404(Teklif, id=teklif_id)
+        aciklama = request.POST.get('aciklama', '')
+        
+        if islem_tipi == 'onay':
+            fiyat = request.POST.get('fiyat')
+            if not fiyat:
+                return JsonResponse({'error': 'Fiyat bilgisi gerekli'}, status=400)
+            
+            teklif.toplam_tutar = fiyat
+            teklif.durum = 'ONAYLANDI'
+            mesaj = f"Teklifiniz {fiyat}TL tutarında onaylanmıştır. Açıklama: {aciklama}"
+            bildirim_tipi = 'ONAY'
+            
+        elif islem_tipi == 'red':
+            teklif.durum = 'REDDEDILDI'
+            mesaj = f"Teklifiniz reddedilmiştir. Sebep: {aciklama}"
+            bildirim_tipi = 'RED'
+            
+        elif islem_tipi == 'revizyon':
+            teklif.durum = 'REVIZYON'
+            mesaj = f"Teklifiniz için revizyon talep edildi. Detaylar: {aciklama}"
+            bildirim_tipi = 'REVIZYON'
+        
+        teklif.save()
+        
+        # Bildirim oluştur
+        Bildirim.objects.create(
+            musteri=teklif.musteri,
+            teklif=teklif,
+            tip=bildirim_tipi,
+            mesaj=mesaj
+        )
+        
+        logger.info(f"Teklif işlem başarılı: {teklif_id}")
+        return JsonResponse({'success': True})
+    except Exception as e:
+        logger.error(f"Teklif işlem hatası: {str(e)}")
+        return JsonResponse({'error': str(e)}, status=500)
+
+@login_required
+def bildirimler(request):
+    try:
+        musteri = request.user.musteri_set.first()
+        if not musteri:
+            return redirect('anasayfa')
+        
+        bildirimler = Bildirim.objects.filter(musteri=musteri, okundu=False)
+        return render(request, 'musteri/bildirimler.html', {
+            'bildirimler': bildirimler
+        })
+    except Exception as e:
+        logger.error(f"Hata: {str(e)}")
+        return JsonResponse({'error': 'Bir hata oluştu'}, status=500)

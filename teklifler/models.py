@@ -6,17 +6,21 @@ from musteri.models import Musteri, Urun
 # Date: 05.03.2025  00.39
 
 class Teklif(models.Model):
-    DURUM_CHOICES = [
+    DURUM_CHOICES = (
         ('BEKLEMEDE', 'Beklemede'),
         ('ONAYLANDI', 'Onaylandı'),
         ('REDDEDILDI', 'Reddedildi'),
-        ('REVIZYON', 'Revizyon Bekliyor'),
-    ]
+        ('REVIZYON', 'Revizyon'),
+    )
     
     musteri = models.ForeignKey(Musteri, on_delete=models.CASCADE)
     urunler = models.ManyToManyField(Urun, through='TeklifUrunu')
     toplam_tutar = models.DecimalField(max_digits=10, decimal_places=2)
-    durum = models.CharField(max_length=20, choices=DURUM_CHOICES, default='BEKLEMEDE')
+    durum = models.CharField(
+        max_length=20,
+        choices=DURUM_CHOICES,
+        default='BEKLEMEDE'
+    )
     notlar = models.TextField(blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)

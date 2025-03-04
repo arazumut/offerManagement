@@ -8,7 +8,6 @@
                 <a href="{% url 'dashboard' %}" class="btn btn-primary">
                     <i class="fas fa-chart-line me-2"></i>Dashboard
                 </a>
-                
             </div>
         </div>
     </div>
@@ -59,17 +58,20 @@
                                     <td>{{ teklif.created_at|date:"d.m.Y H:i" }}</td>
                                     <td>
                                         <div class="btn-group d-flex flex-wrap gap-1">
-                                            <button type="button" class="btn btn-sm btn-outline-primary">
+                                            <button type="button" class="btn btn-sm btn-outline-primary teklif-duzenle" 
+                                                    data-teklif-id="{{ teklif.id }}">
                                                 <i class="fas fa-edit"></i>
-                                                <span class="d-none d-md-inline ms-1">Düzenle</span>
+                                                Düzenle
                                             </button>
-                                            <button type="button" class="btn btn-sm btn-outline-success">
+                                            <button type="button" class="btn btn-sm btn-outline-success teklif-onayla"
+                                                    data-teklif-id="{{ teklif.id }}">
                                                 <i class="fas fa-check"></i>
-                                                <span class="d-none d-md-inline ms-1">Onayla</span>
+                                                Onayla
                                             </button>
-                                            <button type="button" class="btn btn-sm btn-outline-danger">
+                                            <button type="button" class="btn btn-sm btn-outline-danger teklif-reddet"
+                                                    data-teklif-id="{{ teklif.id }}">
                                                 <i class="fas fa-times"></i>
-                                                <span class="d-none d-md-inline ms-1">Reddet</span>
+                                                Reddet
                                             </button>
                                         </div>
                                     </td>
@@ -90,4 +92,109 @@
         </div>
     </div>
 </div>
-{% endblock %} 
+
+<!-- Modal -->
+<div class="modal fade" id="teklifIslemModal" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalTitle">Teklif İşlemi</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <form id="teklifIslemForm">
+                    {% csrf_token %}
+                    <div id="fiyatAlani" style="display:none;">
+                        <div class="mb-3">
+                            <label class="form-label">Teklif Tutarı (TL)</label>
+                            <input type="number" class="form-control" name="fiyat" step="0.01">
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Açıklama</label>
+                        <textarea class="form-control" name="aciklama" rows="3"></textarea>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">İptal</button>
+                <button type="button" class="btn btn-primary" onclick="teklifIslemGonder()">Gönder</button>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const teklifIslemModal = new bootstrap.Modal(document.getElementById('teklifIslemModal'));
+
+    // Düzenle butonları
+    document.querySelectorAll('.teklif-duzenle').forEach(button => {
+        button.addEventListener('click', function() {
+            const teklifId = this.dataset.teklifId;
+            window.aktifTeklifId = teklifId;
+            window.aktifIslemTipi = 'revizyon';
+            document.getElementById('fiyatAlani').style.display = 'none';
+            document.getElementById('modalTitle').textContent = 'Teklif Düzenleme';
+            teklifIslemModal.show();
+        });
+    });
+
+
+    document.querySelectorAll('.teklif-onayla').forEach(button => {
+        button.addEventListener('click', function() {
+            const teklifId = this.dataset.teklifId;
+            window.aktifTeklifId = teklifId;
+            window.aktifIslemTipi = 'onay';
+            document.getElementById('fiyatAlani').style.display = 'block';
+            document.getElementById('modalTitle').textContent = 'Teklif Onaylama';
+            teklifIslemModal.show();
+        });
+    });
+
+    
+    document.querySelectorAll('.teklif-reddet').forEach(button => {
+        button.addEventListener('click', function() {
+            const teklifId = this.dataset.teklifId;
+            window.aktifTeklifId = teklifId;
+            window.aktifIslemTipi = 'red';
+            document.getElementById('fiyatAlani').style.display = 'none';
+            document.getElementById('modalTitle').textContent = 'Teklif Reddetme';
+            teklifIslemModal.show();
+        });
+    });
+
+    
+    const form = document.getElementById('teklifIslemForm');
+    if (form) {
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const formData = new FormData(this);
+            
+            fetch(`/teklif/${window.aktifTeklifId}/${window.aktifIslemTipi}/`, {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'X-CSRFToken': formData.get('csrfmiddlewaretoken')
+                }
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    teklifIslemModal.hide();
+                    location.reload();
+                } else {
+                    alert(data.error || 'Bir hata oluştu');
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('Bir hata oluştu');
+            });
+        });
+    }
+});
+</script>
+{% endblock %}

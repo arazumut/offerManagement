@@ -51,3 +51,24 @@ class TeklifAnalitik(models.Model):
                 durum='BEKLEMEDE'
             ).aggregate(Avg('updated_at' - 'created_at'))['avg']
         )
+
+class Bildirim(models.Model):
+    BILDIRIM_TIPLERI = (
+        ('ONAY', 'Teklif Onaylandı'),
+        ('RED', 'Teklif Reddedildi'),
+        ('REVIZYON', 'Teklif Revizyon'),
+        ('GUNCELLEME', 'Teklif Güncelleme'),
+    )
+
+    musteri = models.ForeignKey(Musteri, on_delete=models.CASCADE)
+    teklif = models.ForeignKey('teklifler.Teklif', on_delete=models.CASCADE)
+    tip = models.CharField(max_length=20, choices=BILDIRIM_TIPLERI)
+    mesaj = models.TextField()
+    okundu = models.BooleanField(default=False)
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        ordering = ['-created_at']
+
+    def __str__(self):
+        return f"{self.musteri.ad_soyad} - {self.get_tip_display()}"
