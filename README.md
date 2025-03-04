@@ -35,6 +35,14 @@ Bu proje, firmaların müşterilerine teklif verme sürecini dijitalleştiren ve
 - **Modern UI**: Bootstrap 5 ile geliştirilmiş kullanıcı dostu arayüz
 - **Bildirimler**: İşlem durumları için anlık bildirimler
 
+### 📊 Dashboard
+- **Performans Metrikleri**: Toplam teklif, onay oranı, ortalama yanıt süresi
+- **Grafikler**: Aylık teklif istatistikleri, sektörel dağılım
+- **En Aktif Müşteriler**: En çok teklif talebi oluşturan müşteriler
+
+### 📈 Raporlama
+- **Excel Raporu**: Teklif raporlarını Excel formatında indirme
+
 ## 🛠 Teknolojiler
 
 - **Backend**: Django 4.2+
@@ -44,6 +52,8 @@ Bu proje, firmaların müşterilerine teklif verme sürecini dijitalleştiren ve
 - **PDF İşleme**: WeasyPrint
 - **Form İşleme**: Django Crispy Forms
 - **İkonlar**: Font Awesome
+- **Grafikler**: Chart.js
+- **Veri İşleme**: Pandas
 
 ## 📋 Gereksinimler 
 
@@ -54,15 +64,17 @@ Bu proje, firmaların müşterilerine teklif verme sürecini dijitalleştiren ve
 - Django Rest Framework
 - Django Crispy Forms
 - Font Awesome
+- Pandas
+- Chart.js
 
 ## 🚀 Kurulum
 
 1. Projeyi klonlayın:
 
-bash
+```bash
 git clone https://github.com/arazumut/offerManagement.git
 
-cd teklif-sistemi
+cd teklif_yonetim_sistemi
 
 
 3. Gereksinimleri yükleyin:
