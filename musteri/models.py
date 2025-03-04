@@ -1,5 +1,8 @@
 from django.contrib.auth.models import User
 from django.db import models
+from django.db.models import Count, Avg
+from django.utils import timezone
+from datetime import datetime, timedelta
 
 class Musteri(models.Model):
     ad_soyad = models.CharField(max_length=100)
@@ -27,3 +30,24 @@ class Profile(models.Model):
 
     def __str__(self):
         return self.user.username
+
+class TeklifAnalitik(models.Model):
+    tarih = models.DateField(auto_now_add=True)
+    toplam_teklif = models.IntegerField(default=0)
+    onaylanan_teklif = models.IntegerField(default=0)
+    reddedilen_teklif = models.IntegerField(default=0)
+    ortalama_yanit_suresi = models.DurationField(null=True)
+    
+    @classmethod
+    def hesapla_gunluk_analitik(cls):
+        bugun = timezone.now().date()
+        teklifler = Teklif.objects.filter(created_at__date=bugun)
+        
+        return cls.objects.create(
+            toplam_teklif=teklifler.count(),
+            onaylanan_teklif=teklifler.filter(durum='ONAYLANDI').count(),
+            reddedilen_teklif=teklifler.filter(durum='REDDEDILDI').count(),
+            ortalama_yanit_suresi=teklifler.exclude(
+                durum='BEKLEMEDE'
+            ).aggregate(Avg('updated_at' - 'created_at'))['avg']
+        )

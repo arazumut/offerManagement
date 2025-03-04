@@ -5,7 +5,7 @@ from django.contrib import admin
 from django.urls import path, include
 from rest_framework.routers import DefaultRouter
 from teklifler.views import TeklifViewSet, MusteriViewSet, UrunViewSet
-from musteri.views import musteri_talep_formu, talep_basarili, anasayfa, register, firma_sahibi_paneli
+from musteri.views import musteri_talep_formu, talep_basarili, anasayfa, register, firma_sahibi_paneli, dashboard, export_rapor
 from django.contrib.auth.views import LoginView, LogoutView
 from django.views.generic import TemplateView
 
@@ -25,4 +25,6 @@ urlpatterns = [
     path('logout/', LogoutView.as_view(next_page='logout_success'), name='logout'),
     path('logout-success/', TemplateView.as_view(template_name='logout_success.html'), name='logout_success'),
     path('firma-sahibi-paneli/', firma_sahibi_paneli, name='firma_sahibi_paneli'),
+    path('dashboard/', dashboard, name='dashboard'),
+    path('export-rapor/', export_rapor, name='export_rapor'),
 ]

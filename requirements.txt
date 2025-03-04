@@ -6,4 +6,6 @@ python-decouple
 psycopg2-binary
 pillow
 django-crispy-forms
-crispy-bootstrap4 
+crispy-bootstrap4
+pandas
+openpyxl 
