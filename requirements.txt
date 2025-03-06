@@ -1,4 +1,4 @@
-Django>=4.2.0
+Django
 djangorestframework
 django-cors-headers
 weasyprint
@@ -8,4 +8,10 @@ pillow
 django-crispy-forms
 crispy-bootstrap4
 pandas
-openpyxl 
+openpyxl
+whitenoise
+gunicorn
+django-allauth
+django-widget-tweaks
+django-filter
+django-debug-toolbar

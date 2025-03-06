@@ -3,77 +3,91 @@
 
 {% block content %}
 <div class="container-fluid mt-4">
-    <div class="row">
-        
+    <h2 class="mb-4">Dashboard</h2>
+
+    
+    <div class="row mb-4">
         <div class="col-md-3">
-            <div class="card">
+            <div class="card bg-primary text-white">
                 <div class="card-body">
-                    <h5 class="card-title">Toplam Teklif</h5>
-                    <h2>{{ performans.toplam_teklif }}</h2>
+                    <h6 class="card-title">Toplam Teklif</h6>
+                    <h2 class="mb-0">{{ performans.toplam_teklif }}</h2>
                 </div>
             </div>
         </div>
         <div class="col-md-3">
-            <div class="card">
+            <div class="card bg-success text-white">
                 <div class="card-body">
-                    <h5 class="card-title">Onay Oranı</h5>
-                    <h2>{{ performans.onay_orani|floatformat:1 }}%</h2>
+                    <h6 class="card-title">Onaylanan Teklif</h6>
+                    <h2 class="mb-0">{{ performans.onaylanan_teklif }}</h2>
                 </div>
             </div>
         </div>
         <div class="col-md-3">
-            <div class="card">
+            <div class="card bg-danger text-white">
                 <div class="card-body">
-                    <h5 class="card-title">Ortalama Yanıt Süresi</h5>
-                    <h2>{{ performans.ortalama_yanit_suresi|timeuntil:0 }}</h2>
+                    <h6 class="card-title">Reddedilen Teklif</h6>
+                    <h2 class="mb-0">{{ performans.reddedilen_teklif }}</h2>
                 </div>
             </div>
         </div>
         <div class="col-md-3">
-            <div class="card">
+            <div class="card bg-warning text-white">
                 <div class="card-body">
-                    <h5 class="card-title">Aktif Müşteriler</h5>
-                    <h2>{{ aktif_musteriler.count }}</h2>
+                    <h6 class="card-title">Bekleyen Teklif</h6>
+                    <h2 class="mb-0">{{ performans.bekleyen_teklif }}</h2>
                 </div>
             </div>
         </div>
     </div>
 
-    <div class="row mt-4">
-        
+    <div class="row mb-4">
         <div class="col-md-8">
             <div class="card">
+                <div class="card-header">
+                    <h5 class="card-title mb-0">Aylık Teklif İstatistikleri</h5>
+                </div>
                 <div class="card-body">
-                    <h5 class="card-title">Aylık Teklif İstatistikleri</h5>
                     <canvas id="aylikTeklifGrafik"></canvas>
                 </div>
             </div>
         </div>
-
-    
         <div class="col-md-4">
             <div class="card">
+                <div class="card-header">
+                    <h5 class="card-title mb-0">Sektörel Dağılım</h5>
+                </div>
                 <div class="card-body">
-                    <h5 class="card-title">Sektörel Dağılım</h5>
-                    <canvas id="sektorelDagilimGrafik"></canvas>
+                    <canvas id="sektorDagilimGrafik"></canvas>
                 </div>
             </div>
         </div>
     </div>
 
-    <div class="row mt-4">
-    
-        <div class="col-md-12">
+    <div class="row mb-4">
+        <div class="col-md-6">
             <div class="card">
+                <div class="card-header">
+                    <h5 class="card-title mb-0">Performans Metrikleri</h5>
+                </div>
                 <div class="card-body">
-                    <h5 class="card-title">En Aktif Müşteriler</h5>
+                    <p><strong>Onay Oranı:</strong> %{{ performans.onay_orani }}</p>
+                    <p><strong>Ortalama Yanıt Süresi:</strong> {{ performans.ortalama_yanit_suresi }}</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header">
+                    <h5 class="card-title mb-0">En Aktif Müşteriler</h5>
+                </div>
+                <div class="card-body">
                     <div class="table-responsive">
-                        <table class="table">
+                        <table class="table table-sm">
                             <thead>
                                 <tr>
                                     <th>Müşteri</th>
                                     <th>Teklif Sayısı</th>
-                                    <th>Son Teklif</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -81,7 +95,10 @@
                                 <tr>
                                     <td>{{ musteri.ad_soyad }}</td>
                                     <td>{{ musteri.teklif_sayisi }}</td>
-                                    <td>{{ musteri.teklif_set.last.created_at|date }}</td>
+                                </tr>
+                                {% empty %}
+                                <tr>
+                                    <td colspan="2" class="text-center">Henüz müşteri bulunmuyor.</td>
                                 </tr>
                                 {% endfor %}
                             </tbody>
@@ -91,52 +108,77 @@
             </div>
         </div>
     </div>
-
-    
-    <div class="row mt-4">
-        <div class="col-12">
-            <a href="{% url 'export_rapor' %}" class="btn btn-success">
-                <i class="fas fa-file-excel me-2"></i>Excel Raporu İndir
-            </a>
-        </div>
-    </div>
 </div>
-
 {% endblock %}
 
 {% block extra_js %}
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script>
-    
-    const aylikTeklifCtx = document.getElementById('aylikTeklifGrafik').getContext('2d');
-    new Chart(aylikTeklifCtx, {
+document.addEventListener('DOMContentLoaded', function() {
+    const aylikVeriler = JSON.parse('{{ aylik_veriler|safe }}');
+    const aylikCtx = document.getElementById('aylikTeklifGrafik').getContext('2d');
+    new Chart(aylikCtx, {
         type: 'line',
         data: {
-            labels: JSON.parse('{{ aylik_teklifler_labels|safe }}'),
-            datasets: [{
-                label: 'Toplam Teklif',
-                data: JSON.parse('{{ aylik_teklifler_data|safe }}'),
-                borderColor: 'rgb(75, 192, 192)',
-                tension: 0.1
-            }]
+            labels: aylikVeriler.map(veri => veri.ay),
+            datasets: [
+                {
+                    label: 'Toplam',
+                    data: aylikVeriler.map(veri => veri.toplam),
+                    borderColor: 'rgb(75, 192, 192)',
+                    tension: 0.1
+                },
+                {
+                    label: 'Onaylanan',
+                    data: aylikVeriler.map(veri => veri.onaylanan),
+                    borderColor: 'rgb(54, 162, 235)',
+                    tension: 0.1
+                },
+                {
+                    label: 'Reddedilen',
+                    data: aylikVeriler.map(veri => veri.reddedilen),
+                    borderColor: 'rgb(255, 99, 132)',
+                    tension: 0.1
+                }
+            ]
+        },
+        options: {
+            responsive: true,
+            plugins: {
+                legend: {
+                    position: 'top',
+                }
+            }
         }
     });
-
     
-    const sektorelDagilimCtx = document.getElementById('sektorelDagilimGrafik').getContext('2d');
-    new Chart(sektorelDagilimCtx, {
+    const sektorVeriler = JSON.parse('{{ sektor_veriler|safe }}');
+    const sektorCtx = document.getElementById('sektorDagilimGrafik').getContext('2d');
+    new Chart(sektorCtx, {
         type: 'pie',
         data: {
-            labels: JSON.parse('{{ sektor_labels|safe }}'),
+            labels: sektorVeriler.map(veri => veri.firma_adi),
             datasets: [{
-                data: JSON.parse('{{ sektor_data|safe }}'),
+                data: sektorVeriler.map(veri => veri.teklif_sayisi),
                 backgroundColor: [
                     'rgb(255, 99, 132)',
                     'rgb(54, 162, 235)',
-                    'rgb(255, 205, 86)'
+                    'rgb(255, 205, 86)',
+                    'rgb(75, 192, 192)',
+                    'rgb(153, 102, 255)',
+                    'rgb(255, 159, 64)'
                 ]
             }]
+        },
+        options: {
+            responsive: true,
+            plugins: {
+                legend: {
+                    position: 'right',
+                }
+            }
         }
     });
+});
 </script>
 {% endblock %} 

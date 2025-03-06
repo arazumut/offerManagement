@@ -15,10 +15,7 @@
         <div class="col-12">
             <div class="d-flex flex-column flex-md-row justify-content-between align-items-center mb-4">
                 <h2 class="mb-3 mb-md-0">Teklif Yönetimi</h2>
-                <div class="d-flex gap-2">
-                    <button class="btn btn-primary">
-                        <i class="fas fa-plus me-1"></i> Yeni Teklif
-                    </button>
+                
                 </div>
             </div>
 
@@ -38,7 +35,7 @@
                             </thead>
                             <tbody>
                                 {% for teklif in teklifler %}
-                                <tr>
+                                <tr data-teklif-id="{{ teklif.id }}">
                                     <td>{{ teklif.id }}</td>
                                     <td>
                                         <div class="d-flex flex-column">
@@ -93,7 +90,7 @@
     </div>
 </div>
 
-<!-- Modal -->
+
 <div class="modal fade" id="teklifIslemModal" tabindex="-1">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -136,10 +133,9 @@ document.addEventListener('DOMContentLoaded', function() {
         aktifTeklifId = teklifId;
         aktifIslemTipi = islemTipi;
         
-        // Form resetle
+        
         document.getElementById('teklifIslemForm').reset();
         
-        // Modal başlığını ve form alanlarını ayarla
         const modalTitle = document.getElementById('modalTitle');
         const fiyatAlani = document.getElementById('fiyatAlani');
         
@@ -161,12 +157,11 @@ document.addEventListener('DOMContentLoaded', function() {
         teklifIslemModal.show();
     }
 
-    // formGonder fonksiyonunu window objesine bağlıyoruz
-    window.formGonder = function() {
+    window.formGonder = async function() {
         const form = document.getElementById('teklifIslemForm');
         const formData = new FormData(form);
+        const gonderBtn = document.querySelector('.modal-footer .btn-primary');
         
-        // Form validasyonu
         if (aktifIslemTipi === 'onay') {
             const fiyat = formData.get('fiyat');
             if (!fiyat || fiyat <= 0) {
@@ -181,57 +176,68 @@ document.addEventListener('DOMContentLoaded', function() {
             return;
         }
 
-        // Loading durumunu göster
-        const gonderBtn = document.querySelector('.modal-footer .btn-primary');
-        const originalText = gonderBtn.innerHTML;
-        gonderBtn.disabled = true;
-        gonderBtn.innerHTML = '<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> İşleniyor...';
+        try {
+            gonderBtn.disabled = true;
+            gonderBtn.innerHTML = '<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> İşleniyor...';
 
-        fetch(`/teklif/${aktifTeklifId}/${aktifIslemTipi}/`, {
-            method: 'POST',
-            body: formData,
-            headers: {
-                'X-CSRFToken': document.querySelector('[name=csrfmiddlewaretoken]').value
-            }
-        })
-        .then(response => {
+            const response = await fetch(`/teklif/${aktifTeklifId}/${aktifIslemTipi}/`, {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'X-CSRFToken': document.querySelector('[name=csrfmiddlewaretoken]').value,
+                    'X-Requested-With': 'XMLHttpRequest'
+                }
+            });
+
+            const data = await response.json();
+
             if (!response.ok) {
-                throw new Error('Sunucu hatası: ' + response.status);
+                throw new Error(data.error || `HTTP error! status: ${response.status}`);
             }
-            return response.json();
-        })
-        .then(data => {
+
             if (data.success) {
-                // Başarılı işlem bildirimi
-                const alertDiv = document.createElement('div');
-                alertDiv.className = 'alert alert-success alert-dismissible fade show';
-                alertDiv.innerHTML = `
-                    <strong>Başarılı!</strong> ${getIslemMesaji(aktifIslemTipi)}
-                    <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                const alertHTML = `
+                    <div class="alert alert-success alert-dismissible fade show" role="alert">
+                        <strong>Başarılı!</strong> ${getIslemMesaji(aktifIslemTipi)}
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
                 `;
-                document.querySelector('.container').insertBefore(alertDiv, document.querySelector('.row'));
                 
-                // Modalı kapat ve sayfayı yenile
                 teklifIslemModal.hide();
+                
+                const container = document.querySelector('.container');
+                container.insertAdjacentHTML('afterbegin', alertHTML);
+                
+                const teklifRow = document.querySelector(`tr[data-teklif-id="${aktifTeklifId}"]`);
+                if (teklifRow) {
+                    const durumHucresi = teklifRow.querySelector('.durum-badge');
+                    const islemlerHucresi = teklifRow.querySelector('.btn-group');
+                    
+                    if (durumHucresi) {
+                        durumHucresi.className = `badge ${getDurumClass(aktifIslemTipi)}`;
+                        durumHucresi.textContent = getDurumText(aktifIslemTipi);
+                    }
+                    
+                    if (islemlerHucresi && (aktifIslemTipi === 'onay' || aktifIslemTipi === 'red')) {
+                        islemlerHucresi.querySelectorAll('button').forEach(btn => {
+                            btn.disabled = true;
+                        });
+                    }
+                }
+                
                 setTimeout(() => {
                     location.reload();
-                }, 1500);
-            } else {
-                throw new Error(data.error || 'Bir hata oluştu');
+                }, 2000);
             }
-        })
-        .catch(error => {
+        } catch (error) {
             console.error('Error:', error);
             alert(`İşlem sırasında bir hata oluştu: ${error.message}`);
-        })
-        .finally(() => {
-            // Loading durumunu kaldır
+        } finally {
             gonderBtn.disabled = false;
-            gonderBtn.innerHTML = originalText;
-        });
+            gonderBtn.innerHTML = 'Gönder';
+        }
     }
-
-    // İşlem tipine göre başarı mesajı
+    
     function getIslemMesaji(islemTipi) {
         switch(islemTipi) {
             case 'onay':
@@ -242,6 +248,32 @@ document.addEventListener('DOMContentLoaded', function() {
                 return 'Revizyon talebi gönderildi.';
             default:
                 return 'İşlem başarıyla tamamlandı.';
+        }
+    }
+
+    function getDurumClass(islemTipi) {
+        switch(islemTipi) {
+            case 'onay':
+                return 'bg-success';
+            case 'red':
+                return 'bg-danger';
+            case 'revizyon':
+                return 'bg-info';
+            default:
+                return 'bg-warning';
+        }
+    }
+
+    function getDurumText(islemTipi) {
+        switch(islemTipi) {
+            case 'onay':
+                return 'ONAYLANDI';
+            case 'red':
+                return 'REDDEDİLDİ';
+            case 'revizyon':
+                return 'REVİZYON';
+            default:
+                return 'BEKLEMEDE';
         }
     }
 });

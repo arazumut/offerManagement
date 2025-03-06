@@ -6,6 +6,7 @@ from datetime import datetime, timedelta
 
 
 class Musteri(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE, null=True, blank=True)
     ad_soyad = models.CharField(max_length=100)
     email = models.EmailField(unique=True)
     telefon = models.CharField(max_length=20)
@@ -15,6 +16,10 @@ class Musteri(models.Model):
 
     def __str__(self):
         return self.ad_soyad
+
+    class Meta:
+        verbose_name = 'Müşteri'
+        verbose_name_plural = 'Müşteriler'
 
 class Urun(models.Model):
     ad = models.CharField(max_length=100)
@@ -54,22 +59,23 @@ class TeklifAnalitik(models.Model):
         )
 
 class Bildirim(models.Model):
-    BILDIRIM_TIPLERI = (
-        ('ONAY', 'Teklif Onaylandı'),
-        ('RED', 'Teklif Reddedildi'),
-        ('REVIZYON', 'Teklif Revizyon'),
-        ('GUNCELLEME', 'Teklif Güncelleme'),
-    )
+    BILDIRIM_TIPLERI = [
+        ('ONAY', 'Onay'),
+        ('RED', 'Red'),
+        ('REVIZYON', 'Revizyon'),
+    ]
 
-    musteri = models.ForeignKey(Musteri, on_delete=models.CASCADE)
+    musteri = models.ForeignKey('Musteri', on_delete=models.CASCADE)
     teklif = models.ForeignKey('teklifler.Teklif', on_delete=models.CASCADE)
     tip = models.CharField(max_length=20, choices=BILDIRIM_TIPLERI)
     mesaj = models.TextField()
     okundu = models.BooleanField(default=False)
-    created_at = models.DateTimeField(auto_now_add=True)
+    created_at = models.DateTimeField(default=timezone.now)
 
     class Meta:
         ordering = ['-created_at']
+        verbose_name = 'Bildirim'
+        verbose_name_plural = 'Bildirimler'
 
     def __str__(self):
-        return f"{self.musteri.ad_soyad} - {self.get_tip_display()}"
+        return f"{self.get_tip_display()} - {self.musteri.ad_soyad}"
