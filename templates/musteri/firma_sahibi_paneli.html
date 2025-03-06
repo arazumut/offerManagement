@@ -57,21 +57,21 @@
                                     </td>
                                     <td>{{ teklif.created_at|date:"d.m.Y H:i" }}</td>
                                     <td>
-                                        <div class="btn-group d-flex flex-wrap gap-1">
-                                            <button type="button" class="btn btn-sm btn-outline-primary teklif-duzenle" 
-                                                    data-teklif-id="{{ teklif.id }}">
-                                                <i class="fas fa-edit"></i>
-                                                Düzenle
+                                        <div class="btn-group">
+                                            <button type="button" class="btn btn-sm btn-outline-primary" 
+                                                    onclick="teklifIslem('{{ teklif.id }}', 'revizyon')"
+                                                    {% if teklif.durum == 'ONAYLANDI' or teklif.durum == 'REDDEDILDI' %}disabled{% endif %}>
+                                                <i class="fas fa-edit"></i> Düzenle
                                             </button>
-                                            <button type="button" class="btn btn-sm btn-outline-success teklif-onayla"
-                                                    data-teklif-id="{{ teklif.id }}">
-                                                <i class="fas fa-check"></i>
-                                                Onayla
+                                            <button type="button" class="btn btn-sm btn-outline-success"
+                                                    onclick="teklifIslem('{{ teklif.id }}', 'onay')"
+                                                    {% if teklif.durum == 'ONAYLANDI' or teklif.durum == 'REDDEDILDI' %}disabled{% endif %}>
+                                                <i class="fas fa-check"></i> Onayla
                                             </button>
-                                            <button type="button" class="btn btn-sm btn-outline-danger teklif-reddet"
-                                                    data-teklif-id="{{ teklif.id }}">
-                                                <i class="fas fa-times"></i>
-                                                Reddet
+                                            <button type="button" class="btn btn-sm btn-outline-danger"
+                                                    onclick="teklifIslem('{{ teklif.id }}', 'red')"
+                                                    {% if teklif.durum == 'ONAYLANDI' or teklif.durum == 'REDDEDILDI' %}disabled{% endif %}>
+                                                <i class="fas fa-times"></i> Reddet
                                             </button>
                                         </div>
                                     </td>
@@ -112,13 +112,13 @@
                     </div>
                     <div class="mb-3">
                         <label class="form-label">Açıklama</label>
-                        <textarea class="form-control" name="aciklama" rows="3"></textarea>
+                        <textarea class="form-control" name="aciklama" rows="3" required></textarea>
                     </div>
                 </form>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">İptal</button>
-                <button type="button" class="btn btn-primary" onclick="teklifIslemGonder()">Gönder</button>
+                <button type="button" class="btn btn-primary" onclick="formGonder()">Gönder</button>
             </div>
         </div>
     </div>
@@ -129,71 +129,120 @@
 <script>
 document.addEventListener('DOMContentLoaded', function() {
     const teklifIslemModal = new bootstrap.Modal(document.getElementById('teklifIslemModal'));
+    let aktifTeklifId = null;
+    let aktifIslemTipi = null;
 
-    // Düzenle butonları
-    document.querySelectorAll('.teklif-duzenle').forEach(button => {
-        button.addEventListener('click', function() {
-            const teklifId = this.dataset.teklifId;
-            window.aktifTeklifId = teklifId;
-            window.aktifIslemTipi = 'revizyon';
-            document.getElementById('fiyatAlani').style.display = 'none';
-            document.getElementById('modalTitle').textContent = 'Teklif Düzenleme';
-            teklifIslemModal.show();
-        });
-    });
+    window.teklifIslem = function(teklifId, islemTipi) {
+        aktifTeklifId = teklifId;
+        aktifIslemTipi = islemTipi;
+        
+        // Form resetle
+        document.getElementById('teklifIslemForm').reset();
+        
+        // Modal başlığını ve form alanlarını ayarla
+        const modalTitle = document.getElementById('modalTitle');
+        const fiyatAlani = document.getElementById('fiyatAlani');
+        
+        switch(islemTipi) {
+            case 'onay':
+                modalTitle.textContent = 'Teklifi Onayla';
+                fiyatAlani.style.display = 'block';
+                break;
+            case 'red':
+                modalTitle.textContent = 'Teklifi Reddet';
+                fiyatAlani.style.display = 'none';
+                break;
+            case 'revizyon':
+                modalTitle.textContent = 'Revizyon Talebi';
+                fiyatAlani.style.display = 'none';
+                break;
+        }
+        
+        teklifIslemModal.show();
+    }
 
+    // formGonder fonksiyonunu window objesine bağlıyoruz
+    window.formGonder = function() {
+        const form = document.getElementById('teklifIslemForm');
+        const formData = new FormData(form);
+        
+        // Form validasyonu
+        if (aktifIslemTipi === 'onay') {
+            const fiyat = formData.get('fiyat');
+            if (!fiyat || fiyat <= 0) {
+                alert('Lütfen geçerli bir fiyat giriniz!');
+                return;
+            }
+        }
 
-    document.querySelectorAll('.teklif-onayla').forEach(button => {
-        button.addEventListener('click', function() {
-            const teklifId = this.dataset.teklifId;
-            window.aktifTeklifId = teklifId;
-            window.aktifIslemTipi = 'onay';
-            document.getElementById('fiyatAlani').style.display = 'block';
-            document.getElementById('modalTitle').textContent = 'Teklif Onaylama';
-            teklifIslemModal.show();
-        });
-    });
+        const aciklama = formData.get('aciklama');
+        if (!aciklama || aciklama.trim() === '') {
+            alert('Lütfen açıklama giriniz!');
+            return;
+        }
 
-    
-    document.querySelectorAll('.teklif-reddet').forEach(button => {
-        button.addEventListener('click', function() {
-            const teklifId = this.dataset.teklifId;
-            window.aktifTeklifId = teklifId;
-            window.aktifIslemTipi = 'red';
-            document.getElementById('fiyatAlani').style.display = 'none';
-            document.getElementById('modalTitle').textContent = 'Teklif Reddetme';
-            teklifIslemModal.show();
-        });
-    });
+        // Loading durumunu göster
+        const gonderBtn = document.querySelector('.modal-footer .btn-primary');
+        const originalText = gonderBtn.innerHTML;
+        gonderBtn.disabled = true;
+        gonderBtn.innerHTML = '<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> İşleniyor...';
 
-    
-    const form = document.getElementById('teklifIslemForm');
-    if (form) {
-        form.addEventListener('submit', function(e) {
-            e.preventDefault();
-            const formData = new FormData(this);
-            
-            fetch(`/teklif/${window.aktifTeklifId}/${window.aktifIslemTipi}/`, {
-                method: 'POST',
-                body: formData,
-                headers: {
-                    'X-CSRFToken': formData.get('csrfmiddlewaretoken')
-                }
-            })
-            .then(response => response.json())
-            .then(data => {
-                if (data.success) {
-                    teklifIslemModal.hide();
+        fetch(`/teklif/${aktifTeklifId}/${aktifIslemTipi}/`, {
+            method: 'POST',
+            body: formData,
+            headers: {
+                'X-CSRFToken': document.querySelector('[name=csrfmiddlewaretoken]').value
+            }
+        })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Sunucu hatası: ' + response.status);
+            }
+            return response.json();
+        })
+        .then(data => {
+            if (data.success) {
+                // Başarılı işlem bildirimi
+                const alertDiv = document.createElement('div');
+                alertDiv.className = 'alert alert-success alert-dismissible fade show';
+                alertDiv.innerHTML = `
+                    <strong>Başarılı!</strong> ${getIslemMesaji(aktifIslemTipi)}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                `;
+                document.querySelector('.container').insertBefore(alertDiv, document.querySelector('.row'));
+                
+                // Modalı kapat ve sayfayı yenile
+                teklifIslemModal.hide();
+                setTimeout(() => {
                     location.reload();
-                } else {
-                    alert(data.error || 'Bir hata oluştu');
-                }
-            })
-            .catch(error => {
-                console.error('Error:', error);
-                alert('Bir hata oluştu');
-            });
+                }, 1500);
+            } else {
+                throw new Error(data.error || 'Bir hata oluştu');
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            alert(`İşlem sırasında bir hata oluştu: ${error.message}`);
+        })
+        .finally(() => {
+            // Loading durumunu kaldır
+            gonderBtn.disabled = false;
+            gonderBtn.innerHTML = originalText;
         });
+    }
+
+    // İşlem tipine göre başarı mesajı
+    function getIslemMesaji(islemTipi) {
+        switch(islemTipi) {
+            case 'onay':
+                return 'Teklif başarıyla onaylandı.';
+            case 'red':
+                return 'Teklif reddedildi.';
+            case 'revizyon':
+                return 'Revizyon talebi gönderildi.';
+            default:
+                return 'İşlem başarıyla tamamlandı.';
+        }
     }
 });
 </script>

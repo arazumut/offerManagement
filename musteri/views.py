@@ -155,11 +155,10 @@ def export_rapor(request):
 @login_required
 @require_POST
 def teklif_islem(request, teklif_id, islem_tipi):
-    logger.debug(f"Teklif işlem başladı: {teklif_id} - {islem_tipi}")
+    if not request.user.profile.is_firma_sahibi:
+        return JsonResponse({'error': 'Yetkisiz erişim'}, status=403)
+    
     try:
-        if not request.user.profile.is_firma_sahibi:
-            return JsonResponse({'error': 'Yetkisiz erişim'}, status=403)
-        
         teklif = get_object_or_404(Teklif, id=teklif_id)
         aciklama = request.POST.get('aciklama', '')
         

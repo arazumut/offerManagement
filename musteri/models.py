@@ -4,6 +4,7 @@ from django.db.models import Count, Avg
 from django.utils import timezone
 from datetime import datetime, timedelta
 
+
 class Musteri(models.Model):
     ad_soyad = models.CharField(max_length=100)
     email = models.EmailField(unique=True)

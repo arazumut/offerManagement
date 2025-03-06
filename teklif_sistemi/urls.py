@@ -5,7 +5,10 @@ from django.contrib import admin
 from django.urls import path, include
 from rest_framework.routers import DefaultRouter
 from teklifler.views import TeklifViewSet, MusteriViewSet, UrunViewSet
-from musteri.views import musteri_talep_formu, talep_basarili, anasayfa, register, firma_sahibi_paneli, dashboard, export_rapor, teklif_islem, bildirimler
+from musteri.views import (
+    musteri_talep_formu, talep_basarili, anasayfa, register, 
+    firma_sahibi_paneli, dashboard, export_rapor, teklif_islem, bildirimler
+)
 from django.contrib.auth.views import LoginView, LogoutView
 from django.views.generic import TemplateView
 
