@@ -1,5 +1,171 @@
 {% extends 'base.html' %}
 
+{% block extra_css %}
+<style>
+    
+    .container {
+        padding: 1rem;
+    }
+
+    
+    .table-responsive {
+        display: none !important;
+    }
+
+    .mobile-cards {
+        display: block !important;
+    }
+
+    @media (min-width: 769px) {
+        .table-responsive {
+            display: block !important;
+        }
+
+        .mobile-cards {
+            display: none !important;
+        }
+    }
+
+    .teklif-card {
+        background: #fff;
+        border-radius: 0.5rem;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        margin-bottom: 1rem;
+        padding: 1rem;
+    }
+
+    .teklif-card .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        margin-bottom: 0.75rem;
+    }
+
+    .teklif-card .musteri-bilgi {
+        margin-bottom: 0.75rem;
+    }
+
+    .teklif-card .detaylar {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.75rem;
+        margin-bottom: 1rem;
+    }
+
+    .teklif-card .detay-item {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .teklif-card .detay-label {
+        font-size: 0.75rem;
+        color: #6c757d;
+        margin-bottom: 0.25rem;
+    }
+
+    .teklif-card .detay-value {
+        font-weight: 500;
+    }
+
+    .teklif-card .badge {
+        padding: 0.5rem 0.75rem;
+        font-size: 0.875rem;
+        width: auto;
+    }
+
+    .teklif-card .btn-group {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.5rem;
+        margin-top: 1rem;
+    }
+
+    .teklif-card .btn {
+        padding: 0.5rem;
+        font-size: 0.875rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .teklif-card .btn i {
+        margin-right: 0.25rem;
+    }
+
+    .card {
+        border-radius: 0.5rem;
+        box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+    }
+
+    .table-hover tbody tr:hover {
+        background-color: rgba(0, 0, 0, 0.02);
+    }
+
+    .btn {
+        white-space: nowrap;
+    }
+
+    .timeline {
+        position: relative;
+        padding: 20px 0;
+    }
+
+    .timeline-item {
+        position: relative;
+        padding-left: 40px;
+        margin-bottom: 20px;
+    }
+
+    .timeline-item:before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: -20px;
+        width: 2px;
+        background: #e9ecef;
+    }
+
+    .timeline-item:last-child:before {
+        bottom: 0;
+    }
+
+    .timeline-item:after {
+        content: '';
+        position: absolute;
+        left: -4px;
+        top: 8px;
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background: #007bff;
+    }
+
+    .timeline-item.success:after { background: #28a745; }
+    .timeline-item.danger:after { background: #dc3545; }
+    .timeline-item.warning:after { background: #ffc107; }
+    .timeline-item.info:after { background: #17a2b8; }
+
+    .timeline-date {
+        font-size: 0.875rem;
+        color: #6c757d;
+        margin-bottom: 0.25rem;
+    }
+
+    .timeline-content {
+        padding: 0.5rem;
+        background: #f8f9fa;
+        border-radius: 0.25rem;
+    }
+
+    @media (max-width: 768px) {
+        .teklif-card .btn-group {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+</style>
+{% endblock %}
+
 {% block content %}
 <div class="container mt-4">
     <div class="row mb-4">
@@ -15,81 +181,68 @@
         <div class="col-12">
             <div class="d-flex flex-column flex-md-row justify-content-between align-items-center mb-4">
                 <h2 class="mb-3 mb-md-0">Teklif Yönetimi</h2>
-                
-                </div>
             </div>
 
-            <div class="card">
-                <div class="card-body p-0">
-                    <div class="table-responsive">
-                        <table class="table table-hover mb-0">
-                            <thead class="table-light">
-                                <tr>
-                                    <th>ID</th>
-                                    <th>Müşteri</th>
-                                    <th>Tutar</th>
-                                    <th>Durum</th>
-                                    <th>Tarih</th>
-                                    <th>İşlemler</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                {% for teklif in teklifler %}
-                                <tr data-teklif-id="{{ teklif.id }}">
-                                    <td>{{ teklif.id }}</td>
-                                    <td>
-                                        <div class="d-flex flex-column">
-                                            <strong>{{ teklif.musteri.ad_soyad }}</strong>
-                                            <small class="text-muted">{{ teklif.musteri.email }}</small>
-                                        </div>
-                                    </td>
-                                    <td>{{ teklif.toplam_tutar }} TL</td>
-                                    <td>
-                                        <span class="badge {% if teklif.durum == 'BEKLEMEDE' %}bg-warning
-                                              {% elif teklif.durum == 'ONAYLANDI' %}bg-success
-                                              {% elif teklif.durum == 'REDDEDILDI' %}bg-danger
-                                              {% else %}bg-info{% endif %}">
-                                            {{ teklif.get_durum_display }}
-                                        </span>
-                                    </td>
-                                    <td>{{ teklif.created_at|date:"d.m.Y H:i" }}</td>
-                                    <td>
-                                        <div class="btn-group">
-                                            <button type="button" class="btn btn-sm btn-outline-primary" 
-                                                    onclick="teklifIslem('{{ teklif.id }}', 'revizyon')"
-                                                    {% if teklif.durum == 'ONAYLANDI' or teklif.durum == 'REDDEDILDI' %}disabled{% endif %}>
-                                                <i class="fas fa-edit"></i> Düzenle
-                                            </button>
-                                            <button type="button" class="btn btn-sm btn-outline-success"
-                                                    onclick="teklifIslem('{{ teklif.id }}', 'onay')"
-                                                    {% if teklif.durum == 'ONAYLANDI' or teklif.durum == 'REDDEDILDI' %}disabled{% endif %}>
-                                                <i class="fas fa-check"></i> Onayla
-                                            </button>
-                                            <button type="button" class="btn btn-sm btn-outline-danger"
-                                                    onclick="teklifIslem('{{ teklif.id }}', 'red')"
-                                                    {% if teklif.durum == 'ONAYLANDI' or teklif.durum == 'REDDEDILDI' %}disabled{% endif %}>
-                                                <i class="fas fa-times"></i> Reddet
-                                            </button>
-                                        </div>
-                                    </td>
-                                </tr>
-                                {% empty %}
-                                <tr>
-                                    <td colspan="6" class="text-center py-4">
-                                        <i class="fas fa-inbox fa-2x mb-3 text-muted"></i>
-                                        <p class="mb-0">Henüz teklif bulunmuyor.</p>
-                                    </td>
-                                </tr>
-                                {% endfor %}
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
+        
+            <div class="table-responsive">
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th>Teklif No</th>
+                            <th>Müşteri</th>
+                            <th>E-posta</th>
+                            <th>Tutar</th>
+                            <th>Tarih</th>
+                            <th>Durum</th>
+                            <th>İşlemler</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for teklif in teklifler %}
+                        <tr>
+                            <td>#{{ teklif.id }}</td>
+                            <td>{{ teklif.musteri.ad_soyad }}</td>
+                            <td>{{ teklif.musteri.email }}</td>
+                            <td>{{ teklif.toplam_tutar }} TL</td>
+                            <td>{{ teklif.created_at|date:"d.m.Y H:i" }}</td>
+                            <td>
+                                <span class="badge {% if teklif.durum == 'BEKLEMEDE' %}bg-warning
+                                            {% elif teklif.durum == 'ONAYLANDI' %}bg-success
+                                            {% elif teklif.durum == 'REDDEDILDI' %}bg-danger
+                                            {% else %}bg-info{% endif %}">
+                                    {{ teklif.get_durum_display }}
+                                </span>
+                            </td>
+                            <td>
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-sm btn-outline-info" 
+                                            onclick="teklifDetay('{{ teklif.id }}')">
+                                        <i class="fas fa-eye"></i>
+                                    </button>
+                                    <button type="button" class="btn btn-sm btn-outline-primary" 
+                                            onclick="teklifIslem('{{ teklif.id }}', 'revizyon')"
+                                            {% if teklif.durum == 'ONAYLANDI' or teklif.durum == 'REDDEDILDI' %}disabled{% endif %}>
+                                        <i class="fas fa-edit"></i>
+                                    </button>
+                                    <button type="button" class="btn btn-sm btn-outline-success"
+                                            onclick="teklifIslem('{{ teklif.id }}', 'onay')"
+                                            {% if teklif.durum == 'ONAYLANDI' or teklif.durum == 'REDDEDILDI' %}disabled{% endif %}>
+                                        <i class="fas fa-check"></i>
+                                    </button>
+                                    <button type="button" class="btn btn-sm btn-outline-danger"
+                                            onclick="teklifIslem('{{ teklif.id }}', 'red')"
+                                            {% if teklif.durum == 'ONAYLANDI' or teklif.durum == 'REDDEDILDI' %}disabled{% endif %}>
+                                        <i class="fas fa-times"></i>
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
             </div>
-        </div>
-    </div>
-</div>
 
+           
 
 <div class="modal fade" id="teklifIslemModal" tabindex="-1">
     <div class="modal-dialog">
@@ -116,6 +269,55 @@
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">İptal</button>
                 <button type="button" class="btn btn-primary" onclick="formGonder()">Gönder</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="modal fade" id="teklifDetayModal" tabindex="-1">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Teklif Detayı</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="card mb-3">
+                            <div class="card-header">
+                                <h6 class="mb-0">Müşteri Bilgileri</h6>
+                            </div>
+                            <div class="card-body" id="musteri-bilgileri">
+                            
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card mb-3">
+                            <div class="card-header">
+                                <h6 class="mb-0">Teklif Bilgileri</h6>
+                            </div>
+                            <div class="card-body" id="teklif-bilgileri">
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header">
+                        <h6 class="mb-0">İşlem Geçmişi</h6>
+                    </div>
+                    <div class="card-body">
+                        <div class="timeline" id="teklif-timeline">
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Kapat</button>
             </div>
         </div>
     </div>
@@ -277,5 +479,99 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 });
+
+const teklifDetayModal = new bootstrap.Modal(document.getElementById('teklifDetayModal'));
+
+async function teklifDetay(teklifId) {
+    try {
+        const response = await fetch(`/teklif-detay/${teklifId}/`);
+        const data = await response.json();
+
+        if (!response.ok) {
+            throw new Error(data.error || 'Teklif detayı alınamadı');
+        }
+
+        
+        console.log('Teklif detay verisi:', data);
+
+        document.getElementById('musteri-bilgileri').innerHTML = `
+            <dl class="row mb-0">
+                <dt class="col-sm-4">Ad Soyad</dt>
+                <dd class="col-sm-8">${data.musteri.ad_soyad || '-'}</dd>
+                
+                <dt class="col-sm-4">E-posta</dt>
+                <dd class="col-sm-8">${data.musteri.email || '-'}</dd>
+                
+                <dt class="col-sm-4">Telefon</dt>
+                <dd class="col-sm-8">${data.musteri.telefon || '-'}</dd>
+                
+                <dt class="col-sm-4">Firma</dt>
+                <dd class="col-sm-8">${data.musteri.firma_adi || '-'}</dd>
+            </dl>
+        `;
+
+        document.getElementById('teklif-bilgileri').innerHTML = `
+            <dl class="row mb-0">
+                <dt class="col-sm-4">Teklif No</dt>
+                <dd class="col-sm-8">#${data.id}</dd>
+                
+                <dt class="col-sm-4">Durum</dt>
+                <dd class="col-sm-8">
+                    <span class="badge ${getBadgeClass(data.durum)}">${data.durum}</span>
+                </dd>
+                
+                <dt class="col-sm-4">Tutar</dt>
+                <dd class="col-sm-8">${data.toplam_tutar.toLocaleString('tr-TR')} TL</dd>
+                
+                <dt class="col-sm-4">Oluşturulma</dt>
+                <dd class="col-sm-8">${data.created_at}</dd>
+                
+                <dt class="col-sm-4">Son Güncelleme</dt>
+                <dd class="col-sm-8">${data.updated_at || '-'}</dd>
+                
+                <dt class="col-sm-4">Notlar</dt>
+                <dd class="col-sm-8">${data.notlar || '-'}</dd>
+            </dl>
+        `;
+
+        const timelineHTML = data.bildirimler.length > 0 
+            ? data.bildirimler.map(bildirim => `
+                <div class="timeline-item ${getBildirimClass(bildirim.tip)}">
+                    <div class="timeline-date">${bildirim.tarih}</div>
+                    <div class="timeline-content">
+                        <strong>${bildirim.tip}</strong>
+                        <p class="mb-0">${bildirim.mesaj}</p>
+                    </div>
+                </div>
+            `).join('')
+            : '<p class="text-center mb-0">İşlem geçmişi bulunmuyor.</p>';
+
+        document.getElementById('teklif-timeline').innerHTML = timelineHTML;
+
+        teklifDetayModal.show();
+    } catch (error) {
+        console.error('Teklif detay hatası:', error);
+        alert('Teklif detayı yüklenirken bir hata oluştu: ' + error.message);
+    }
+}
+
+function getBadgeClass(durum) {
+    switch(durum) {
+        case 'Beklemede': return 'bg-warning';
+        case 'Onaylandı': return 'bg-success';
+        case 'Reddedildi': return 'bg-danger';
+        case 'Revizyon': return 'bg-info';
+        default: return 'bg-secondary';
+    }
+}
+
+function getBildirimClass(tip) {
+    switch(tip) {
+        case 'ONAY': return 'success';
+        case 'RED': return 'danger';
+        case 'REVIZYON': return 'info';
+        default: return 'warning';
+    }
+}
 </script>
 {% endblock %}

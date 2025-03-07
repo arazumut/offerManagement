@@ -25,13 +25,10 @@ def anasayfa(request):
         return render(request, 'anasayfa.html')
     
     try:
-        # Kullanıcı girişi yapılmışsa, profilini kontrol etmemiz gerekiyor
         if hasattr(request.user, 'profile'):
             if request.user.profile.is_firma_sahibi:
-                # Firma sahibi ise firma paneline yönlendirmemiz gerekiyor
                 return redirect('firma_sahibi_paneli')
             else:
-                # Müşteri ise müşteri paneline yönlendirmemiz gerekiyor
                 return redirect('musteri_paneli')
         
         return render(request, 'anasayfa.html')
@@ -44,20 +41,41 @@ def anasayfa(request):
 def musteri_talep_formu(request):
     if request.method == 'POST':
         form = MusteriTalepFormu(request.POST)
-        if form.is_valid():
-            # Eğer kullanıcı giriş yapmışsa ve müşteri kaydı varsa, mevcut müşteriyi kullan auth hatası alırsam bu düzeltilecek unutma!
+        form.request = request
+        
+        try:
+            email = request.POST.get('email')
+            mevcut_musteri = None
+            
             if request.user.is_authenticated:
-                musteri = request.user.musteri_set.first()
-                if not musteri:
-                    musteri = form.save(commit=False)
-                    musteri.user = request.user
-                    musteri.save()
+                mevcut_musteri = request.user.musteri_set.first()
+            
+            if not mevcut_musteri and email:
+                mevcut_musteri = Musteri.objects.filter(email=email).first()
+            
+            if mevcut_musteri:
+                
+                mevcut_musteri.ad_soyad = request.POST.get('ad_soyad', mevcut_musteri.ad_soyad)
+                mevcut_musteri.telefon = request.POST.get('telefon', mevcut_musteri.telefon)
+                mevcut_musteri.firma_adi = request.POST.get('firma_adi', mevcut_musteri.firma_adi)
+                mevcut_musteri.adres = request.POST.get('adres', mevcut_musteri.adres)
+                
+                if request.user.is_authenticated and not mevcut_musteri.user:
+                    mevcut_musteri.user = request.user
+                
+                mevcut_musteri.save()
+                musteri = mevcut_musteri
             else:
-                musteri = form.save()
+            
+                if form.is_valid():
+                    musteri = form.save(commit=False)
+                    if request.user.is_authenticated:
+                        musteri.user = request.user
+                    musteri.save()
+                else:
+                    return render(request, 'musteri/talep_formu.html', {'form': form})
             
             talep_detay = request.POST.get('talep_detay')
-            
-            
             Teklif.objects.create(
                 musteri=musteri,
                 notlar=talep_detay,
@@ -69,6 +87,11 @@ def musteri_talep_formu(request):
             if request.user.is_authenticated:
                 return redirect('musteri_paneli')
             return redirect('talep_basarili')
+            
+        except Exception as e:
+            logger.error(f"Teklif oluşturma hatası: {str(e)}")
+            messages.error(request, 'Teklif oluşturulurken bir hata oluştu. Lütfen daha sonra tekrar deneyin.')
+            return render(request, 'musteri/talep_formu.html', {'form': form})
     else:
         initial_data = {}
         if request.user.is_authenticated:
@@ -82,6 +105,7 @@ def musteri_talep_formu(request):
                     'adres': musteri.adres
                 }
         form = MusteriTalepFormu(initial=initial_data)
+        form.request = request
     
     return render(request, 'musteri/talep_formu.html', {'form': form})
 
@@ -379,26 +403,47 @@ def musteri_paneli(request):
 @login_required
 def teklif_detay(request, teklif_id):
     try:
-        musteri = request.user.musteri_set.first()
-        if not musteri:
-            return JsonResponse({'error': 'Yetkisiz erişim'}, status=403)
+        teklif = get_object_or_404(Teklif, id=teklif_id)
         
-        teklif = get_object_or_404(Teklif, id=teklif_id, musteri=musteri)
+        # Firma sahibi veya teklifin sahibi olan müşteri mi kontrol et
+        if not (request.user.profile.is_firma_sahibi or 
+                (hasattr(request.user, 'musteri_set') and 
+                 request.user.musteri_set.filter(teklif=teklif).exists())):
+            return JsonResponse({'error': 'Bu teklifi görüntüleme yetkiniz yok'}, status=403)
+        
         bildirimler = Bildirim.objects.filter(teklif=teklif).order_by('-created_at')
         
-        return JsonResponse({
+        
+        logger.info(f"Teklif detayı istendi - ID: {teklif_id}")
+        logger.info(f"Teklif durumu: {teklif.durum}")
+        logger.info(f"Teklif display durumu: {teklif.get_durum_display()}")
+        
+        response_data = {
             'id': teklif.id,
             'durum': teklif.get_durum_display(),
-            'created_at': teklif.created_at.strftime('%d.%m.%Y %H:%M'),
-            'updated_at': teklif.updated_at.strftime('%d.%m.%Y %H:%M'),
+            'created_at': teklif.created_at.strftime('%d.m.%Y %H:%M'),
+            'updated_at': teklif.updated_at.strftime('%d.m.%Y %H:%M') if teklif.updated_at else '',
             'toplam_tutar': float(teklif.toplam_tutar) if teklif.toplam_tutar else 0,
-            'notlar': teklif.notlar,
+            'notlar': teklif.notlar or '',
+            'musteri': {
+                'ad_soyad': teklif.musteri.ad_soyad,
+                'email': teklif.musteri.email,
+                'telefon': teklif.musteri.telefon or '',
+                'firma_adi': teklif.musteri.firma_adi or '',
+                'adres': teklif.musteri.adres or ''
+            },
             'bildirimler': [{
                 'tip': bildirim.get_tip_display(),
                 'mesaj': bildirim.mesaj,
-                'tarih': bildirim.created_at.strftime('%d.%m.%Y %H:%M')
+                'tarih': bildirim.created_at.strftime('%d.m.%Y %H:%M')
             } for bildirim in bildirimler]
-        })
+        }
+        
+        return JsonResponse(response_data)
+        
+    except Teklif.DoesNotExist:
+        logger.error(f"Teklif bulunamadı - ID: {teklif_id}")
+        return JsonResponse({'error': 'Teklif bulunamadı'}, status=404)
     except Exception as e:
         logger.error(f"Teklif detay hatası - Teklif ID: {teklif_id}, Hata: {str(e)}")
-        return JsonResponse({'error': 'Teklif detayı alınamadı'}, status=500)
+        return JsonResponse({'error': f'Teklif detayı alınamadı: {str(e)}'}, status=500)

@@ -10,6 +10,20 @@ class MusteriTalepFormu(forms.ModelForm):
             'adres': forms.Textarea(attrs={'rows': 3}),
         }
 
+    def clean_email(self):
+        email = self.cleaned_data.get('email')
+        
+        if self.instance and self.instance.pk:
+            return self.instance.email
+        
+        request = getattr(self, 'request', None)
+        if request and request.user.is_authenticated:
+            musteri = request.user.musteri_set.first()
+            if musteri:
+                return musteri.email
+        
+        return email
+
 class UserRegistrationForm(forms.ModelForm):
     password = forms.CharField(label='Şifre', widget=forms.PasswordInput)
     password2 = forms.CharField(label='Şifre (Tekrar)', widget=forms.PasswordInput)
