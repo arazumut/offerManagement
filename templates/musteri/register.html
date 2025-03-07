@@ -142,7 +142,7 @@
                 <h2>Hesap Oluştur</h2>
                 <p>Hemen ücretsiz hesabınızı oluşturun</p>
             </div>
-
+        
             <form method="post" novalidate>
                 {% csrf_token %}
 
@@ -187,10 +187,13 @@
                 </div>
                 {% endfor %}
 
+
                 <button type="submit" class="btn btn-primary btn-register">
                     <i class="fas fa-user-plus me-2"></i>Kayıt Ol
                 </button>
             </form>
+
+            
 
             <div class="login-link">
                 <p class="mb-0">

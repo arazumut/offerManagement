@@ -39,6 +39,18 @@
         opacity: 0.9;
         color: var(--navbar-text);
     }
+
+    .theme-toggle {
+        background: transparent;
+        border: none;
+        color: var(--navbar-text);
+        cursor: pointer;
+        padding: 0.5rem;
+    }
+
+    .theme-toggle:hover {
+        opacity: 0.8;
+    }
 </style>
 {% endblock %}
 
@@ -55,6 +67,6 @@
         <a href="{% url 'register' %}" class="btn btn-info">
             <i class="fas fa-user-plus me-2"></i>Kayıt Ol
         </a>
-    </div>
+
 </div>
 {% endblock %} 
