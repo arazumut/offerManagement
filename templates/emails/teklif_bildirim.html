@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .header {
+            background-color: #f8f9fa;
+            padding: 20px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+        .content {
+            background-color: #ffffff;
+            padding: 20px;
+            border: 1px solid #dee2e6;
+            border-radius: 5px;
+        }
+        .footer {
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid #dee2e6;
+            font-size: 12px;
+            color: #6c757d;
+        }
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #ffffff;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+        .status {
+            display: inline-block;
+            padding: 5px 10px;
+            border-radius: 3px;
+            font-weight: bold;
+        }
+        .status-ONAYLANDI { background-color: #28a745; color: white; }
+        .status-REDDEDILDI { background-color: #dc3545; color: white; }
+        .status-REVIZYON { background-color: #ffc107; color: black; }
+        .status-BEKLEMEDE { background-color: #17a2b8; color: white; }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h2>Teklif Durumu Güncellendi</h2>
+        <p>Sayın {{ musteri.ad_soyad }},</p>
+    </div>
+
+    <div class="content">
+        <p><strong>Teklif No:</strong> #{{ teklif.id }}</p>
+        <p><strong>Durum:</strong> 
+            <span class="status status-{{ teklif.durum }}">{{ durum }}</span>
+        </p>
+        <p><strong>Güncelleme Tarihi:</strong> {{ teklif.updated_at|date:"d.m.Y H:i" }}</p>
+        
+        {% if teklif.toplam_tutar > 0 %}
+        <p><strong>Toplam Tutar:</strong> {{ teklif.toplam_tutar }} TL</p>
+        {% endif %}
+
+        {% if teklif.notlar %}
+        <p><strong>Notlar:</strong><br>
+        {{ teklif.notlar }}</p>
+        {% endif %}
+
+        <p>{{ durum_mesaji }}</p>
+
+        <p>Lütfen hesabınıza giriş yapıp kontrol ediniz</p>    
+    </div>
+
+    <div class="footer">
+        <p>Bu e-posta otomatik olarak gönderilmiştir. Lütfen yanıtlamayınız.</p>
+        <p>© {% now "Y" %} Teklif Yönetim Sistemi(K. Umut Araz). Tüm hakları saklıdır.</p>
+    </div>
+</body>
+</html> 

@@ -1,3 +1,4 @@
+import logging
 from django.shortcuts import render, redirect
 from django.contrib import messages
 from .forms import MusteriTalepFormu, UserRegistrationForm
@@ -13,24 +14,38 @@ import json
 from django.core.serializers.json import DjangoJSONEncoder
 from django.views.decorators.http import require_POST
 from django.shortcuts import get_object_or_404
-import logging
 from datetime import timedelta
-
-# Create your views here.
+from teklifler.utils import send_teklif_email
 
 logger = logging.getLogger(__name__)
+
+# Create your views here.
 
 def anasayfa(request):
     if not request.user.is_authenticated:
         return render(request, 'anasayfa.html')
     
     try:
-        if hasattr(request.user, 'profile'):
-            if request.user.profile.is_firma_sahibi:
-                return redirect('firma_sahibi_paneli')
-            else:
-                return redirect('musteri_paneli')
         
+        profile = getattr(request.user, 'profile', None)
+        if not profile:
+            
+            profile = Profile.objects.create(
+                user=request.user,
+                is_firma_sahibi=False
+            )
+        
+        # Firma sahibi mi kontrol et
+        if profile.is_firma_sahibi:
+            return redirect('firma_sahibi_paneli')
+        
+        # Müşteri kaydı var mı kontrol et
+        musteri = request.user.musteri_set.first()
+        if musteri:
+            return redirect('musteri_paneli')
+        
+
+        messages.warning(request, 'Müşteri profiliniz eksik. Lütfen müşteri bilgilerinizi tamamlayın.')
         return render(request, 'anasayfa.html')
         
     except Exception as e:
@@ -47,14 +62,15 @@ def musteri_talep_formu(request):
             email = request.POST.get('email')
             mevcut_musteri = None
             
+        
             if request.user.is_authenticated:
                 mevcut_musteri = request.user.musteri_set.first()
             
-            if not mevcut_musteri and email:
+            if not mevcut_musteri:
                 mevcut_musteri = Musteri.objects.filter(email=email).first()
             
             if mevcut_musteri:
-                
+            
                 mevcut_musteri.ad_soyad = request.POST.get('ad_soyad', mevcut_musteri.ad_soyad)
                 mevcut_musteri.telefon = request.POST.get('telefon', mevcut_musteri.telefon)
                 mevcut_musteri.firma_adi = request.POST.get('firma_adi', mevcut_musteri.firma_adi)
@@ -65,32 +81,36 @@ def musteri_talep_formu(request):
                 
                 mevcut_musteri.save()
                 musteri = mevcut_musteri
+                messages.info(request, 'Mevcut müşteri bilgileriniz güncellendi.')
             else:
-            
+                
                 if form.is_valid():
                     musteri = form.save(commit=False)
                     if request.user.is_authenticated:
                         musteri.user = request.user
                     musteri.save()
+                    messages.success(request, 'Müşteri kaydınız oluşturuldu.')
                 else:
                     return render(request, 'musteri/talep_formu.html', {'form': form})
             
+    
             talep_detay = request.POST.get('talep_detay')
-            Teklif.objects.create(
-                musteri=musteri,
-                notlar=talep_detay,
-                toplam_tutar=0,
-                durum='BEKLEMEDE'
-            )
+            if talep_detay:  
+                Teklif.objects.create(
+                    musteri=musteri,
+                    notlar=talep_detay,
+                    toplam_tutar=0,
+                    durum='BEKLEMEDE'
+                )
+                messages.success(request, 'Teklif talebiniz başarıyla alınmıştır.')
             
-            messages.success(request, 'Teklif talebiniz başarıyla alınmıştır.')
             if request.user.is_authenticated:
                 return redirect('musteri_paneli')
             return redirect('talep_basarili')
             
         except Exception as e:
             logger.error(f"Teklif oluşturma hatası: {str(e)}")
-            messages.error(request, 'Teklif oluşturulurken bir hata oluştu. Lütfen daha sonra tekrar deneyin.')
+            messages.error(request, 'İşlem sırasında bir hata oluştu. Lütfen daha sonra tekrar deneyin.')
             return render(request, 'musteri/talep_formu.html', {'form': form})
     else:
         initial_data = {}
@@ -115,33 +135,48 @@ def talep_basarili(request):
 def register(request):
     if request.method == 'POST':
         form = UserRegistrationForm(request.POST)
-        if form.is_valid():
-            # Kullanıcıyı oluştur
-            new_user = form.save(commit=False)
-            new_user.set_password(form.cleaned_data['password'])
-            new_user.save()
+        try:
+            if form.is_valid():
             
-            
-            Profile.objects.create(
-                user=new_user, 
-                is_firma_sahibi=form.cleaned_data['is_firma_sahibi']
-            )
-            
-            # Eğer firma sahibi değilse müşteri olarak kaydet olarak eklemek zorundayız unutma!
-            if not form.cleaned_data['is_firma_sahibi']:
-                Musteri.objects.create(
-                    user=new_user,
-                    ad_soyad=form.cleaned_data.get('ad_soyad', ''),
-                    email=form.cleaned_data.get('email', ''),
-                    telefon=form.cleaned_data.get('telefon', ''),
-                    firma_adi=form.cleaned_data.get('firma_adi', ''),
-                    adres=form.cleaned_data.get('adres', '')
+                new_user = form.save(commit=False)
+                new_user.set_password(form.cleaned_data['password'])
+                new_user.save()
+                
+                
+                Profile.objects.create(
+                    user=new_user, 
+                    is_firma_sahibi=form.cleaned_data['is_firma_sahibi']
                 )
-            
-            login(request, new_user)
-            return redirect('anasayfa')
+                
+                
+                if not form.cleaned_data['is_firma_sahibi']:
+                    try:
+                        Musteri.objects.create(
+                            user=new_user,
+                            ad_soyad=form.cleaned_data['ad_soyad'],
+                            email=form.cleaned_data['email'],
+                            telefon=form.cleaned_data['telefon'],
+                            firma_adi=form.cleaned_data['firma_adi'],
+                            adres=form.cleaned_data['adres']
+                        )
+                    except Exception as e:
+                        
+                        new_user.delete()
+                        logger.error(f"Müşteri oluşturma hatası: {str(e)}")
+                        messages.error(request, 'Kayıt sırasında bir hata oluştu. Lütfen daha sonra tekrar deneyin.')
+                        return render(request, 'musteri/register.html', {'form': form})
+                
+                
+                login(request, new_user)
+                messages.success(request, 'Kayıt işlemi başarıyla tamamlandı!')
+                return redirect('anasayfa')
+                
+        except Exception as e:
+            logger.error(f"Kullanıcı kayıt hatası: {str(e)}")
+            messages.error(request, 'Kayıt sırasında bir hata oluştu. Lütfen daha sonra tekrar deneyin.')
     else:
         form = UserRegistrationForm()
+    
     return render(request, 'musteri/register.html', {'form': form})
 
 @login_required
@@ -177,7 +212,7 @@ def dashboard(request):
 
         aylik_veriler = []
         for teklif in aylik_teklifler:
-            if teklif['ay']:  # ay değeri None değilse
+            if teklif['ay']:  
                 ay_str = teklif['ay'].strftime('%B %Y')
                 aylik_veriler.append({
                     'ay': ay_str,
@@ -270,15 +305,20 @@ def export_rapor(request):
 @require_POST
 def teklif_islem(request, teklif_id, islem_tipi):
     try:
+        logger.info(f"Teklif işlemi başlatıldı - ID: {teklif_id}, İşlem: {islem_tipi}")
+        
         if not request.user.profile.is_firma_sahibi:
+            logger.warning(f"Yetkisiz erişim denemesi - Kullanıcı: {request.user.username}")
             return JsonResponse({
                 'success': False,
                 'error': 'Bu işlem için yetkiniz bulunmuyor.'
             }, status=403)
         
         teklif = get_object_or_404(Teklif, id=teklif_id)
+        logger.info(f"Teklif bulundu - Müşteri: {teklif.musteri.email}")
         
         if teklif.durum in ['ONAYLANDI', 'REDDEDILDI']:
+            logger.warning(f"İşlem yapılamaz - Mevcut durum: {teklif.durum}")
             return JsonResponse({
                 'success': False,
                 'error': 'Bu teklif için işlem yapılamaz.'
@@ -286,6 +326,7 @@ def teklif_islem(request, teklif_id, islem_tipi):
         
         aciklama = request.POST.get('aciklama', '').strip()
         if not aciklama:
+            logger.warning("Açıklama alanı boş")
             return JsonResponse({
                 'success': False,
                 'error': 'Açıklama alanı zorunludur.'
@@ -295,6 +336,7 @@ def teklif_islem(request, teklif_id, islem_tipi):
             try:
                 fiyat = float(request.POST.get('fiyat', 0))
                 if fiyat <= 0:
+                    logger.warning(f"Geçersiz fiyat: {fiyat}")
                     return JsonResponse({
                         'success': False,
                         'error': 'Geçerli bir fiyat giriniz.'
@@ -305,7 +347,8 @@ def teklif_islem(request, teklif_id, islem_tipi):
                 mesaj = f"Teklifiniz {fiyat:,.2f} TL tutarında onaylanmıştır. Açıklama: {aciklama}"
                 bildirim_tipi = 'ONAY'
                 
-            except (ValueError, TypeError):
+            except (ValueError, TypeError) as e:
+                logger.error(f"Fiyat dönüştürme hatası: {str(e)}")
                 return JsonResponse({
                     'success': False,
                     'error': 'Geçersiz fiyat formatı.'
@@ -322,12 +365,16 @@ def teklif_islem(request, teklif_id, islem_tipi):
             bildirim_tipi = 'REVIZYON'
             
         else:
+            logger.error(f"Geçersiz işlem tipi: {islem_tipi}")
             return JsonResponse({
                 'success': False,
                 'error': 'Geçersiz işlem tipi.'
             }, status=400)
         
+        teklif.notlar = aciklama
         teklif.save()
+        logger.info(f"Teklif güncellendi - Yeni durum: {teklif.durum}")
+        
         
         Bildirim.objects.create(
             musteri=teklif.musteri,
@@ -335,17 +382,21 @@ def teklif_islem(request, teklif_id, islem_tipi):
             tip=bildirim_tipi,
             mesaj=mesaj
         )
+        logger.info("Bildirim oluşturuldu")
         
-        return JsonResponse({
+    
+        email_sent = send_teklif_email(teklif)
+        logger.info(f"E-posta gönderme sonucu: {'Başarılı' if email_sent else 'Başarısız'}")
+        
+        response_data = {
             'success': True,
-            'message': mesaj
-        })
+            'message': mesaj,
+        }
         
-    except Teklif.DoesNotExist:
-        return JsonResponse({
-            'success': False,
-            'error': 'Teklif bulunamadı.'
-        }, status=404)
+        if not email_sent:
+            response_data['warning'] = 'İşlem başarılı ancak e-posta gönderilemedi.'
+        
+        return JsonResponse(response_data)
         
     except Exception as e:
         logger.error(f"Teklif işlem hatası - Teklif ID: {teklif_id}, İşlem: {islem_tipi}, Hata: {str(e)}")
@@ -372,10 +423,16 @@ def bildirimler(request):
 @login_required
 def musteri_paneli(request):
     try:
+    
+        if request.user.profile.is_firma_sahibi:
+            messages.error(request, 'Firma sahipleri müşteri paneline erişemez.')
+            return redirect('firma_sahibi_paneli')
+        
+        
         musteri = request.user.musteri_set.first()
         if not musteri:
-            messages.error(request, 'Müşteri hesabı bulunamadı.')
-            return redirect('anasayfa')
+            messages.warning(request, 'Müşteri profiliniz eksik. Lütfen müşteri bilgilerinizi tamamlayın.')
+            return redirect('musteri_talep_formu')
         
         teklifler = Teklif.objects.filter(musteri=musteri)
         
@@ -405,7 +462,7 @@ def teklif_detay(request, teklif_id):
     try:
         teklif = get_object_or_404(Teklif, id=teklif_id)
         
-        # Firma sahibi veya teklifin sahibi olan müşteri mi kontrol et
+        
         if not (request.user.profile.is_firma_sahibi or 
                 (hasattr(request.user, 'musteri_set') and 
                  request.user.musteri_set.filter(teklif=teklif).exists())):

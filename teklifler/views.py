@@ -17,6 +17,7 @@ from django.template.loader import render_to_string
 from weasyprint import HTML
 from django.core.mail import send_mail
 from rest_framework.permissions import IsAuthenticated
+from .utils import send_teklif_email
 
 # Create your views here.
 
@@ -58,7 +59,16 @@ class TeklifViewSet(viewsets.ModelViewSet):
         
         teklif.durum = yeni_durum
         teklif.save()
+        
+    
+        try:
+            self.email_gonder(request, pk=pk)
+        except Exception as e:
+            
+            pass
+            
         return Response(TeklifSerializer(teklif).data)
+    # mail entegresyon denemesi.
 
     @action(detail=True, methods=['post'])
     def revizyon_iste(self, request, pk=None):
@@ -94,15 +104,62 @@ class TeklifViewSet(viewsets.ModelViewSet):
 
     @action(detail=True, methods=['post'])
     def email_gonder(self, request, pk=None):
-        teklif = self.get_object()
-        subject = f'Teklif #{teklif.id}'
-        message = f'Teklif detayları: {teklif.toplam_tutar} TL\nDurum: {teklif.durum}\nNotlar: {teklif.notlar}'
-        recipient_list = [teklif.musteri.email]
+        try:
+            teklif = self.get_object()
+            subject = f'Teklif #{teklif.id} - Durum Güncellemesi'
+            
+            
+            html_message = f"""
+            <html>
+                <body style="font-family: Arial, sans-serif; line-height: 1.6; color: #333;">
+                    <div style="max-width: 600px; margin: 0 auto; padding: 20px;">
+                        <h2 style="color: #2c3e50;">Teklif Durumu Güncellendi</h2>
+                        <p>Sayın {teklif.musteri.ad_soyad},</p>
+                        <div style="background-color: #f8f9fa; padding: 15px; border-radius: 5px; margin: 20px 0;">
+                            <p><strong>Teklif No:</strong> #{teklif.id}</p>
+                            <p><strong>Durum:</strong> {teklif.get_durum_display()}</p>
+                            <p><strong>Toplam Tutar:</strong> {teklif.toplam_tutar} TL</p>
+                            <p><strong>Son Güncelleme:</strong> {teklif.updated_at.strftime('%d.%m.%Y %H:%M')}</p>
+                        </div>
+                        {f'<p><strong>Notlar:</strong> {teklif.notlar}</p>' if teklif.notlar else ''}
+                        <hr style="border: 1px solid #eee; margin: 20px 0;">
+                        <p style="color: #666; font-size: 12px;">
+                            Bu e-posta otomatik olarak gönderilmiştir. Lütfen yanıtlamayınız.
+                        </p>
+                    </div>
+                </body>
+            </html>
+            """
+            
+            
+            plain_message = f"""
+            Teklif Durumu Güncellendi
+            
+            Sayın {teklif.musteri.ad_soyad},
+            
+            Teklif No: #{teklif.id}
+            Durum: {teklif.get_durum_display()}
+            Toplam Tutar: {teklif.toplam_tutar} TL
+            Son Güncelleme: {teklif.updated_at.strftime('%d.%m.%Y %H:%M')}
+            
+            {f'Notlar: {teklif.notlar}' if teklif.notlar else ''}
+            
+            Bu e-posta otomatik olarak gönderilmiştir. Lütfen yanıtlamayınız.
+            """
 
-        send_mail(
-            subject,
-            message,
-            'from@example.com',  
-            recipient_list
-        )
-        return Response({'status': 'E-posta gönderildi'})
+            send_mail(
+                subject=subject,
+                message=plain_message,
+                html_message=html_message,
+                from_email=None,  # settings.py'deki DEFAULT_FROM_EMAIL kullanılacak
+                recipient_list=[teklif.musteri.email],
+                fail_silently=False,
+            )
+            
+            return Response({'status': 'E-posta başarıyla gönderildi'})
+            
+        except Exception as e:
+            return Response(
+                {'error': f'E-posta gönderilirken bir hata oluştu: {str(e)}'},
+                status=status.HTTP_500_INTERNAL_SERVER_ERROR
+            )
