@@ -95,7 +95,7 @@ EMAIL_PORT = 465  # SSL için
 EMAIL_USE_TLS = False
 EMAIL_USE_SSL = True
 EMAIL_HOST_USER = 'arazumut349@gmail.com'
-EMAIL_HOST_PASSWORD = 'ulzh tkyv hbha yag' #burayı düzelt güvenlik sebebi ile değiştirdim
+EMAIL_HOST_PASSWORD = 'ulzh tkyv hbha yage' #burayı düzelt güvenlik sebebi ile değiştirdim
 DEFAULT_FROM_EMAIL = 'Teklif Sistemi <arazumut349@gmail.com>'
 
 
@@ -121,7 +121,7 @@ ROOT_URLCONF = 'teklif_sistemi.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR / 'templates'],  # Bu satırı ekleyin
+        'DIRS': [BASE_DIR / 'templates'],  
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

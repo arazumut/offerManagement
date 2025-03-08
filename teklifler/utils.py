@@ -3,6 +3,7 @@ from django.core.mail import send_mail
 from django.template.loader import render_to_string
 from django.conf import settings
 from django.utils.html import strip_tags
+from django.contrib.auth.models import User
 
 logger = logging.getLogger(__name__)
 
@@ -58,4 +59,48 @@ def send_teklif_email(teklif, subject=None, template_name='emails/teklif_bildiri
         
     except Exception as e:
         logger.error(f"E-posta gönderme hatası: {str(e)}")
+        return False 
+
+def send_yeni_teklif_email_firma(teklif):
+    """
+    Yeni teklif talebi geldiğinde firma sahibine e-posta gönderme fonksiyonu
+    """
+    try:
+        logger.info(f"Firma sahibine e-posta gönderme işlemi başlatıldı - Teklif ID: {teklif.id}")
+        
+        # Firma sahibini bul
+        firma_sahibi = User.objects.filter(profile__is_firma_sahibi=True).first()
+        if not firma_sahibi:
+            logger.error("Firma sahibi bulunamadı")
+            return False
+
+        context = {
+            'teklif': teklif,
+            'musteri': teklif.musteri,
+            'site_url': 'http://localhost:8000' 
+        }
+
+        # HTML içeriği oluştur
+        html_message = render_to_string('emails/yeni_teklif_bildirim.html', context)
+        plain_message = strip_tags(html_message)
+        
+        subject = f'Yeni Teklif Talebi #{teklif.id} - {teklif.musteri.ad_soyad}'
+
+        logger.info(f"E-posta gönderiliyor - Alıcı: {firma_sahibi.email}")
+        
+        # E-postayı gönder
+        send_mail(
+            subject=subject,
+            message=plain_message,
+            from_email=settings.DEFAULT_FROM_EMAIL,
+            recipient_list=[firma_sahibi.email],
+            html_message=html_message,
+            fail_silently=False,
+        )
+        
+        logger.info("Firma sahibine e-posta başarıyla gönderildi")
+        return True
+        
+    except Exception as e:
+        logger.error(f"Firma sahibine e-posta gönderme hatası: {str(e)}")
         return False 

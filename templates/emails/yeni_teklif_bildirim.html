@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .header {
+            background-color: #f8f9fa;
+            padding: 20px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+        .content {
+            background-color: #ffffff;
+            padding: 20px;
+            border: 1px solid #dee2e6;
+            border-radius: 5px;
+        }
+        .footer {
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid #dee2e6;
+            font-size: 12px;
+            color: #6c757d;
+        }
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #ffffff;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h2>Yeni Teklif Talebi</h2>
+    </div>
+
+    <div class="content">
+        <p><strong>Teklif No:</strong> #{{ teklif.id }}</p>
+        <p><strong>Müşteri Adı:</strong> {{ musteri.ad_soyad }}</p>
+        <p><strong>Müşteri E-posta:</strong> {{ musteri.email }}</p>
+        <p><strong>Müşteri Telefon:</strong> {{ musteri.telefon }}</p>
+        
+        {% if teklif.notlar %}
+        <p><strong>Talep Detayı:</strong><br>
+        {{ teklif.notlar }}</p>
+        {% endif %}
+
+        <p><strong>Talep Tarihi:</strong> {{ teklif.created_at|date:"d.m.Y H:i" }}</p>
+
+        <a href="{{ site_url }}{% url 'teklif_detay' teklif.id %}" class="button">
+            Teklifi İncele
+        </a>
+    </div>
+
+    <div class="footer">
+        <p>Bu e-posta otomatik olarak gönderilmiştir. Lütfen yanıtlamayınız.</p>
+        <p>© {% now "Y" %} Teklif Yönetim Sistemi. Tüm hakları saklıdır.</p>
+    </div>
+</body>
+</html>

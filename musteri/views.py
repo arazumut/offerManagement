@@ -62,7 +62,6 @@ def musteri_talep_formu(request):
             email = request.POST.get('email')
             mevcut_musteri = None
             
-        
             if request.user.is_authenticated:
                 mevcut_musteri = request.user.musteri_set.first()
             
@@ -70,7 +69,7 @@ def musteri_talep_formu(request):
                 mevcut_musteri = Musteri.objects.filter(email=email).first()
             
             if mevcut_musteri:
-            
+                # Mevcut müşteriyi güncelle
                 mevcut_musteri.ad_soyad = request.POST.get('ad_soyad', mevcut_musteri.ad_soyad)
                 mevcut_musteri.telefon = request.POST.get('telefon', mevcut_musteri.telefon)
                 mevcut_musteri.firma_adi = request.POST.get('firma_adi', mevcut_musteri.firma_adi)
@@ -83,7 +82,7 @@ def musteri_talep_formu(request):
                 musteri = mevcut_musteri
                 messages.info(request, 'Mevcut müşteri bilgileriniz güncellendi.')
             else:
-                
+                # Yeni müşteri oluştur
                 if form.is_valid():
                     musteri = form.save(commit=False)
                     if request.user.is_authenticated:
@@ -93,15 +92,23 @@ def musteri_talep_formu(request):
                 else:
                     return render(request, 'musteri/talep_formu.html', {'form': form})
             
-    
+            # Teklif oluştur
             talep_detay = request.POST.get('talep_detay')
-            if talep_detay:  
-                Teklif.objects.create(
+            if talep_detay:
+                teklif = Teklif.objects.create(
                     musteri=musteri,
                     notlar=talep_detay,
                     toplam_tutar=0,
                     durum='BEKLEMEDE'
                 )
+                
+                # Müşteriye e-posta gönder
+                send_teklif_email(teklif)
+                
+                # Firma sahibine e-posta gönder
+                from teklifler.utils import send_yeni_teklif_email_firma
+                send_yeni_teklif_email_firma(teklif)
+                
                 messages.success(request, 'Teklif talebiniz başarıyla alınmıştır.')
             
             if request.user.is_authenticated:
@@ -504,3 +511,4 @@ def teklif_detay(request, teklif_id):
     except Exception as e:
         logger.error(f"Teklif detay hatası - Teklif ID: {teklif_id}, Hata: {str(e)}")
         return JsonResponse({'error': f'Teklif detayı alınamadı: {str(e)}'}, status=500)
+    
