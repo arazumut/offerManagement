@@ -1,27 +1,482 @@
 {% extends 'base.html' %}
 
+{% block extra_css %}
+<style>
+    :root {
+        --primary-color: #4361ee;
+        --success-color: #2ec4b6;
+        --info-color: #3a86ff;
+        --warning-color: #ff9f1c;
+        --danger-color: #e63946;
+        --dark-bg: #151f29;
+        --dark-card: #1f314b;
+        --dark-text: #ffffff;
+        --light-bg: #f8f9fa;
+        --light-card: #ffffff;
+        --light-text: #212529;
+        --border-radius: 12px;
+        --transition: all 0.3s ease;
+    }
+
+    body.light-theme {
+        background-color: var(--light-bg);
+        color: var(--light-text);
+    }
+
+    body.light-theme .card {
+        background-color: var(--light-card);
+        color: var(--light-text);
+    }
+
+    .hero-section {
+        padding: 4rem 0;
+        position: relative;
+        overflow: hidden;
+        border-radius: var(--border-radius);
+        margin-bottom: 3rem;
+    }
+
+    .hero-section::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(135deg, rgba(67, 97, 238, 0.1), rgba(58, 134, 255, 0.1));
+        z-index: -1;
+    }
+
+    .hero-content {
+        padding: 2rem;
+    }
+
+    .hero-image {
+        transition: var(--transition);
+        transform: perspective(1000px) rotateY(-5deg);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+    }
+
+    .hero-image:hover {
+        transform: perspective(1000px) rotateY(0);
+    }
+
+    .feature-card {
+        border: none;
+        border-radius: var(--border-radius);
+        overflow: hidden;
+        transition: var(--transition);
+        height: 100%;
+        position: relative;
+        z-index: 1;
+    }
+
+    .feature-card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(135deg, rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.15));
+        z-index: -1;
+    }
+
+    .feature-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+    }
+
+    .feature-icon {
+        width: 80px;
+        height: 80px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 1.5rem;
+        border-radius: 50%;
+        background-color: rgba(255, 255, 255, 0.1);
+        transition: var(--transition);
+    }
+
+    .feature-card:hover .feature-icon {
+        transform: scale(1.1);
+    }
+
+    .step-card {
+        border: none;
+        border-radius: var(--border-radius);
+        overflow: hidden;
+        transition: var(--transition);
+        height: 100%;
+    }
+
+    .step-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+    }
+
+    .step-number {
+        position: relative;
+        width: 60px;
+        height: 60px;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .step-number .badge {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.5rem;
+        font-weight: bold;
+    }
+
+    .testimonial-card {
+        border: none;
+        border-radius: var(--border-radius);
+        overflow: hidden;
+        transition: var(--transition);
+        height: 100%;
+    }
+
+    .testimonial-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+    }
+
+    .avatar {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: rgba(255, 255, 255, 0.1);
+    }
+
+    .cta-section {
+        border-radius: var(--border-radius);
+        padding: 3rem;
+        position: relative;
+        overflow: hidden;
+        background: linear-gradient(135deg, var(--primary-color), var(--info-color));
+    }
+
+    .cta-section::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M0,0 L100,0 L100,100 Z" fill="rgba(255,255,255,0.1)"/></svg>');
+        background-size: cover;
+        z-index: 0;
+    }
+
+    .cta-content {
+        position: relative;
+        z-index: 1;
+    }
+
+    @media (max-width: 768px) {
+        .hero-section {
+            padding: 2rem 0;
+            text-align: center;
+        }
+
+        .hero-image {
+            margin-top: 2rem;
+            transform: none;
+        }
+
+        .hero-image:hover {
+            transform: none;
+        }
+
+        .feature-card, .step-card, .testimonial-card {
+            margin-bottom: 1.5rem;
+        }
+
+        .cta-section {
+            padding: 2rem;
+        }
+    }
+
+    body, .card, .feature-card, .step-card, .testimonial-card {
+        transition: background-color 0.3s ease, color 0.3s ease;
+    }
+</style>
+{% endblock %}
+
 {% block content %}
-<div class="container mt-5">
-    <div class="row">
-        <div class="col-md-8 offset-md-2 text-center">
-            <h1 class="display-4">Teklif Sistemi</h1>
-            <p class="lead">Firmamızdan teklif almak için aşağıdaki butona tıklayabilirsiniz.</p>
-            <a href="{% url 'musteri_talep_formu' %}" class="btn btn-primary btn-lg">
-                Teklif Talebi Oluştur
-            </a>
-            <hr class="my-4">
-            {% if user.is_authenticated %}
-                <p>Hoşgeldiniz, {{ user.username }}!</p>
-                <form method="post" action="{% url 'logout' %}">
-                    {% csrf_token %}
-                    <button type="submit" class="btn btn-secondary">Çıkış Yap</button>
-                </form>
-            {% else %}
-                <a href="{% url 'login' %}" class="btn btn-success">Giriş Yap</a>
-                <a href="{% url 'register' %}" class="btn btn-info">Kayıt Ol</a>
-            {% endif %}
+<div class="hero-section">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6 hero-content">
+                <h1 class="display-4 fw-bold mb-4 animate__animated animate__fadeInUp">Teklif Yönetim Sistemi</h1>
+                <p class="lead mb-4 animate__animated animate__fadeInUp animate__delay-1s">Tekliflerinizi kolayca oluşturun, yönetin ve takip edin. Müşterilerinizle iletişimi güçlendirin.</p>
+                <div class="d-flex gap-3 flex-wrap animate__animated animate__fadeInUp animate__delay-2s">
+                    <a href="{% url 'login' %}" class="btn btn-primary btn-lg">Giriş Yap</a>
+                    <a href="#ozellikler" class="btn btn-primary btn-lg">Özellikler</a>
+                </div>
+            </div>
 
         </div>
     </div>
 </div>
-{% endblock %} 
+
+
+<div id="ozellikler" class="container mb-5">
+    <h2 class="text-center mb-5 position-relative">
+        <span class="position-relative">Öne Çıkan Özellikler</span>
+        <span class="position-absolute start-50 translate-middle-x" style="bottom: -10px; width: 80px; height: 3px; background-color: var(--primary-color);"></span>
+    </h2>
+    
+    <div class="row g-4">
+    
+        <div class="col-md-4">
+            <div class="card feature-card bg-dark text-light border-primary h-100">
+                <div class="card-body text-center p-4">
+                    <div class="feature-icon">
+                        <i class="fas fa-file-invoice-dollar fa-3x text-primary"></i>
+                    </div>
+                    <h4 class="card-title mb-3">Kolay Teklif Oluşturma</h4>
+                    <p class="card-text">Dakikalar içinde profesyonel teklifler oluşturun ve müşterilerinizle paylaşın.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-4">
+            <div class="card feature-card bg-dark text-light border-success h-100">
+                <div class="card-body text-center p-4">
+                    <div class="feature-icon">
+                        <i class="fas fa-bell fa-3x text-success"></i>
+                    </div>
+                    <h4 class="card-title mb-3">Gerçek Zamanlı Bildirimler</h4>
+                    <p class="card-text">Teklif durumu değiştiğinde anında bildirimler alın, hiçbir gelişmeyi kaçırmayın.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-4">
+            <div class="card feature-card bg-dark text-light border-info h-100">
+                <div class="card-body text-center p-4">
+                    <div class="feature-icon">
+                        <i class="fas fa-chart-line fa-3x text-info"></i>
+                    </div>
+                    <h4 class="card-title mb-3">Detaylı Analitikler</h4>
+                    <p class="card-text">Teklif performansınızı izleyin, onay oranlarını görün ve iş süreçlerinizi optimize edin.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="container mb-5">
+    <h2 class="text-center mb-5 position-relative">
+        <span class="position-relative">Nasıl Çalışır?</span>
+        <span class="position-absolute start-50 translate-middle-x" style="bottom: -10px; width: 80px; height: 3px; background-color: var(--primary-color);"></span>
+    </h2>
+    
+    <div class="row g-4">
+        <div class="col-md-6 col-lg-3">
+            <div class="card step-card bg-dark text-light h-100">
+                <div class="card-body text-center p-4">
+                    <div class="step-number mb-3">
+                        <span class="badge bg-primary rounded-circle">1</span>
+                    </div>
+                    <h4 class="card-title mb-3">Kayıt Olun</h4>
+                    <p class="card-text">Hızlı kayıt süreciyle sisteme erişim sağlayın.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-6 col-lg-3">
+            <div class="card step-card bg-dark text-light h-100">
+                <div class="card-body text-center p-4">
+                    <div class="step-number mb-3">
+                        <span class="badge bg-primary rounded-circle">2</span>
+                    </div>
+                    <h4 class="card-title mb-3">Teklif Oluşturun</h4>
+                    <p class="card-text">Ürün ve hizmetleriniz için kolayca teklif hazırlayın.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-6 col-lg-3">
+            <div class="card step-card bg-dark text-light h-100">
+                <div class="card-body text-center p-4">
+                    <div class="step-number mb-3">
+                        <span class="badge bg-primary rounded-circle">3</span>
+                    </div>
+                    <h4 class="card-title mb-3">Müşterilerle Paylaşın</h4>
+                    <p class="card-text">Teklifinizi e-posta ile gönderin veya link paylaşın.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-6 col-lg-3">
+            <div class="card step-card bg-dark text-light h-100">
+                <div class="card-body text-center p-4">
+                    <div class="step-number mb-3">
+                        <span class="badge bg-primary rounded-circle">4</span>
+                    </div>
+                    <h4 class="card-title mb-3">Takip Edin</h4>
+                    <p class="card-text">Tekliflerin durumunu gerçek zamanlı olarak izleyin.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="container mb-5">
+    <h2 class="text-center mb-5 position-relative">
+        <span class="position-relative">Müşteri Yorumları</span>
+        <span class="position-absolute start-50 translate-middle-x" style="bottom: -10px; width: 80px; height: 3px; background-color: var(--primary-color);"></span>
+    </h2>
+    
+    <div class="row g-4">
+        <div class="col-md-4">
+            <div class="card testimonial-card bg-dark text-light h-100">
+                <div class="card-body p-4">
+                    <div class="d-flex align-items-center mb-3">
+                        <div class="text-warning me-2">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <span>5.0</span>
+                    </div>
+                    <p class="card-text mb-4">"Bu sistem sayesinde teklif süreçlerimiz %40 hızlandı. Müşterilerimizle iletişimimiz çok daha etkili hale geldi."</p>
+                    <div class="d-flex align-items-center mt-auto">
+                        <div class="avatar me-3">
+                            <i class="fas fa-user-circle fa-2x text-primary"></i>
+                        </div>
+                        <div>
+                            <h6 class="mb-0">Ahmet Yılmaz</h6>
+                            <small class="text-muted">ABC Teknoloji</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-4">
+            <div class="card testimonial-card bg-dark text-light h-100">
+                <div class="card-body p-4">
+                    <div class="d-flex align-items-center mb-3">
+                        <div class="text-warning me-2">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                        <span>4.5</span>
+                    </div>
+                    <p class="card-text mb-4">"Bildirim sistemi sayesinde hiçbir müşteri talebini kaçırmıyoruz. Arayüzü kullanmak çok kolay ve sezgisel."</p>
+                    <div class="d-flex align-items-center mt-auto">
+                        <div class="avatar me-3">
+                            <i class="fas fa-user-circle fa-2x text-primary"></i>
+                        </div>
+                        <div>
+                            <h6 class="mb-0">Ayşe Demir</h6>
+                            <small class="text-muted">XYZ Danışmanlık</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-4">
+            <div class="card testimonial-card bg-dark text-light h-100">
+                <div class="card-body p-4">
+                    <div class="d-flex align-items-center mb-3">
+                        <div class="text-warning me-2">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <span>5.0</span>
+                    </div>
+                    <p class="card-text mb-4">"Analitik özellikleri sayesinde hangi tekliflerin daha başarılı olduğunu görebiliyoruz. Bu da stratejimizi geliştirmemize yardımcı oluyor."</p>
+                    <div class="d-flex align-items-center mt-auto">
+                        <div class="avatar me-3">
+                            <i class="fas fa-user-circle fa-2x text-primary"></i>
+                        </div>
+                        <div>
+                            <h6 class="mb-0">Mehmet Kaya</h6>
+                            <small class="text-muted">123 İnşaat</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="container mb-5">
+    <div class="cta-section">
+        <div class="cta-content text-center text-white">
+            <h2 class="mb-4">Hemen Başlayın</h2>
+            <p class="lead mb-4">Teklif süreçlerinizi optimize edin, müşteri memnuniyetini artırın.</p>
+            <div class="d-flex justify-content-center gap-3 flex-wrap">
+                <a href="{% url 'login' %}" class="btn btn-light btn-lg">Giriş Yap</a>
+                <a href="{% url 'register' %}" class="btn btn-outline-light btn-lg">Kayıt Ol</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+    
+    function toggleTheme() {
+        document.body.classList.toggle('light-theme');
+        const isDarkMode = !document.body.classList.contains('light-theme');
+        localStorage.setItem('darkMode', isDarkMode);
+    }
+    
+    document.addEventListener('DOMContentLoaded', function() {
+        const prefersDarkMode = localStorage.getItem('darkMode') === 'true';
+        
+        const systemPrefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+        
+        if (prefersDarkMode === null ? systemPrefersDark : prefersDarkMode) {
+            document.body.classList.remove('light-theme');
+        } else {
+            document.body.classList.add('light-theme');
+        }
+        
+        const animateElements = document.querySelectorAll('.animate__animated');
+        animateElements.forEach(element => {
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.visibility = 'visible';
+                        entry.target.classList.add('animate__fadeIn');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            });
+            
+            element.style.visibility = 'hidden';
+            observer.observe(element);
+        });
+    });
+</script>
+{% endblock %}
