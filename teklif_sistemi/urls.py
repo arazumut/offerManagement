@@ -11,6 +11,7 @@ from musteri.views import (
 )
 from django.contrib.auth.views import LoginView, LogoutView
 from django.views.generic import TemplateView
+from teklifler.views import teklif_sil
 
 router = DefaultRouter()
 router.register(r'teklifler', TeklifViewSet)
@@ -34,4 +35,5 @@ urlpatterns = [
     path('bildirimler/', bildirimler, name='bildirimler'),
     path('musteri-paneli/', musteri_paneli, name='musteri_paneli'),
     path('teklif-detay/<int:teklif_id>/', teklif_detay, name='teklif_detay'),
+    path('teklif-sil/<int:teklif_id>/', teklif_sil, name='teklif_sil'),
 ]

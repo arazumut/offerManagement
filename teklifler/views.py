@@ -12,12 +12,15 @@ from .serializers import (
     TeklifSerializer, MusteriSerializer, 
     UrunSerializer, TeklifUrunuSerializer
 )
-from django.http import HttpResponse
+from django.http import HttpResponse, JsonResponse
 from django.template.loader import render_to_string
 from weasyprint import HTML
 from django.core.mail import send_mail
 from rest_framework.permissions import IsAuthenticated
 from .utils import send_teklif_email
+from django.views.decorators.http import require_POST
+from django.contrib.auth.decorators import login_required
+
 
 # Create your views here.
 
@@ -163,3 +166,24 @@ class TeklifViewSet(viewsets.ModelViewSet):
                 {'error': f'E-posta gönderilirken bir hata oluştu: {str(e)}'},
                 status=status.HTTP_500_INTERNAL_SERVER_ERROR
             )
+
+@login_required
+@require_POST
+def teklif_sil(request, teklif_id):
+    try:
+
+        teklif = Teklif.objects.get(id=teklif_id)
+        
+        if teklif.musteri.user != request.user:
+            return JsonResponse({'error': 'Bu işlem için yetkiniz yok'}, status=403)
+        
+        if teklif.durum != 'REDDEDILDI':
+            return JsonResponse({'error': 'Sadece reddedilen teklifler silinebilir'}, status=400)
+        
+        teklif.delete()
+        
+        return JsonResponse({'success': True})
+    except Teklif.DoesNotExist:
+        return JsonResponse({'error': 'Teklif bulunamadı'}, status=404)
+    except Exception as e:
+        return JsonResponse({'error': str(e)}, status=500)

@@ -1,60 +1,622 @@
-INFO 2025-03-08 12:08:39,573 autoreload /Users/umutaraz/Desktop/teklif_yonetim/offerManagement/teklif_sistemi/settings.py changed, reloading.
-INFO 2025-03-08 12:08:40,212 autoreload Watching for file changes with StatReloader
-INFO 2025-03-08 12:09:20,619 views Teklif işlemi başlatıldı - ID: 10, İşlem: onay
-INFO 2025-03-08 12:09:20,622 views Teklif bulundu - Müşteri: umutaraz324@gmail.com
-INFO 2025-03-08 12:09:20,625 views Teklif güncellendi - Yeni durum: ONAYLANDI
-INFO 2025-03-08 12:09:20,627 views Bildirim oluşturuldu
-INFO 2025-03-08 12:09:20,627 utils E-posta gönderme işlemi başlatıldı - Teklif ID: 10
-DEBUG 2025-03-08 12:09:20,627 utils E-posta şablonu hazırlanıyor - Template: emails/teklif_bildirim.html
-INFO 2025-03-08 12:09:20,629 utils E-posta gönderiliyor - Alıcı: umutaraz324@gmail.com
-DEBUG 2025-03-08 12:09:20,629 utils E-posta ayarları: HOST=smtp.gmail.com, PORT=465, TLS=False
-INFO 2025-03-08 12:09:23,000 utils E-posta başarıyla gönderildi
-INFO 2025-03-08 12:09:23,000 views E-posta gönderme sonucu: Başarılı
-INFO 2025-03-08 12:14:11,420 views Teklif işlemi başlatıldı - ID: 12, İşlem: onay
-INFO 2025-03-08 12:14:11,422 views Teklif bulundu - Müşteri: esra.atladi4340@gmail.com
-INFO 2025-03-08 12:14:11,425 views Teklif güncellendi - Yeni durum: ONAYLANDI
-INFO 2025-03-08 12:14:11,427 views Bildirim oluşturuldu
-INFO 2025-03-08 12:14:11,427 utils E-posta gönderme işlemi başlatıldı - Teklif ID: 12
-DEBUG 2025-03-08 12:14:11,427 utils E-posta şablonu hazırlanıyor - Template: emails/teklif_bildirim.html
-INFO 2025-03-08 12:14:11,428 utils E-posta gönderiliyor - Alıcı: esra.atladi4340@gmail.com
-DEBUG 2025-03-08 12:14:11,428 utils E-posta ayarları: HOST=smtp.gmail.com, PORT=465, TLS=False
-INFO 2025-03-08 12:14:13,710 utils E-posta başarıyla gönderildi
-INFO 2025-03-08 12:14:13,710 views E-posta gönderme sonucu: Başarılı
-INFO 2025-03-08 12:31:06,526 views Teklif detayı istendi - ID: 12
-INFO 2025-03-08 12:31:06,527 views Teklif durumu: ONAYLANDI
-INFO 2025-03-08 12:31:06,527 views Teklif display durumu: Onaylandı
-INFO 2025-03-08 12:33:37,860 views Teklif detayı istendi - ID: 9
-INFO 2025-03-08 12:33:37,861 views Teklif durumu: BEKLEMEDE
-INFO 2025-03-08 12:33:37,861 views Teklif display durumu: Beklemede
-INFO 2025-03-08 12:34:08,345 views Teklif işlemi başlatıldı - ID: 9, İşlem: revizyon
-INFO 2025-03-08 12:34:08,347 views Teklif bulundu - Müşteri: umutaraz324@gmail.com
-INFO 2025-03-08 12:34:08,349 views Teklif güncellendi - Yeni durum: REVIZYON
-INFO 2025-03-08 12:34:08,351 views Bildirim oluşturuldu
-INFO 2025-03-08 12:34:08,352 utils E-posta gönderme işlemi başlatıldı - Teklif ID: 9
-DEBUG 2025-03-08 12:34:08,352 utils E-posta şablonu hazırlanıyor - Template: emails/teklif_bildirim.html
-INFO 2025-03-08 12:34:08,354 utils E-posta gönderiliyor - Alıcı: umutaraz324@gmail.com
-DEBUG 2025-03-08 12:34:08,354 utils E-posta ayarları: HOST=smtp.gmail.com, PORT=465, TLS=False
-INFO 2025-03-08 12:34:11,785 utils E-posta başarıyla gönderildi
-INFO 2025-03-08 12:34:11,785 views E-posta gönderme sonucu: Başarılı
-INFO 2025-03-08 12:52:34,745 autoreload Watching for file changes with StatReloader
-INFO 2025-03-08 13:00:18,645 utils E-posta gönderme işlemi başlatıldı - Teklif ID: 13
-DEBUG 2025-03-08 13:00:18,645 utils E-posta şablonu hazırlanıyor - Template: emails/teklif_bildirim.html
-INFO 2025-03-08 13:00:18,647 utils E-posta gönderiliyor - Alıcı: umutaraz324@gmail.com
-DEBUG 2025-03-08 13:00:18,647 utils E-posta ayarları: HOST=smtp.gmail.com, PORT=465, TLS=False
-INFO 2025-03-08 13:00:21,439 utils E-posta başarıyla gönderildi
-INFO 2025-03-08 13:00:21,439 utils Firma sahibine e-posta gönderme işlemi başlatıldı - Teklif ID: 13
-INFO 2025-03-08 13:00:21,446 utils E-posta gönderiliyor - Alıcı: 
-INFO 2025-03-08 13:00:21,446 utils Firma sahibine e-posta başarıyla gönderildi
-INFO 2025-03-08 13:00:53,360 autoreload /Users/umutaraz/Desktop/teklif_yonetim/offerManagement/teklifler/utils.py changed, reloading.
-INFO 2025-03-08 13:00:53,947 autoreload Watching for file changes with StatReloader
-INFO 2025-03-08 13:15:22,054 autoreload Watching for file changes with StatReloader
-INFO 2025-03-08 13:16:09,789 views Teklif işlemi başlatıldı - ID: 13, İşlem: revizyon
-INFO 2025-03-08 13:16:09,791 views Teklif bulundu - Müşteri: umutaraz324@gmail.com
-INFO 2025-03-08 13:16:09,794 views Teklif güncellendi - Yeni durum: REVIZYON
-INFO 2025-03-08 13:16:09,796 views Bildirim oluşturuldu
-INFO 2025-03-08 13:16:09,796 utils E-posta gönderme işlemi başlatıldı - Teklif ID: 13
-DEBUG 2025-03-08 13:16:09,796 utils E-posta şablonu hazırlanıyor - Template: emails/teklif_bildirim.html
-INFO 2025-03-08 13:16:09,798 utils E-posta gönderiliyor - Alıcı: umutaraz324@gmail.com
-DEBUG 2025-03-08 13:16:09,799 utils E-posta ayarları: HOST=smtp.gmail.com, PORT=465, TLS=False
-INFO 2025-03-08 13:16:12,348 utils E-posta başarıyla gönderildi
-INFO 2025-03-08 13:16:12,349 views E-posta gönderme sonucu: Başarılı
+INFO 2025-03-09 13:08:59,100 autoreload /Users/umutaraz/Desktop/teklif_yonetim/offerManagement/teklifler/views.py changed, reloading.
+INFO 2025-03-09 13:08:59,681 autoreload Watching for file changes with StatReloader
+INFO 2025-03-09 13:09:05,718 autoreload /Users/umutaraz/Desktop/teklif_yonetim/offerManagement/teklifler/views.py changed, reloading.
+INFO 2025-03-09 13:09:06,057 autoreload Watching for file changes with StatReloader
+INFO 2025-03-09 13:09:18,897 autoreload /Users/umutaraz/Desktop/teklif_yonetim/offerManagement/teklifler/admin.py changed, reloading.
+INFO 2025-03-09 13:09:19,241 autoreload Watching for file changes with StatReloader
+INFO 2025-03-09 13:10:43,044 autoreload /Users/umutaraz/Desktop/teklif_yonetim/offerManagement/teklif_sistemi/urls.py changed, reloading.
+INFO 2025-03-09 13:10:43,466 autoreload Watching for file changes with StatReloader
+INFO 2025-03-09 13:11:14,866 autoreload /Users/umutaraz/Desktop/teklif_yonetim/offerManagement/teklif_sistemi/urls.py changed, reloading.
+INFO 2025-03-09 13:11:15,275 autoreload Watching for file changes with StatReloader
+INFO 2025-03-09 13:12:08,437 autoreload /Users/umutaraz/Desktop/teklif_yonetim/offerManagement/teklif_sistemi/urls.py changed, reloading.
+INFO 2025-03-09 13:12:08,854 autoreload Watching for file changes with StatReloader
+INFO 2025-03-09 13:12:10,586 autoreload /Users/umutaraz/Desktop/teklif_yonetim/offerManagement/teklif_sistemi/urls.py changed, reloading.
+INFO 2025-03-09 13:12:10,858 autoreload Watching for file changes with StatReloader
+INFO 2025-03-09 13:12:13,400 autoreload /Users/umutaraz/Desktop/teklif_yonetim/offerManagement/teklif_sistemi/urls.py changed, reloading.
+INFO 2025-03-09 13:12:13,683 autoreload Watching for file changes with StatReloader
+INFO 2025-03-09 13:20:14,990 views Teklif işlemi başlatıldı - ID: 18, İşlem: red
+INFO 2025-03-09 13:20:14,992 views Teklif bulundu - Müşteri: umutaraz324@gmail.com
+INFO 2025-03-09 13:20:14,995 views Teklif güncellendi - Yeni durum: REDDEDILDI
+INFO 2025-03-09 13:20:14,997 views Bildirim oluşturuldu
+INFO 2025-03-09 13:20:14,997 utils E-posta gönderme işlemi başlatıldı - Teklif ID: 18
+DEBUG 2025-03-09 13:20:14,997 utils E-posta şablonu hazırlanıyor - Template: emails/teklif_bildirim.html
+INFO 2025-03-09 13:20:14,999 utils E-posta gönderiliyor - Alıcı: umutaraz324@gmail.com
+DEBUG 2025-03-09 13:20:15,000 utils E-posta ayarları: HOST=smtp.gmail.com, PORT=465, TLS=False
+INFO 2025-03-09 13:20:17,291 utils E-posta başarıyla gönderildi
+INFO 2025-03-09 13:20:17,292 views E-posta gönderme sonucu: Başarılı
+INFO 2025-03-09 13:20:28,191 views Teklif işlemi başlatıldı - ID: 14, İşlem: red
+INFO 2025-03-09 13:20:28,194 views Teklif bulundu - Müşteri: umutaraz324@gmail.com
+INFO 2025-03-09 13:20:28,196 views Teklif güncellendi - Yeni durum: REDDEDILDI
+INFO 2025-03-09 13:20:28,198 views Bildirim oluşturuldu
+INFO 2025-03-09 13:20:28,198 utils E-posta gönderme işlemi başlatıldı - Teklif ID: 14
+DEBUG 2025-03-09 13:20:28,198 utils E-posta şablonu hazırlanıyor - Template: emails/teklif_bildirim.html
+INFO 2025-03-09 13:20:28,199 utils E-posta gönderiliyor - Alıcı: umutaraz324@gmail.com
+DEBUG 2025-03-09 13:20:28,199 utils E-posta ayarları: HOST=smtp.gmail.com, PORT=465, TLS=False
+INFO 2025-03-09 13:20:30,185 utils E-posta başarıyla gönderildi
+INFO 2025-03-09 13:20:30,186 views E-posta gönderme sonucu: Başarılı
+INFO 2025-03-09 13:20:37,186 views Teklif işlemi başlatıldı - ID: 18, İşlem: sil
+INFO 2025-03-09 13:20:37,189 views Teklif bulundu - Müşteri: umutaraz324@gmail.com
+WARNING 2025-03-09 13:20:37,189 views İşlem yapılamaz - Mevcut durum: REDDEDILDI
+WARNING 2025-03-09 13:20:37,189 log Bad Request: /teklif/18/sil/
+INFO 2025-03-09 13:22:18,778 autoreload /Users/umutaraz/Desktop/teklif_yonetim/offerManagement/teklifler/admin.py changed, reloading.
+INFO 2025-03-09 13:22:19,262 autoreload Watching for file changes with StatReloader
+INFO 2025-03-09 13:23:10,436 autoreload /Users/umutaraz/Desktop/teklif_yonetim/offerManagement/teklif_sistemi/urls.py changed, reloading.
+INFO 2025-03-09 13:23:10,829 autoreload Watching for file changes with StatReloader
+INFO 2025-03-09 13:24:10,117 autoreload /Users/umutaraz/Desktop/teklif_yonetim/offerManagement/teklifler/views.py changed, reloading.
+INFO 2025-03-09 13:24:10,536 autoreload Watching for file changes with StatReloader
+INFO 2025-03-09 13:24:30,692 autoreload /Users/umutaraz/Desktop/teklif_yonetim/offerManagement/teklifler/views.py changed, reloading.
+INFO 2025-03-09 13:24:31,080 autoreload Watching for file changes with StatReloader
+ERROR 2025-03-09 13:24:35,759 log Internal Server Error: /teklif-sil/18/
+INFO 2025-03-09 13:26:31,158 autoreload /Users/umutaraz/Desktop/teklif_yonetim/offerManagement/teklifler/views.py changed, reloading.
+INFO 2025-03-09 13:26:31,591 autoreload Watching for file changes with StatReloader
+INFO 2025-03-09 13:26:35,355 autoreload /Users/umutaraz/Desktop/teklif_yonetim/offerManagement/teklifler/views.py changed, reloading.
+INFO 2025-03-09 13:26:35,647 autoreload Watching for file changes with StatReloader
+WARNING 2025-03-09 13:26:42,719 log Forbidden: /teklif-sil/18/
+INFO 2025-03-09 13:30:01,097 autoreload /Users/umutaraz/Desktop/teklif_yonetim/offerManagement/teklifler/views.py changed, reloading.
+INFO 2025-03-09 13:30:01,561 autoreload Watching for file changes with StatReloader
+INFO 2025-03-09 13:30:26,547 autoreload /Users/umutaraz/Desktop/teklif_yonetim/offerManagement/teklifler/views.py changed, reloading.
+INFO 2025-03-09 13:30:26,897 autoreload Watching for file changes with StatReloader
+INFO 2025-03-09 13:31:43,053 autoreload /Users/umutaraz/Desktop/teklif_yonetim/offerManagement/teklifler/views.py changed, reloading.
+INFO 2025-03-09 13:31:43,530 autoreload Watching for file changes with StatReloader
+INFO 2025-03-09 13:33:15,087 autoreload /Users/umutaraz/Desktop/teklif_yonetim/offerManagement/teklifler/views.py changed, reloading.
+INFO 2025-03-09 13:33:15,466 autoreload Watching for file changes with StatReloader
+INFO 2025-03-09 13:33:21,976 autoreload /Users/umutaraz/Desktop/teklif_yonetim/offerManagement/teklifler/views.py changed, reloading.
+INFO 2025-03-09 13:33:22,302 autoreload Watching for file changes with StatReloader
+INFO 2025-03-09 13:33:29,749 autoreload /Users/umutaraz/Desktop/teklif_yonetim/offerManagement/teklifler/views.py changed, reloading.
+INFO 2025-03-09 13:33:30,031 autoreload Watching for file changes with StatReloader
+INFO 2025-03-09 13:34:14,896 autoreload /Users/umutaraz/Desktop/teklif_yonetim/offerManagement/teklifler/views.py changed, reloading.
+INFO 2025-03-09 13:34:15,397 autoreload Watching for file changes with StatReloader
+INFO 2025-03-09 13:34:35,730 autoreload /Users/umutaraz/Desktop/teklif_yonetim/offerManagement/teklif_sistemi/urls.py changed, reloading.
+INFO 2025-03-09 13:34:36,058 autoreload Watching for file changes with StatReloader
+INFO 2025-03-09 13:36:26,188 views Teklif işlemi başlatıldı - ID: 15, İşlem: red
+INFO 2025-03-09 13:36:26,191 views Teklif bulundu - Müşteri: umutaraz324@gmail.com
+INFO 2025-03-09 13:36:26,194 views Teklif güncellendi - Yeni durum: REDDEDILDI
+INFO 2025-03-09 13:36:26,197 views Bildirim oluşturuldu
+INFO 2025-03-09 13:36:26,197 utils E-posta gönderme işlemi başlatıldı - Teklif ID: 15
+DEBUG 2025-03-09 13:36:26,197 utils E-posta şablonu hazırlanıyor - Template: emails/teklif_bildirim.html
+INFO 2025-03-09 13:36:26,199 utils E-posta gönderiliyor - Alıcı: umutaraz324@gmail.com
+DEBUG 2025-03-09 13:36:26,199 utils E-posta ayarları: HOST=smtp.gmail.com, PORT=465, TLS=False
+INFO 2025-03-09 13:36:28,510 utils E-posta başarıyla gönderildi
+INFO 2025-03-09 13:36:28,510 views E-posta gönderme sonucu: Başarılı
+INFO 2025-03-09 13:41:49,756 views Teklif detayı istendi - ID: 15
+INFO 2025-03-09 13:41:49,757 views Teklif durumu: REDDEDILDI
+INFO 2025-03-09 13:41:49,757 views Teklif display durumu: Reddedildi
+INFO 2025-03-09 13:41:57,871 views Teklif detayı istendi - ID: 14
+INFO 2025-03-09 13:41:57,872 views Teklif durumu: REDDEDILDI
+INFO 2025-03-09 13:41:57,872 views Teklif display durumu: Reddedildi
+INFO 2025-03-09 13:42:14,954 views Teklif detayı istendi - ID: 19
+INFO 2025-03-09 13:42:14,954 views Teklif durumu: ONAYLANDI
+INFO 2025-03-09 13:42:14,954 views Teklif display durumu: Onaylandı
+INFO 2025-03-09 13:42:18,572 views Teklif detayı istendi - ID: 11
+INFO 2025-03-09 13:42:18,572 views Teklif durumu: BEKLEMEDE
+INFO 2025-03-09 13:42:18,572 views Teklif display durumu: Beklemede
+INFO 2025-03-09 13:42:28,838 views Teklif detayı istendi - ID: 12
+INFO 2025-03-09 13:42:28,839 views Teklif durumu: ONAYLANDI
+INFO 2025-03-09 13:42:28,839 views Teklif display durumu: Onaylandı
+INFO 2025-03-09 13:46:37,585 autoreload /Users/umutaraz/Desktop/teklif_yonetim/offerManagement/musteri/models.py changed, reloading.
+INFO 2025-03-09 13:46:38,259 autoreload Watching for file changes with StatReloader
+ERROR 2025-03-09 13:55:23,339 log Internal Server Error: /register/
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/umutaraz/Desktop/teklif_yonetim/offerManagement/musteri/views.py", line 187, in register
+    return render(request, 'musteri/register.html', {'form': form})
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/backends/django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/base.py", line 969, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/base.py", line 969, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/defaulttags.py", line 327, in render
+    return nodelist.render(context)
+           ~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/base.py", line 969, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/urls/base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/urls/resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'giris' not found. 'giris' is not a valid view function or pattern name.
+ERROR 2025-03-09 13:55:28,253 log Internal Server Error: /
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/umutaraz/Desktop/teklif_yonetim/offerManagement/musteri/views.py", line 26, in anasayfa
+    return render(request, 'anasayfa.html')
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/backends/django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/base.py", line 969, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/base.py", line 969, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/defaulttags.py", line 327, in render
+    return nodelist.render(context)
+           ~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/base.py", line 969, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/urls/base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/urls/resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'giris' not found. 'giris' is not a valid view function or pattern name.
+ERROR 2025-03-09 13:55:28,643 log Internal Server Error: /
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/umutaraz/Desktop/teklif_yonetim/offerManagement/musteri/views.py", line 26, in anasayfa
+    return render(request, 'anasayfa.html')
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/backends/django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/base.py", line 969, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/base.py", line 969, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/defaulttags.py", line 327, in render
+    return nodelist.render(context)
+           ~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/base.py", line 969, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/urls/base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/urls/resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'giris' not found. 'giris' is not a valid view function or pattern name.
+ERROR 2025-03-09 13:55:56,528 log Internal Server Error: /
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/umutaraz/Desktop/teklif_yonetim/offerManagement/musteri/views.py", line 26, in anasayfa
+    return render(request, 'anasayfa.html')
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/backends/django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/base.py", line 969, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/base.py", line 969, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/defaulttags.py", line 327, in render
+    return nodelist.render(context)
+           ~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/base.py", line 969, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/urls/base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/urls/resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'giris' not found. 'giris' is not a valid view function or pattern name.
+ERROR 2025-03-09 13:55:57,503 log Internal Server Error: /
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/umutaraz/Desktop/teklif_yonetim/offerManagement/musteri/views.py", line 26, in anasayfa
+    return render(request, 'anasayfa.html')
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/backends/django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/base.py", line 969, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/base.py", line 969, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/defaulttags.py", line 327, in render
+    return nodelist.render(context)
+           ~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/base.py", line 969, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/urls/base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/urls/resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'giris' not found. 'giris' is not a valid view function or pattern name.
+ERROR 2025-03-09 13:55:57,666 log Internal Server Error: /
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/umutaraz/Desktop/teklif_yonetim/offerManagement/musteri/views.py", line 26, in anasayfa
+    return render(request, 'anasayfa.html')
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/backends/django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/base.py", line 969, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/base.py", line 969, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/defaulttags.py", line 327, in render
+    return nodelist.render(context)
+           ~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/base.py", line 969, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/urls/base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/urls/resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'giris' not found. 'giris' is not a valid view function or pattern name.
+ERROR 2025-03-09 13:55:57,828 log Internal Server Error: /
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/umutaraz/Desktop/teklif_yonetim/offerManagement/musteri/views.py", line 26, in anasayfa
+    return render(request, 'anasayfa.html')
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/backends/django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/base.py", line 969, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/base.py", line 969, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/defaulttags.py", line 327, in render
+    return nodelist.render(context)
+           ~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/base.py", line 969, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/urls/base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/urls/resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'giris' not found. 'giris' is not a valid view function or pattern name.
+ERROR 2025-03-09 13:55:57,999 log Internal Server Error: /
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/umutaraz/Desktop/teklif_yonetim/offerManagement/musteri/views.py", line 26, in anasayfa
+    return render(request, 'anasayfa.html')
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/backends/django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/base.py", line 969, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/base.py", line 969, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/defaulttags.py", line 327, in render
+    return nodelist.render(context)
+           ~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/base.py", line 969, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/urls/base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/urls/resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'giris' not found. 'giris' is not a valid view function or pattern name.
+ERROR 2025-03-09 13:55:58,162 log Internal Server Error: /
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/umutaraz/Desktop/teklif_yonetim/offerManagement/musteri/views.py", line 26, in anasayfa
+    return render(request, 'anasayfa.html')
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/backends/django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/base.py", line 969, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/base.py", line 969, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/defaulttags.py", line 327, in render
+    return nodelist.render(context)
+           ~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/base.py", line 969, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/urls/base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/urls/resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'giris' not found. 'giris' is not a valid view function or pattern name.
+INFO 2025-03-09 14:00:18,577 views Teklif detayı istendi - ID: 19
+INFO 2025-03-09 14:00:18,578 views Teklif durumu: ONAYLANDI
+INFO 2025-03-09 14:00:18,578 views Teklif display durumu: Onaylandı
+INFO 2025-03-09 14:01:17,772 autoreload Watching for file changes with StatReloader
+INFO 2025-03-09 14:33:41,433 autoreload Watching for file changes with StatReloader
+INFO 2025-03-09 14:33:50,361 views Teklif detayı istendi - ID: 15
+INFO 2025-03-09 14:33:50,362 views Teklif durumu: REDDEDILDI
+INFO 2025-03-09 14:33:50,362 views Teklif display durumu: Reddedildi
+INFO 2025-03-09 14:33:59,423 views Teklif detayı istendi - ID: 13
+INFO 2025-03-09 14:33:59,423 views Teklif durumu: REVIZYON
+INFO 2025-03-09 14:33:59,423 views Teklif display durumu: Revizyon
+INFO 2025-03-09 14:44:24,517 autoreload Watching for file changes with StatReloader
