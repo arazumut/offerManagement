@@ -163,27 +163,112 @@
             grid-template-columns: repeat(2, 1fr);
         }
     }
+
+    .action-buttons {
+        display: flex;
+        gap: 10px;
+        margin-top: 20px;
+    }
+    
+    .action-button {
+        flex: 1;
+        text-align: center;
+        padding: 15px;
+        border-radius: 8px;
+        color: white;
+        text-decoration: none;
+        font-weight: bold;
+        transition: all 0.3s ease;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .action-button i {
+        font-size: 24px;
+        margin-bottom: 8px;
+    }
+    
+    .action-button.primary {
+        background-color: #0d6efd;
+    }
+    
+    .action-button.success {
+        background-color: #198754;
+    }
+    
+    .action-button.warning {
+        background-color: #ffc107;
+        color: #212529;
+    }
+    
+    .action-button.info {
+        background-color: #0dcaf0;
+        color: #212529;
+    }
+    
+    .action-button:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        color: white;
+    }
+    
+    .action-button.warning:hover, .action-button.info:hover {
+        color: #212529;
+    }
 </style>
 {% endblock %}
 
 {% block content %}
 <div class="container mt-4">
+    <h2 class="mb-4">Firma Sahibi Paneli</h2>
+    
+    
     <div class="row mb-4">
         <div class="col-12">
-            <div class="btn-group">
-                <a href="{% url 'dashboard' %}" class="btn btn-primary">
-                    <i class="fas fa-chart-line me-2"></i>Dashboard
-                </a>
+            <div class="card shadow-sm border-0 rounded-4">
+                <div class="card-body p-4">
+                    <h5 class="card-title mb-4 text-center fw-bold">
+                        <i class="fas fa-bolt me-2 text-primary"></i>
+                        Hızlı Erişim
+                    </h5>
+                    <div class="action-buttons d-flex flex-wrap justify-content-center gap-4">
+                        <a href="{% url 'dashboard' %}" class="action-button primary rounded-4">
+                            <i class="fas fa-chart-line mb-3"></i>
+                            <span>Dashboard</span>
+                        </a>
+                        <a href="{% url 'export_rapor' %}" class="action-button success rounded-4">
+                            <i class="fas fa-file-export mb-3"></i>
+                            <span>Rapor Al</span>
+                        </a>
+                        <a href="{% url 'bildirimler' %}" class="action-button warning rounded-4">
+                            <i class="fas fa-bell mb-3"></i>
+                            <span>Bildirimler</span>
+                        </a>
+                        <a href="{% url 'mesajlar:kullanici_listesi' %}" class="action-button info rounded-4">
+                            <i class="fas fa-comments mb-3"></i>
+                            <span>Müşterilerle Mesajlaş</span>
+                        </a>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-    <div class="row">
-        <div class="col-12">
-            <div class="d-flex flex-column flex-md-row justify-content-between align-items-center mb-4">
-                <h2 class="mb-3 mb-md-0">Teklif Yönetimi</h2>
+    
+    
+    <div class="card shadow-sm">
+        <div class="card-header bg-primary text-white">
+            <h5 class="mb-0">Teklif Listesi</h5>
+        </div>
+        <div class="card-body">
+            <div class="row mb-4">
+                <div class="col-12">
+                    <div class="d-flex flex-column flex-md-row justify-content-between align-items-center mb-4">
+                        <h2 class="mb-3 mb-md-0">Teklif Yönetimi</h2>
+                    </div>
+                </div>
             </div>
-
-        
             <div class="table-responsive">
                 <table class="table table-hover">
                     <thead>
@@ -241,83 +326,83 @@
                     </tbody>
                 </table>
             </div>
+        </div>
+    </div>
 
-           
-
-<div class="modal fade" id="teklifIslemModal" tabindex="-1">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="modalTitle">Teklif İşlemi</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-            </div>
-            <div class="modal-body">
-                <form id="teklifIslemForm">
-                    {% csrf_token %}
-                    <div id="fiyatAlani" style="display:none;">
-                        <div class="mb-3">
-                            <label class="form-label">Teklif Tutarı (TL)</label>
-                            <input type="number" class="form-control" name="fiyat" step="0.01">
+    <div class="modal fade" id="teklifIslemModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalTitle">Teklif İşlemi</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="teklifIslemForm">
+                        {% csrf_token %}
+                        <div id="fiyatAlani" style="display:none;">
+                            <div class="mb-3">
+                                <label class="form-label">Teklif Tutarı (TL)</label>
+                                <input type="number" class="form-control" name="fiyat" step="0.01">
+                            </div>
                         </div>
-                    </div>
-                    <div class="mb-3">
-                        <label class="form-label">Açıklama</label>
-                        <textarea class="form-control" name="aciklama" rows="3" required></textarea>
-                    </div>
-                </form>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">İptal</button>
-                <button type="button" class="btn btn-primary" onclick="formGonder()">Gönder</button>
+                        <div class="mb-3">
+                            <label class="form-label">Açıklama</label>
+                            <textarea class="form-control" name="aciklama" rows="3" required></textarea>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">İptal</button>
+                    <button type="button" class="btn btn-primary" onclick="formGonder()">Gönder</button>
+                </div>
             </div>
         </div>
     </div>
-</div>
 
-
-<div class="modal fade" id="teklifDetayModal" tabindex="-1">
-    <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title">Teklif Detayı</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-            </div>
-            <div class="modal-body">
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="card mb-3">
-                            <div class="card-header">
-                                <h6 class="mb-0">Müşteri Bilgileri</h6>
+    <div class="modal fade" id="teklifDetayModal" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Teklif Detayı</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="card mb-3">
+                                <div class="card-header">
+                                    <h6 class="mb-0">Müşteri Bilgileri</h6>
+                                </div>
+                                <div class="card-body" id="musteri-bilgileri">
+                                
+                                </div>
                             </div>
-                            <div class="card-body" id="musteri-bilgileri">
-                            
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card mb-3">
+                                <div class="card-header">
+                                    <h6 class="mb-0">Teklif Bilgileri</h6>
+                                </div>
+                                <div class="card-body" id="teklif-bilgileri">
+                                    
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-6">
-                        <div class="card mb-3">
-                            <div class="card-header">
-                                <h6 class="mb-0">Teklif Bilgileri</h6>
-                            </div>
-                            <div class="card-body" id="teklif-bilgileri">
+                    <div class="card">
+                        <div class="card-header">
+                            <h6 class="mb-0">İşlem Geçmişi</h6>
+                        </div>
+                        <div class="card-body">
+                            <div class="timeline" id="teklif-timeline">
                                 
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="card">
-                    <div class="card-header">
-                        <h6 class="mb-0">İşlem Geçmişi</h6>
-                    </div>
-                    <div class="card-body">
-                        <div class="timeline" id="teklif-timeline">
-                            
-                        </div>
-                    </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Kapat</button>
                 </div>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Kapat</button>
             </div>
         </div>
     </div>

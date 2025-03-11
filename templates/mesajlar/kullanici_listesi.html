@@ -1,0 +1,109 @@
+{% extends 'base.html' %}
+
+{% block title %}Mesajlaşabileceğiniz Kişiler{% endblock %}
+
+{% block extra_head %}
+<style>
+    .kullanici-listesi {
+        max-width: 800px;
+        margin: 0 auto;
+    }
+    .kullanici-item {
+        transition: all 0.3s ease;
+        border-left: 4px solid transparent;
+    }
+    .kullanici-item:hover {
+        transform: translateX(5px);
+        border-left: 4px solid var(--bs-primary);
+    }
+    .kullanici-avatar {
+        width: 50px;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: white;
+        background-color: var(--bs-primary);
+        border-radius: 50%;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+    <div class="kullanici-listesi">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <h2>
+                <i class="fas fa-users me-2"></i>
+                {% if user.profile.is_firma_sahibi %}
+                    Müşterileriniz
+                {% else %}
+                    Firma Sahipleri
+                {% endif %}
+            </h2>
+            <div class="input-group" style="max-width: 300px;">
+                <input type="text" class="form-control" id="kullaniciArama" placeholder="Kişi ara...">
+                <span class="input-group-text">
+                    <i class="fas fa-search"></i>
+                </span>
+            </div>
+        </div>
+
+        <div class="list-group shadow-sm">
+            {% for kullanici in kullanicilar %}
+                <div class="list-group-item kullanici-item">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div class="d-flex align-items-center">
+                            <div class="kullanici-avatar me-3">
+                                {{ kullanici.get_full_name|default:kullanici.username|make_list|first|upper }}
+                            </div>
+                            <div>
+                                <h5 class="mb-1">{{ kullanici.get_full_name|default:kullanici.username }}</h5>
+                                <p class="mb-1 text-muted">
+                                    {% if kullanici.email %}
+                                        <i class="fas fa-envelope me-1"></i> {{ kullanici.email }}
+                                    {% endif %}
+                                </p>
+                            </div>
+                        </div>
+                        <a href="{% url 'mesajlar:yeni_sohbet' kullanici.id %}" class="btn btn-primary">
+                            <i class="fas fa-comments me-1"></i> Mesaj Gönder
+                        </a>
+                    </div>
+                </div>
+            {% empty %}
+                <div class="text-center py-5">
+                    <i class="fas fa-users text-muted mb-3" style="font-size: 3rem;"></i>
+                    <p class="text-muted">
+                        {% if user.profile.is_firma_sahibi %}
+                            Henüz hiç müşteriniz bulunmuyor.
+                        {% else %}
+                            Henüz hiç firma sahibi bulunmuyor.
+                        {% endif %}
+                    </p>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+<script>
+document.getElementById('kullaniciArama').addEventListener('input', function(e) {
+    const aramaMetni = e.target.value.toLowerCase();
+    const kullanicilar = document.querySelectorAll('.kullanici-item');
+    
+    kullanicilar.forEach(kullanici => {
+        const isim = kullanici.querySelector('h5').textContent.toLowerCase();
+        const email = kullanici.querySelector('p').textContent.toLowerCase();
+        
+        if (isim.includes(aramaMetni) || email.includes(aramaMetni)) {
+            kullanici.style.display = '';
+        } else {
+            kullanici.style.display = 'none';
+        }
+    });
+});
+</script>
+{% endblock %} 

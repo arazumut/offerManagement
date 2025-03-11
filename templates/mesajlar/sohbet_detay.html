@@ -1,0 +1,270 @@
+{% extends 'base.html' %}
+
+{% block title %}Sohbet: {{ diger_katilimci.username }}{% endblock %}
+
+{% block extra_head %}
+<style>
+    .mesaj-container {
+        height: 60vh;
+        overflow-y: auto;
+        display: flex;
+        flex-direction: column;
+    }
+    .mesaj {
+        max-width: 70%;
+        margin-bottom: 10px;
+        padding: 10px;
+        border-radius: 10px;
+    }
+    .mesaj-gelen {
+        align-self: flex-start;
+        background-color: #f1f0f0;
+    }
+    .mesaj-giden {
+        align-self: flex-end;
+        background-color: #dcf8c6;
+    }
+    .mesaj-form {
+        position: sticky;
+        bottom: 0;
+        background-color: white;
+        padding: 15px 0;
+        border-top: 1px solid #ddd;
+    }
+    .mesaj-icerik {
+        word-wrap: break-word;
+    }
+    .mesaj-bilgi {
+        font-size: 0.7rem;
+        text-align: right;
+        margin-top: 5px;
+    }
+    .sohbet-baslik {
+        position: sticky;
+        top: 0;
+        background-color: white;
+        z-index: 100;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+    <div class="card shadow-sm" style="max-width: 800px; margin: 0 auto;">
+        <div class="card-header sohbet-baslik d-flex justify-content-between align-items-center">
+            <div class="d-flex align-items-center">
+                <div class="rounded-circle bg-primary text-white d-flex align-items-center justify-content-center me-3" 
+                     style="width: 40px; height: 40px;">
+                    {{ diger_katilimci.get_full_name|default:diger_katilimci.username|make_list|first|upper }}
+                </div>
+                <div>
+                    <h5 class="mb-0">{{ diger_katilimci.get_full_name|default:diger_katilimci.username }}</h5>
+                    <small class="text-muted">
+                        {% if diger_katilimci.profile.is_firma_sahibi %}
+                            Firma Sahibi
+                        {% else %}
+                            Müşteri
+                        {% endif %}
+                    </small>
+                </div>
+            </div>
+            <a href="{% url 'mesajlar:sohbet_listesi' %}" class="btn btn-sm btn-outline-secondary">
+                <i class="fas fa-arrow-left me-1"></i> Geri Dön
+            </a>
+        </div>
+        
+        <div class="card-body p-0">
+            <div class="mesaj-container p-3" id="mesaj-container">
+                {% for mesaj in mesajlar %}
+                    <div class="mesaj {% if mesaj.gonderen == request.user %}mesaj-giden{% else %}mesaj-gelen{% endif %}">
+                        <div class="mesaj-icerik">{{ mesaj.icerik }}</div>
+                        <div class="mesaj-bilgi text-muted">
+                            {{ mesaj.gonderilme_tarihi|date:"d.m.Y H:i" }}
+                            {% if mesaj.gonderen == request.user %}
+                                {% if mesaj.okundu %}
+                                    <span class="text-primary">✓✓</span>
+                                {% else %}
+                                    <span>✓</span>
+                                {% endif %}
+                            {% endif %}
+                        </div>
+                    </div>
+                {% empty %}
+                    <div class="text-center text-muted my-5">
+                        <i class="fas fa-comments mb-3" style="font-size: 3rem;"></i>
+                        <p>Henüz mesaj yok. Sohbete başlamak için aşağıdan mesaj gönderin.</p>
+                    </div>
+                {% endfor %}
+            </div>
+            
+            <div class="mesaj-form p-3">
+                <form id="mesaj-form" class="d-flex">
+                    <input type="text" id="mesaj-input" class="form-control me-2" placeholder="Mesajınızı yazın..." required>
+                    <button type="submit" class="btn btn-primary">
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+    const sohbetId = {{ sohbet.id }};
+    const kullaniciId = {{ request.user.id }};
+    const kullaniciAdi = "{{ request.user.username }}";
+    
+    // WebSocket bağlantısı
+    let wsProtocol = window.location.protocol === 'https:' ? 'wss:' : 'ws:';
+    let wsHost = window.location.host;
+    let wsPath = `/ws/sohbet/${sohbetId}/`;
+    
+    
+    {% if debug %}
+    if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
+        wsHost = window.location.hostname + ':8000'; // burayı düzgün değiştir unutma.
+    }
+    {% endif %}
+    
+    const sohbetSocket = new WebSocket(`${wsProtocol}//${wsHost}${wsPath}`);
+    
+    
+    let pingInterval;
+    
+    function startPingInterval() {
+        // Her 30 saniyede bir ping gönder
+        pingInterval = setInterval(() => {
+            if (sohbetSocket.readyState === WebSocket.OPEN) {
+                sohbetSocket.send(JSON.stringify({
+                    'ping': true
+                }));
+                console.log('Ping gönderildi');
+            }
+        }, 30000);
+    }
+    
+    function stopPingInterval() {
+        clearInterval(pingInterval);
+    }
+    
+    
+    sohbetSocket.onopen = function(e) {
+        console.log('WebSocket bağlantısı başarıyla kuruldu');
+        startPingInterval();
+    };
+    
+    sohbetSocket.onmessage = function(e) {
+        const data = JSON.parse(e.data);
+        
+        
+        if (data.pong) {
+            console.log('Pong alındı');
+            return;
+        }
+        
+        
+        if (data.hata) {
+            if (data.hata === 'auth_required') {
+                alert('Mesaj göndermek için giriş yapmalısınız.');
+                window.location.href = '{% url "login" %}?next=' + window.location.pathname;
+                return;
+            }
+            console.error('Hata:', data.mesaj);
+            return;
+        }
+        
+        ekranaMesajEkle(data.mesaj, data.gonderen_id, data.gonderen_username, data.gonderilme_tarihi);
+    };
+    
+    sohbetSocket.onclose = function(e) {
+        console.error('Sohbet bağlantısı kapandı');
+        stopPingInterval();
+        
+        
+        setTimeout(function() {
+            if (confirm('Bağlantı kesildi. Yeniden bağlanmak ister misiniz?')) {
+                window.location.reload();
+            }
+        }, 1000);
+    };
+    
+    sohbetSocket.onerror = function(e) {
+        console.error('WebSocket hatası:', e);
+    };
+    
+    
+    window.addEventListener('beforeunload', function() {
+        if (sohbetSocket.readyState === WebSocket.OPEN) {
+            sohbetSocket.close();
+        }
+    });
+    
+    // Mesaj gönderme
+    document.querySelector('#mesaj-form').addEventListener('submit', function(e) {
+        e.preventDefault();
+        const mesajInput = document.querySelector('#mesaj-input');
+        const mesaj = mesajInput.value;
+        
+        if (mesaj.trim()) {
+            sohbetSocket.send(JSON.stringify({
+                'mesaj': mesaj
+            }));
+            mesajInput.value = '';
+        }
+    });
+    
+    
+    function ekranaMesajEkle(mesaj, gonderenId, gonderenAdi, tarih) {
+        const mesajContainer = document.querySelector('#mesaj-container');
+        const mesajDiv = document.createElement('div');
+        
+        // Mesaj benim mi yoksa karşı taraftan mı?
+        const benimMesajimMi = parseInt(gonderenId) === kullaniciId;
+        mesajDiv.className = `mesaj ${benimMesajimMi ? 'mesaj-giden' : 'mesaj-gelen'}`;
+        
+        
+        const mesajIcerik = document.createElement('div');
+        mesajIcerik.className = 'mesaj-icerik';
+        mesajIcerik.textContent = mesaj;
+        
+    
+        const mesajBilgi = document.createElement('div');
+        mesajBilgi.className = 'mesaj-bilgi text-muted';
+        
+        // Tarih formatını düzenle
+        let formatliTarih = '';
+        if (tarih) {
+            const tarihObj = new Date(tarih);
+            formatliTarih = `${tarihObj.getDate().toString().padStart(2, '0')}.${(tarihObj.getMonth() + 1).toString().padStart(2, '0')}.${tarihObj.getFullYear()} ${tarihObj.getHours().toString().padStart(2, '0')}:${tarihObj.getMinutes().toString().padStart(2, '0')}`;
+        } else {
+            formatliTarih = new Date().toLocaleString('tr-TR');
+        }
+        
+        mesajBilgi.textContent = formatliTarih;
+        
+        if (benimMesajimMi) {
+            const okunduSpan = document.createElement('span');
+            okunduSpan.textContent = ' ✓';
+            mesajBilgi.appendChild(okunduSpan);
+        }
+        
+    
+        mesajDiv.appendChild(mesajIcerik);
+        mesajDiv.appendChild(mesajBilgi);
+        
+        // Mesajı ekrana ekle
+        mesajContainer.appendChild(mesajDiv);
+        
+        
+        mesajContainer.scrollTop = mesajContainer.scrollHeight;
+    }
+    
+    
+    document.addEventListener('DOMContentLoaded', function() {
+        const mesajContainer = document.querySelector('#mesaj-container');
+        mesajContainer.scrollTop = mesajContainer.scrollHeight;
+    });
+</script>
+{% endblock %}

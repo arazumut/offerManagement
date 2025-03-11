@@ -36,4 +36,5 @@ urlpatterns = [
     path('musteri-paneli/', musteri_paneli, name='musteri_paneli'),
     path('teklif-detay/<int:teklif_id>/', teklif_detay, name='teklif_detay'),
     path('teklif-sil/<int:teklif_id>/', teklif_sil, name='teklif_sil'),
+    path('mesajlar/', include('mesajlar.urls', namespace='mesajlar')),
 ]

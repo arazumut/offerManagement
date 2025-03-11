@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>WebSocket Test</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        #messages {
+            border: 1px solid #ccc;
+            padding: 10px;
+            height: 300px;
+            overflow-y: auto;
+            margin-bottom: 10px;
+        }
+        #status {
+            margin-bottom: 10px;
+            padding: 5px;
+        }
+        .connected {
+            background-color: #dff0d8;
+            color: #3c763d;
+        }
+        .disconnected {
+            background-color: #f2dede;
+            color: #a94442;
+        }
+        .message {
+            margin: 5px 0;
+            padding: 5px;
+            border-bottom: 1px solid #eee;
+        }
+        .sent {
+            color: #31708f;
+        }
+        .received {
+            color: #3c763d;
+        }
+        .error {
+            color: #a94442;
+        }
+    </style>
+</head>
+<body>
+    <h1>WebSocket Test</h1>
+    <div id="status" class="disconnected">Bağlantı durumu: Bağlı değil</div>
+    <div id="messages"></div>
+    <input type="text" id="messageInput" placeholder="Mesajınızı yazın...">
+    <button onclick="sendMessage()">Gönder</button>
+    <button onclick="connect()">Bağlan</button>
+    <button onclick="disconnect()">Bağlantıyı Kes</button>
+
+    <script>
+        let socket = null;
+        const messagesDiv = document.getElementById('messages');
+        const statusDiv = document.getElementById('status');
+        const messageInput = document.getElementById('messageInput');
+
+        function addMessage(message, type) {
+            const messageElement = document.createElement('div');
+            messageElement.className = `message ${type}`;
+            messageElement.textContent = message;
+            messagesDiv.appendChild(messageElement);
+            messagesDiv.scrollTop = messagesDiv.scrollHeight;
+        }
+
+        function updateStatus(connected) {
+            statusDiv.className = connected ? 'connected' : 'disconnected';
+            statusDiv.textContent = `Bağlantı durumu: ${connected ? 'Bağlı' : 'Bağlı değil'}`;
+        }
+
+        function connect() {
+            if (socket && socket.readyState === WebSocket.OPEN) {
+                addMessage('Zaten bağlı!', 'error');
+                return;
+            }
+
+            const sohbetId = '1'; // Test için sabit bir sohbet ID'si
+            const wsUrl = `ws://localhost:8000/ws/sohbet/${sohbetId}/`;
+            
+            try {
+                socket = new WebSocket(wsUrl);
+
+                socket.onopen = () => {
+                    updateStatus(true);
+                    addMessage('Bağlantı başarılı!', 'received');
+                };
+
+                socket.onmessage = (event) => {
+                    const data = JSON.parse(event.data);
+                    addMessage(`Alınan: ${data.message}`, 'received');
+                };
+
+                socket.onclose = (event) => {
+                    updateStatus(false);
+                    addMessage(`Bağlantı kapandı. Kod: ${event.code}, Neden: ${event.reason}`, 'error');
+                    socket = null;
+                };
+
+                socket.onerror = (error) => {
+                    updateStatus(false);
+                    addMessage('Bağlantı hatası!', 'error');
+                    console.error('WebSocket hatası:', error);
+                };
+
+            } catch (error) {
+                addMessage(`Bağlantı hatası: ${error.message}`, 'error');
+                console.error('Bağlantı hatası:', error);
+            }
+        }
+
+        function disconnect() {
+            if (socket) {
+                socket.close();
+                socket = null;
+                updateStatus(false);
+                addMessage('Bağlantı manuel olarak kapatıldı.', 'sent');
+            }
+        }
+
+        function sendMessage() {
+            if (!socket || socket.readyState !== WebSocket.OPEN) {
+                addMessage('Mesaj gönderilemedi: Bağlantı yok!', 'error');
+                return;
+            }
+
+            const message = messageInput.value.trim();
+            if (!message) {
+                addMessage('Boş mesaj gönderilemez!', 'error');
+                return;
+            }
+
+            try {
+                socket.send(JSON.stringify({
+                    'message': message
+                }));
+                addMessage(`Gönderilen: ${message}`, 'sent');
+                messageInput.value = '';
+            } catch (error) {
+                addMessage(`Mesaj gönderme hatası: ${error.message}`, 'error');
+                console.error('Mesaj gönderme hatası:', error);
+            }
+        }
+
+        
+        messageInput.addEventListener('keypress', (event) => {
+            if (event.key === 'Enter') {
+                sendMessage();
+            }
+        });
+    </script>
+</body>
+</html> 

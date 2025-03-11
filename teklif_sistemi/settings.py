@@ -36,6 +36,10 @@ LOGGING = {
             'format': '{levelname} {asctime} {module} {message}',
             'style': '{',
         },
+        'simple': {
+            'format': '{levelname} {message}',
+            'style': '{',
+        },
     },
     'handlers': {
         'console': {
@@ -47,18 +51,30 @@ LOGGING = {
             'filename': 'debug.log',
             'formatter': 'verbose',
         },
+        'websocket_file': {
+            'class': 'logging.FileHandler',
+            'filename': 'websocket.log',
+            'formatter': 'verbose',
+        },
     },
     'loggers': {
-        '': {  # Root logger
+        'django': {
             'handlers': ['console', 'file'],
-            'level': 'DEBUG',
-        },
-        'django.db.backends': {
-            'handlers': ['console'],
             'level': 'INFO',
+            'propagate': True,
         },
-        'teklifler': {
-            'handlers': ['console', 'file'],
+        'mesajlar': {
+            'handlers': ['console', 'websocket_file'],
+            'level': 'DEBUG',
+            'propagate': False,
+        },
+        'channels': {
+            'handlers': ['console', 'websocket_file'],
+            'level': 'DEBUG',
+            'propagate': False,
+        },
+        'daphne': {
+            'handlers': ['console', 'websocket_file'],
             'level': 'DEBUG',
             'propagate': False,
         },
@@ -76,6 +92,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     
     # Third party apps
+    'channels',
     'rest_framework',
     'corsheaders',
     'crispy_forms',
@@ -84,7 +101,23 @@ INSTALLED_APPS = [
     # Local apps
     'teklifler',
     'musteri',
+    'mesajlar',
 ]
+
+# WSGI_APPLICATION satırının altına ASGI_APPLICATION ekleyin
+# Channel layers ayarlarını ekleyin
+CHANNEL_LAYERS = {
+    'default': {
+        # Geliştirme ortamında in-memory channel layer
+        # 'BACKEND': 'channels.layers.InMemoryChannelLayer',
+        
+        # Üretim ortamında Redis channel layer
+        'BACKEND': 'channels_redis.core.RedisChannelLayer',
+        'CONFIG': {
+            "hosts": [('127.0.0.1', 6379)],
+        },
+    },
+}
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
@@ -135,6 +168,7 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'teklif_sistemi.wsgi.application'
+ASGI_APPLICATION = 'teklif_sistemi.asgi.application'
 
 
 # Database

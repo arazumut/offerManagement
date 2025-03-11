@@ -735,3 +735,1026 @@ Traceback (most recent call last):
   File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/urls/resolvers.py", line 831, in _reverse_with_prefix
     raise NoReverseMatch(msg)
 django.urls.exceptions.NoReverseMatch: Reverse for 'kayit' not found. 'kayit' is not a valid view function or pattern name.
+INFO 2025-03-10 12:36:42,142 autoreload Watching for file changes with StatReloader
+WARNING 2025-03-10 12:36:45,809 log Not Found: /favicon.ico
+INFO 2025-03-10 12:38:27,479 utils E-posta gönderme işlemi başlatıldı - Teklif ID: 20
+DEBUG 2025-03-10 12:38:27,479 utils E-posta şablonu hazırlanıyor - Template: emails/teklif_bildirim.html
+INFO 2025-03-10 12:38:27,481 utils E-posta gönderiliyor - Alıcı: umutaraz324@gmail.com
+DEBUG 2025-03-10 12:38:27,481 utils E-posta ayarları: HOST=smtp.gmail.com, PORT=465, TLS=False
+INFO 2025-03-10 12:38:29,148 utils E-posta başarıyla gönderildi
+INFO 2025-03-10 12:38:29,149 utils Firma sahibine e-posta gönderme işlemi başlatıldı - Teklif ID: 20
+INFO 2025-03-10 12:38:29,154 utils E-posta gönderiliyor - Alıcı: 
+INFO 2025-03-10 12:38:29,155 utils Firma sahibine e-posta başarıyla gönderildi
+INFO 2025-03-10 12:38:56,820 views Teklif detayı istendi - ID: 20
+INFO 2025-03-10 12:38:56,820 views Teklif durumu: BEKLEMEDE
+INFO 2025-03-10 12:38:56,820 views Teklif display durumu: Beklemede
+INFO 2025-03-10 12:39:05,786 views Teklif işlemi başlatıldı - ID: 20, İşlem: red
+INFO 2025-03-10 12:39:05,788 views Teklif bulundu - Müşteri: umutaraz324@gmail.com
+INFO 2025-03-10 12:39:05,791 views Teklif güncellendi - Yeni durum: REDDEDILDI
+INFO 2025-03-10 12:39:05,794 views Bildirim oluşturuldu
+INFO 2025-03-10 12:39:05,794 utils E-posta gönderme işlemi başlatıldı - Teklif ID: 20
+DEBUG 2025-03-10 12:39:05,794 utils E-posta şablonu hazırlanıyor - Template: emails/teklif_bildirim.html
+INFO 2025-03-10 12:39:05,795 utils E-posta gönderiliyor - Alıcı: umutaraz324@gmail.com
+DEBUG 2025-03-10 12:39:05,795 utils E-posta ayarları: HOST=smtp.gmail.com, PORT=465, TLS=False
+INFO 2025-03-10 12:39:07,239 utils E-posta başarıyla gönderildi
+INFO 2025-03-10 12:39:07,239 views E-posta gönderme sonucu: Başarılı
+INFO 2025-03-10 12:50:14,672 views Teklif detayı istendi - ID: 20
+INFO 2025-03-10 12:50:14,673 views Teklif durumu: REDDEDILDI
+INFO 2025-03-10 12:50:14,673 views Teklif display durumu: Reddedildi
+INFO 2025-03-10 12:50:19,737 views Teklif detayı istendi - ID: 16
+INFO 2025-03-10 12:50:19,737 views Teklif durumu: BEKLEMEDE
+INFO 2025-03-10 12:50:19,737 views Teklif display durumu: Beklemede
+INFO 2025-03-10 13:56:20,728 autoreload Watching for file changes with StatReloader
+INFO 2025-03-11 10:04:29,688 autoreload Watching for file changes with StatReloader
+WARNING 2025-03-11 10:04:34,601 log Not Found: /favicon.ico
+INFO 2025-03-11 10:11:26,374 autoreload Watching for file changes with StatReloader
+INFO 2025-03-11 10:46:36,234 autoreload Watching for file changes with StatReloader
+INFO 2025-03-11 10:46:49,801 views Teklif detayı istendi - ID: 17
+INFO 2025-03-11 10:46:49,802 views Teklif durumu: BEKLEMEDE
+INFO 2025-03-11 10:46:49,802 views Teklif display durumu: Beklemede
+INFO 2025-03-11 10:46:57,706 views Teklif işlemi başlatıldı - ID: 17, İşlem: revizyon
+INFO 2025-03-11 10:46:57,708 views Teklif bulundu - Müşteri: umutaraz324@gmail.com
+INFO 2025-03-11 10:46:57,711 views Teklif güncellendi - Yeni durum: REVIZYON
+INFO 2025-03-11 10:46:57,712 views Bildirim oluşturuldu
+INFO 2025-03-11 10:46:57,713 utils E-posta gönderme işlemi başlatıldı - Teklif ID: 17
+DEBUG 2025-03-11 10:46:57,713 utils E-posta şablonu hazırlanıyor - Template: emails/teklif_bildirim.html
+INFO 2025-03-11 10:46:57,714 utils E-posta gönderiliyor - Alıcı: umutaraz324@gmail.com
+DEBUG 2025-03-11 10:46:57,715 utils E-posta ayarları: HOST=smtp.gmail.com, PORT=465, TLS=False
+INFO 2025-03-11 10:47:07,455 utils E-posta başarıyla gönderildi
+INFO 2025-03-11 10:47:07,455 views E-posta gönderme sonucu: Başarılı
+INFO 2025-03-11 10:47:33,324 views Teklif detayı istendi - ID: 20
+INFO 2025-03-11 10:47:33,324 views Teklif durumu: REDDEDILDI
+INFO 2025-03-11 10:47:33,325 views Teklif display durumu: Reddedildi
+INFO 2025-03-11 10:47:40,936 views Teklif detayı istendi - ID: 19
+INFO 2025-03-11 10:47:40,936 views Teklif durumu: ONAYLANDI
+INFO 2025-03-11 10:47:40,937 views Teklif display durumu: Onaylandı
+INFO 2025-03-11 11:01:10,258 views Teklif detayı istendi - ID: 10
+INFO 2025-03-11 11:01:10,258 views Teklif durumu: ONAYLANDI
+INFO 2025-03-11 11:01:10,259 views Teklif display durumu: Onaylandı
+INFO 2025-03-11 11:03:23,354 views Teklif detayı istendi - ID: 16
+INFO 2025-03-11 11:03:23,355 views Teklif durumu: BEKLEMEDE
+INFO 2025-03-11 11:03:23,355 views Teklif display durumu: Beklemede
+INFO 2025-03-11 11:11:34,247 views Teklif detayı istendi - ID: 17
+INFO 2025-03-11 11:11:34,247 views Teklif durumu: REVIZYON
+INFO 2025-03-11 11:11:34,248 views Teklif display durumu: Revizyon
+INFO 2025-03-11 11:16:46,936 autoreload Watching for file changes with StatReloader
+INFO 2025-03-11 11:25:11,536 autoreload Watching for file changes with StatReloader
+INFO 2025-03-11 11:25:39,684 cli Starting server at tcp:port=8000:interface=127.0.0.1
+INFO 2025-03-11 11:25:39,685 server HTTP/2 support not enabled (install the http2 and tls Twisted extras)
+INFO 2025-03-11 11:25:39,685 server Configuring endpoint tcp:port=8000:interface=127.0.0.1
+CRITICAL 2025-03-11 11:25:39,685 server Listen failure: Couldn't listen on 127.0.0.1:8000: [Errno 48] Address already in use.
+ERROR 2025-03-11 11:25:54,057 views Müşteri paneli hatası: 'mesajlar' is not a registered namespace
+ERROR 2025-03-11 11:25:54,062 views Müşteri paneli hatası: 'mesajlar' is not a registered namespace
+ERROR 2025-03-11 11:25:54,067 views Müşteri paneli hatası: 'mesajlar' is not a registered namespace
+ERROR 2025-03-11 11:25:54,072 views Müşteri paneli hatası: 'mesajlar' is not a registered namespace
+ERROR 2025-03-11 11:25:54,079 views Müşteri paneli hatası: 'mesajlar' is not a registered namespace
+ERROR 2025-03-11 11:25:54,133 views Müşteri paneli hatası: 'mesajlar' is not a registered namespace
+ERROR 2025-03-11 11:25:54,145 views Müşteri paneli hatası: 'mesajlar' is not a registered namespace
+ERROR 2025-03-11 11:25:54,157 views Müşteri paneli hatası: 'mesajlar' is not a registered namespace
+ERROR 2025-03-11 11:25:54,164 views Müşteri paneli hatası: 'mesajlar' is not a registered namespace
+ERROR 2025-03-11 11:25:55,214 views Müşteri paneli hatası: 'mesajlar' is not a registered namespace
+ERROR 2025-03-11 11:25:55,225 views Müşteri paneli hatası: 'mesajlar' is not a registered namespace
+ERROR 2025-03-11 11:25:55,234 views Müşteri paneli hatası: 'mesajlar' is not a registered namespace
+ERROR 2025-03-11 11:25:55,241 views Müşteri paneli hatası: 'mesajlar' is not a registered namespace
+ERROR 2025-03-11 11:25:55,249 views Müşteri paneli hatası: 'mesajlar' is not a registered namespace
+ERROR 2025-03-11 11:25:55,256 views Müşteri paneli hatası: 'mesajlar' is not a registered namespace
+ERROR 2025-03-11 11:25:55,261 views Müşteri paneli hatası: 'mesajlar' is not a registered namespace
+ERROR 2025-03-11 11:25:55,267 views Müşteri paneli hatası: 'mesajlar' is not a registered namespace
+ERROR 2025-03-11 11:25:55,273 views Müşteri paneli hatası: 'mesajlar' is not a registered namespace
+ERROR 2025-03-11 11:25:55,281 views Müşteri paneli hatası: 'mesajlar' is not a registered namespace
+ERROR 2025-03-11 11:26:00,311 views Müşteri paneli hatası: 'mesajlar' is not a registered namespace
+ERROR 2025-03-11 11:26:00,325 views Müşteri paneli hatası: 'mesajlar' is not a registered namespace
+ERROR 2025-03-11 11:26:00,334 views Müşteri paneli hatası: 'mesajlar' is not a registered namespace
+ERROR 2025-03-11 11:26:00,343 views Müşteri paneli hatası: 'mesajlar' is not a registered namespace
+ERROR 2025-03-11 11:26:00,352 views Müşteri paneli hatası: 'mesajlar' is not a registered namespace
+ERROR 2025-03-11 11:26:00,361 views Müşteri paneli hatası: 'mesajlar' is not a registered namespace
+ERROR 2025-03-11 11:26:00,368 views Müşteri paneli hatası: 'mesajlar' is not a registered namespace
+ERROR 2025-03-11 11:26:00,375 views Müşteri paneli hatası: 'mesajlar' is not a registered namespace
+ERROR 2025-03-11 11:26:00,381 views Müşteri paneli hatası: 'mesajlar' is not a registered namespace
+ERROR 2025-03-11 11:26:00,388 views Müşteri paneli hatası: 'mesajlar' is not a registered namespace
+INFO 2025-03-11 11:30:58,644 autoreload Watching for file changes with StatReloader
+ERROR 2025-03-11 11:31:19,612 log Internal Server Error: /mesajlar/
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/contrib/auth/decorators.py", line 60, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/Users/umutaraz/Desktop/teklif_yonetim/offerManagement/mesajlar/views.py", line 11, in sohbet_listesi
+    return render(request, 'mesajlar/sohbet_listesi.html', {
+        'sohbetler': sohbetler,
+    })
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/backends/django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+                       ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/loaders/cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/loaders/base.py", line 28, in get_template
+    return Template(
+        contents,
+    ...<2 lines>...
+        self.engine,
+    )
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/base.py", line 196, in compile_nodelist
+    nodelist = parser.parse()
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/base.py", line 518, in parse
+    raise self.error(token, e)
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/loader_tags.py", line 295, in do_extends
+    nodelist = parser.parse()
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/base.py", line 518, in parse
+    raise self.error(token, e)
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/loader_tags.py", line 234, in do_block
+    nodelist = parser.parse(("endblock",))
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/base.py", line 518, in parse
+    raise self.error(token, e)
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/defaulttags.py", line 862, in do_for
+    nodelist_loop = parser.parse(
+        (
+    ...<2 lines>...
+        )
+    )
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/base.py", line 518, in parse
+    raise self.error(token, e)
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/defaulttags.py", line 1531, in do_with
+    extra_context = token_kwargs(remaining_bits, parser, support_legacy=True)
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/base.py", line 1119, in token_kwargs
+    kwargs[key] = parser.compile_filter(value)
+                  ~~~~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/base.py", line 605, in compile_filter
+    return FilterExpression(token, self)
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/base.py", line 706, in __init__
+    raise TemplateSyntaxError(
+    ...<2 lines>...
+    )
+django.template.exceptions.TemplateSyntaxError: Could not parse the remainder: '=request.user.id.first' from 'sohbet.katilimcilar.exclude.id=request.user.id.first'
+ERROR 2025-03-11 11:31:48,378 log Internal Server Error: /mesajlar/
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/contrib/auth/decorators.py", line 60, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/Users/umutaraz/Desktop/teklif_yonetim/offerManagement/mesajlar/views.py", line 11, in sohbet_listesi
+    return render(request, 'mesajlar/sohbet_listesi.html', {
+        'sohbetler': sohbetler,
+    })
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/backends/django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+                       ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/loaders/cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/loaders/base.py", line 28, in get_template
+    return Template(
+        contents,
+    ...<2 lines>...
+        self.engine,
+    )
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/base.py", line 196, in compile_nodelist
+    nodelist = parser.parse()
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/base.py", line 518, in parse
+    raise self.error(token, e)
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/loader_tags.py", line 295, in do_extends
+    nodelist = parser.parse()
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/base.py", line 518, in parse
+    raise self.error(token, e)
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/loader_tags.py", line 234, in do_block
+    nodelist = parser.parse(("endblock",))
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/base.py", line 518, in parse
+    raise self.error(token, e)
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/defaulttags.py", line 862, in do_for
+    nodelist_loop = parser.parse(
+        (
+    ...<2 lines>...
+        )
+    )
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/base.py", line 518, in parse
+    raise self.error(token, e)
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/defaulttags.py", line 1531, in do_with
+    extra_context = token_kwargs(remaining_bits, parser, support_legacy=True)
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/base.py", line 1119, in token_kwargs
+    kwargs[key] = parser.compile_filter(value)
+                  ~~~~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/base.py", line 605, in compile_filter
+    return FilterExpression(token, self)
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/base.py", line 706, in __init__
+    raise TemplateSyntaxError(
+    ...<2 lines>...
+    )
+django.template.exceptions.TemplateSyntaxError: Could not parse the remainder: '=request.user.id.first' from 'sohbet.katilimcilar.exclude.id=request.user.id.first'
+INFO 2025-03-11 11:34:36,364 cli Starting server at tcp:port=8000:interface=127.0.0.1
+INFO 2025-03-11 11:34:36,365 server HTTP/2 support not enabled (install the http2 and tls Twisted extras)
+INFO 2025-03-11 11:34:36,365 server Configuring endpoint tcp:port=8000:interface=127.0.0.1
+INFO 2025-03-11 11:34:36,365 server Listening on TCP address 127.0.0.1:8000
+INFO 2025-03-11 11:34:58,656 server Killed 0 pending application instances
+INFO 2025-03-11 11:35:04,066 autoreload Watching for file changes with StatReloader
+ERROR 2025-03-11 11:35:07,711 log Internal Server Error: /mesajlar/
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/contrib/auth/decorators.py", line 60, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/Users/umutaraz/Desktop/teklif_yonetim/offerManagement/mesajlar/views.py", line 11, in sohbet_listesi
+    return render(request, 'mesajlar/sohbet_listesi.html', {
+        'sohbetler': sohbetler,
+    })
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/backends/django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+                       ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/loaders/cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/loaders/base.py", line 28, in get_template
+    return Template(
+        contents,
+    ...<2 lines>...
+        self.engine,
+    )
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/base.py", line 196, in compile_nodelist
+    nodelist = parser.parse()
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/base.py", line 518, in parse
+    raise self.error(token, e)
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/loader_tags.py", line 295, in do_extends
+    nodelist = parser.parse()
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/base.py", line 518, in parse
+    raise self.error(token, e)
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/loader_tags.py", line 234, in do_block
+    nodelist = parser.parse(("endblock",))
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/base.py", line 518, in parse
+    raise self.error(token, e)
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/defaulttags.py", line 862, in do_for
+    nodelist_loop = parser.parse(
+        (
+    ...<2 lines>...
+        )
+    )
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/base.py", line 518, in parse
+    raise self.error(token, e)
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/defaulttags.py", line 1531, in do_with
+    extra_context = token_kwargs(remaining_bits, parser, support_legacy=True)
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/base.py", line 1119, in token_kwargs
+    kwargs[key] = parser.compile_filter(value)
+                  ~~~~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/base.py", line 605, in compile_filter
+    return FilterExpression(token, self)
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/base.py", line 706, in __init__
+    raise TemplateSyntaxError(
+    ...<2 lines>...
+    )
+django.template.exceptions.TemplateSyntaxError: Could not parse the remainder: '=request.user.id.first' from 'sohbet.katilimcilar.exclude.id=request.user.id.first'
+ERROR 2025-03-11 11:36:54,223 log Internal Server Error: /mesajlar/
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/contrib/auth/decorators.py", line 60, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/Users/umutaraz/Desktop/teklif_yonetim/offerManagement/mesajlar/views.py", line 11, in sohbet_listesi
+    return render(request, 'mesajlar/sohbet_listesi.html', {
+        'sohbetler': sohbetler,
+    })
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/backends/django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+                       ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/loaders/cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/loaders/base.py", line 28, in get_template
+    return Template(
+        contents,
+    ...<2 lines>...
+        self.engine,
+    )
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/base.py", line 196, in compile_nodelist
+    nodelist = parser.parse()
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/base.py", line 518, in parse
+    raise self.error(token, e)
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/loader_tags.py", line 295, in do_extends
+    nodelist = parser.parse()
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/base.py", line 518, in parse
+    raise self.error(token, e)
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/loader_tags.py", line 234, in do_block
+    nodelist = parser.parse(("endblock",))
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/base.py", line 518, in parse
+    raise self.error(token, e)
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/defaulttags.py", line 862, in do_for
+    nodelist_loop = parser.parse(
+        (
+    ...<2 lines>...
+        )
+    )
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/base.py", line 518, in parse
+    raise self.error(token, e)
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/defaulttags.py", line 1531, in do_with
+    extra_context = token_kwargs(remaining_bits, parser, support_legacy=True)
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/base.py", line 1119, in token_kwargs
+    kwargs[key] = parser.compile_filter(value)
+                  ~~~~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/base.py", line 605, in compile_filter
+    return FilterExpression(token, self)
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/base.py", line 706, in __init__
+    raise TemplateSyntaxError(
+    ...<2 lines>...
+    )
+django.template.exceptions.TemplateSyntaxError: Could not parse the remainder: '=request.user.id.first' from 'sohbet.katilimcilar.exclude.id=request.user.id.first'
+ERROR 2025-03-11 11:37:05,379 log Internal Server Error: /mesajlar/
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/base.py", line 510, in parse
+    compile_func = self.tags[command]
+                   ~~~~~~~~~^^^^^^^^^
+KeyError: 'endwith'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/contrib/auth/decorators.py", line 60, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/Users/umutaraz/Desktop/teklif_yonetim/offerManagement/mesajlar/views.py", line 11, in sohbet_listesi
+    return render(request, 'mesajlar/sohbet_listesi.html', {
+        'sohbetler': sohbetler,
+    })
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/backends/django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+                       ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/loaders/cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/loaders/base.py", line 28, in get_template
+    return Template(
+        contents,
+    ...<2 lines>...
+        self.engine,
+    )
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/base.py", line 196, in compile_nodelist
+    nodelist = parser.parse()
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/base.py", line 518, in parse
+    raise self.error(token, e)
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/loader_tags.py", line 295, in do_extends
+    nodelist = parser.parse()
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/base.py", line 518, in parse
+    raise self.error(token, e)
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/loader_tags.py", line 234, in do_block
+    nodelist = parser.parse(("endblock",))
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/base.py", line 518, in parse
+    raise self.error(token, e)
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/defaulttags.py", line 862, in do_for
+    nodelist_loop = parser.parse(
+        (
+    ...<2 lines>...
+        )
+    )
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/base.py", line 512, in parse
+    self.invalid_block_tag(token, command, parse_until)
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/base.py", line 563, in invalid_block_tag
+    raise self.error(
+    ...<8 lines>...
+    )
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 12: 'endwith', expected 'empty' or 'endfor'. Did you forget to register or load this tag?
+INFO 2025-03-11 11:38:34,669 views Teklif detayı istendi - ID: 19
+INFO 2025-03-11 11:38:34,670 views Teklif durumu: ONAYLANDI
+INFO 2025-03-11 11:38:34,670 views Teklif display durumu: Onaylandı
+INFO 2025-03-11 11:41:08,504 autoreload /Users/umutaraz/Desktop/teklif_yonetim/offerManagement/mesajlar/views.py changed, reloading.
+INFO 2025-03-11 11:41:09,121 autoreload Watching for file changes with StatReloader
+INFO 2025-03-11 11:41:20,337 autoreload /Users/umutaraz/Desktop/teklif_yonetim/offerManagement/mesajlar/urls.py changed, reloading.
+INFO 2025-03-11 11:41:20,665 autoreload Watching for file changes with StatReloader
+INFO 2025-03-11 11:42:06,517 autoreload /Users/umutaraz/Desktop/teklif_yonetim/offerManagement/mesajlar/views.py changed, reloading.
+INFO 2025-03-11 11:42:06,968 autoreload Watching for file changes with StatReloader
+INFO 2025-03-11 11:42:10,872 autoreload /Users/umutaraz/Desktop/teklif_yonetim/offerManagement/mesajlar/urls.py changed, reloading.
+INFO 2025-03-11 11:42:11,166 autoreload Watching for file changes with StatReloader
+WARNING 2025-03-11 11:44:42,809 log Not Found: /ws/sohbet/1/
+WARNING 2025-03-11 11:45:00,101 log Not Found: /ws/sohbet/1/
+ERROR 2025-03-11 11:46:18,521 log Internal Server Error: /export-rapor/
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/contrib/auth/decorators.py", line 60, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/Users/umutaraz/Desktop/teklif_yonetim/offerManagement/musteri/views.py", line 308, in export_rapor
+    df.to_excel(response, index=False)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/pandas/util/_decorators.py", line 333, in wrapper
+    return func(*args, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/pandas/core/generic.py", line 2417, in to_excel
+    formatter.write(
+    ~~~~~~~~~~~~~~~^
+        excel_writer,
+        ^^^^^^^^^^^^^
+    ...<6 lines>...
+        engine_kwargs=engine_kwargs,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/pandas/io/formats/excel.py", line 952, in write
+    writer._write_cells(
+    ~~~~~~~~~~~~~~~~~~~^
+        formatted_cells,
+        ^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+        freeze_panes=freeze_panes,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/pandas/io/excel/_openpyxl.py", line 486, in _write_cells
+    for cell in cells:
+                ^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/pandas/io/formats/excel.py", line 890, in get_formatted_cells
+    cell.val = self._format_value(cell.val)
+               ~~~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/pandas/io/formats/excel.py", line 607, in _format_value
+    raise ValueError(
+    ...<3 lines>...
+    )
+ValueError: Excel does not support datetimes with timezones. Please ensure that datetimes are timezone unaware before writing to Excel.
+INFO 2025-03-11 11:46:45,309 cli Starting server at tcp:port=8000:interface=127.0.0.1
+INFO 2025-03-11 11:46:45,309 server HTTP/2 support not enabled (install the http2 and tls Twisted extras)
+INFO 2025-03-11 11:46:45,309 server Configuring endpoint tcp:port=8000:interface=127.0.0.1
+CRITICAL 2025-03-11 11:46:45,309 server Listen failure: Couldn't listen on 127.0.0.1:8000: [Errno 48] Address already in use.
+INFO 2025-03-11 11:48:30,839 autoreload /Users/umutaraz/Desktop/teklif_yonetim/offerManagement/teklif_sistemi/settings.py changed, reloading.
+INFO 2025-03-11 11:48:31,332 autoreload Watching for file changes with StatReloader
+INFO 2025-03-11 11:48:36,282 autoreload /Users/umutaraz/Desktop/teklif_yonetim/offerManagement/teklif_sistemi/settings.py changed, reloading.
+INFO 2025-03-11 11:48:36,583 autoreload Watching for file changes with StatReloader
+WARNING 2025-03-11 11:48:52,340 log Not Found: /ws/sohbet/1/
+INFO 2025-03-11 11:49:05,162 cli Starting server at tcp:port=8000:interface=127.0.0.1
+INFO 2025-03-11 11:49:05,162 server HTTP/2 support not enabled (install the http2 and tls Twisted extras)
+INFO 2025-03-11 11:49:05,162 server Configuring endpoint tcp:port=8000:interface=127.0.0.1
+INFO 2025-03-11 11:49:05,163 server Listening on TCP address 127.0.0.1:8000
+DEBUG 2025-03-11 11:49:16,241 http_protocol HTTP b'GET' request for ['127.0.0.1', 63069]
+DEBUG 2025-03-11 11:49:16,895 http_protocol HTTP 200 response started for ['127.0.0.1', 63069]
+DEBUG 2025-03-11 11:49:16,896 http_protocol HTTP close for ['127.0.0.1', 63069]
+DEBUG 2025-03-11 11:49:16,896 http_protocol HTTP response complete for ['127.0.0.1', 63069]
+DEBUG 2025-03-11 11:50:10,662 http_protocol Upgraded connection ['127.0.0.1', 63087] to WebSocket
+DEBUG 2025-03-11 11:50:10,673 ws_protocol WebSocket ['127.0.0.1', 63087] open and established
+DEBUG 2025-03-11 11:50:10,673 ws_protocol WebSocket ['127.0.0.1', 63087] accepted by application
+DEBUG 2025-03-11 11:50:15,774 ws_protocol WebSocket incoming frame on ['127.0.0.1', 63087]
+ERROR 2025-03-11 11:50:16,226 server Exception inside application: Cannot assign "<channels.auth.UserLazyObject object at 0x10b47e900>": "Mesaj.gonderen" must be a "User" instance.
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/channels/routing.py", line 48, in __call__
+    return await application(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/channels/security/websocket.py", line 37, in __call__
+    return await self.application(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/channels/sessions.py", line 44, in __call__
+    return await self.inner(dict(scope, cookies=cookies), receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/channels/sessions.py", line 261, in __call__
+    return await self.inner(wrapper.scope, receive, wrapper.send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/channels/auth.py", line 185, in __call__
+    return await super().__call__(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/channels/middleware.py", line 24, in __call__
+    return await self.inner(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/channels/routing.py", line 118, in __call__
+    return await application(
+           ^^^^^^^^^^^^^^^^^^
+    ...<10 lines>...
+    )
+    ^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/channels/consumer.py", line 95, in app
+    return await consumer(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/channels/consumer.py", line 58, in __call__
+    await await_many_dispatch(
+        [receive, self.channel_receive], self.dispatch
+    )
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/channels/utils.py", line 50, in await_many_dispatch
+    await dispatch(result)
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/channels/consumer.py", line 74, in dispatch
+    await handler(message)
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/channels/generic/websocket.py", line 204, in websocket_receive
+    await self.receive(text_data=message["text"])
+  File "/Users/umutaraz/Desktop/teklif_yonetim/offerManagement/mesajlar/consumers.py", line 34, in receive
+    yeni_mesaj = await self.save_message(mesaj)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/asgiref/sync.py", line 468, in __call__
+    ret = await asyncio.shield(exec_coro)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/concurrent/futures/thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/channels/db.py", line 13, in thread_handler
+    return super().thread_handler(loop, *args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/asgiref/sync.py", line 522, in thread_handler
+    return func(*args, **kwargs)
+  File "/Users/umutaraz/Desktop/teklif_yonetim/offerManagement/mesajlar/consumers.py", line 62, in save_message
+    yeni_mesaj = Mesaj.objects.create(
+        sohbet=sohbet,
+        gonderen=self.user,
+        icerik=mesaj
+    )
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/db/models/query.py", line 677, in create
+    obj = self.model(**kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/db/models/base.py", line 543, in __init__
+    _setattr(self, field.name, rel_obj)
+    ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/db/models/fields/related_descriptors.py", line 287, in __set__
+    raise ValueError(
+    ...<7 lines>...
+    )
+ValueError: Cannot assign "<channels.auth.UserLazyObject object at 0x10b47e900>": "Mesaj.gonderen" must be a "User" instance.
+DEBUG 2025-03-11 11:50:16,245 ws_protocol WebSocket closed for ['127.0.0.1', 63087]
+INFO 2025-03-11 11:52:05,310 server Killed 0 pending application instances
+INFO 2025-03-11 11:52:24,947 cli Starting server at tcp:port=8000:interface=127.0.0.1
+INFO 2025-03-11 11:52:24,947 server HTTP/2 support not enabled (install the http2 and tls Twisted extras)
+INFO 2025-03-11 11:52:24,947 server Configuring endpoint tcp:port=8000:interface=127.0.0.1
+INFO 2025-03-11 11:52:24,948 server Listening on TCP address 127.0.0.1:8000
+INFO 2025-03-11 11:52:30,468 server Killed 0 pending application instances
+INFO 2025-03-11 11:52:33,029 cli Starting server at tcp:port=8000:interface=127.0.0.1
+INFO 2025-03-11 11:52:33,030 server HTTP/2 support not enabled (install the http2 and tls Twisted extras)
+INFO 2025-03-11 11:52:33,030 server Configuring endpoint tcp:port=8000:interface=127.0.0.1
+INFO 2025-03-11 11:52:33,030 server Listening on TCP address 127.0.0.1:8000
+DEBUG 2025-03-11 11:52:46,500 http_protocol Upgraded connection ['127.0.0.1', 63151] to WebSocket
+DEBUG 2025-03-11 11:52:46,507 ws_protocol WebSocket ['127.0.0.1', 63151] open and established
+DEBUG 2025-03-11 11:52:46,508 ws_protocol WebSocket ['127.0.0.1', 63151] accepted by application
+DEBUG 2025-03-11 11:52:51,126 ws_protocol WebSocket incoming frame on ['127.0.0.1', 63151]
+DEBUG 2025-03-11 11:52:51,129 ws_protocol Sent WebSocket packet to client for ['127.0.0.1', 63151]
+DEBUG 2025-03-11 11:52:57,375 ws_protocol WebSocket incoming frame on ['127.0.0.1', 63151]
+DEBUG 2025-03-11 11:52:57,378 ws_protocol Sent WebSocket packet to client for ['127.0.0.1', 63151]
+DEBUG 2025-03-11 11:52:59,796 ws_protocol WebSocket incoming frame on ['127.0.0.1', 63151]
+DEBUG 2025-03-11 11:52:59,799 ws_protocol Sent WebSocket packet to client for ['127.0.0.1', 63151]
+DEBUG 2025-03-11 11:53:17,687 ws_protocol WebSocket incoming frame on ['127.0.0.1', 63151]
+DEBUG 2025-03-11 11:53:17,691 ws_protocol Sent WebSocket packet to client for ['127.0.0.1', 63151]
+DEBUG 2025-03-11 11:53:20,187 ws_protocol WebSocket incoming frame on ['127.0.0.1', 63151]
+DEBUG 2025-03-11 11:53:20,190 ws_protocol Sent WebSocket packet to client for ['127.0.0.1', 63151]
+DEBUG 2025-03-11 11:53:44,230 ws_protocol WebSocket closed for ['127.0.0.1', 63151]
+INFO 2025-03-11 11:54:06,398 server Killed 0 pending application instances
+INFO 2025-03-11 11:54:22,289 cli Starting server at tcp:port=8000:interface=127.0.0.1
+INFO 2025-03-11 11:54:22,290 server HTTP/2 support not enabled (install the http2 and tls Twisted extras)
+INFO 2025-03-11 11:54:22,290 server Configuring endpoint tcp:port=8000:interface=127.0.0.1
+INFO 2025-03-11 11:54:22,290 server Listening on TCP address 127.0.0.1:8000
+INFO 2025-03-11 11:54:30,523 autoreload Watching for file changes with StatReloader
+INFO 2025-03-11 11:54:49,820 server Killed 0 pending application instances
+INFO 2025-03-11 11:55:25,813 cli Starting server at tcp:port=8000:interface=127.0.0.1
+INFO 2025-03-11 11:55:25,813 server HTTP/2 support not enabled (install the http2 and tls Twisted extras)
+INFO 2025-03-11 11:55:25,813 server Configuring endpoint tcp:port=8000:interface=127.0.0.1
+INFO 2025-03-11 11:55:25,813 server Listening on TCP address 127.0.0.1:8000
+DEBUG 2025-03-11 11:55:48,780 http_protocol Upgraded connection ['127.0.0.1', 63181] to WebSocket
+DEBUG 2025-03-11 11:55:48,784 ws_protocol WebSocket ['127.0.0.1', 63181] open and established
+DEBUG 2025-03-11 11:55:48,784 ws_protocol WebSocket ['127.0.0.1', 63181] accepted by application
+DEBUG 2025-03-11 11:55:48,784 ws_protocol Sent WebSocket packet to client for ['127.0.0.1', 63181]
+INFO 2025-03-11 11:56:29,204 server Killed 1 pending application instances
+DEBUG 2025-03-11 11:56:29,209 ws_protocol WebSocket closed for ['127.0.0.1', 63181]
+INFO 2025-03-11 11:56:32,806 autoreload Watching for file changes with StatReloader
+WARNING 2025-03-11 11:56:38,558 log Not Found: /ws/sohbet/1/
+INFO 2025-03-11 11:57:12,562 cli Starting server at tcp:port=8000:interface=127.0.0.1
+INFO 2025-03-11 11:57:12,562 server HTTP/2 support not enabled (install the http2 and tls Twisted extras)
+INFO 2025-03-11 11:57:12,562 server Configuring endpoint tcp:port=8000:interface=127.0.0.1
+INFO 2025-03-11 11:57:12,563 server Listening on TCP address 127.0.0.1:8000
+DEBUG 2025-03-11 11:57:42,503 http_protocol Upgraded connection ['127.0.0.1', 63207] to WebSocket
+DEBUG 2025-03-11 11:57:42,510 ws_protocol WebSocket ['127.0.0.1', 63207] open and established
+DEBUG 2025-03-11 11:57:42,510 ws_protocol WebSocket ['127.0.0.1', 63207] accepted by application
+DEBUG 2025-03-11 11:57:42,511 ws_protocol Sent WebSocket packet to client for ['127.0.0.1', 63207]
+DEBUG 2025-03-11 11:57:45,144 ws_protocol WebSocket incoming frame on ['127.0.0.1', 63207]
+DEBUG 2025-03-11 11:57:45,147 ws_protocol Sent WebSocket packet to client for ['127.0.0.1', 63207]
+DEBUG 2025-03-11 11:57:50,220 ws_protocol WebSocket incoming frame on ['127.0.0.1', 63207]
+DEBUG 2025-03-11 11:57:50,223 ws_protocol Sent WebSocket packet to client for ['127.0.0.1', 63207]
+DEBUG 2025-03-11 11:57:52,219 ws_protocol WebSocket incoming frame on ['127.0.0.1', 63207]
+DEBUG 2025-03-11 11:57:52,222 ws_protocol Sent WebSocket packet to client for ['127.0.0.1', 63207]
+DEBUG 2025-03-11 11:57:53,974 ws_protocol WebSocket incoming frame on ['127.0.0.1', 63207]
+DEBUG 2025-03-11 11:57:53,977 ws_protocol Sent WebSocket packet to client for ['127.0.0.1', 63207]
+DEBUG 2025-03-11 11:57:55,324 ws_protocol WebSocket incoming frame on ['127.0.0.1', 63207]
+DEBUG 2025-03-11 11:57:55,326 ws_protocol Sent WebSocket packet to client for ['127.0.0.1', 63207]
+DEBUG 2025-03-11 11:57:56,379 ws_protocol WebSocket incoming frame on ['127.0.0.1', 63207]
+DEBUG 2025-03-11 11:57:56,381 ws_protocol Sent WebSocket packet to client for ['127.0.0.1', 63207]
+DEBUG 2025-03-11 11:57:57,363 ws_protocol WebSocket incoming frame on ['127.0.0.1', 63207]
+DEBUG 2025-03-11 11:57:57,365 ws_protocol Sent WebSocket packet to client for ['127.0.0.1', 63207]
+DEBUG 2025-03-11 11:57:57,650 ws_protocol WebSocket incoming frame on ['127.0.0.1', 63207]
+DEBUG 2025-03-11 11:57:57,652 ws_protocol Sent WebSocket packet to client for ['127.0.0.1', 63207]
+DEBUG 2025-03-11 11:57:57,891 ws_protocol WebSocket incoming frame on ['127.0.0.1', 63207]
+DEBUG 2025-03-11 11:57:57,893 ws_protocol Sent WebSocket packet to client for ['127.0.0.1', 63207]
+DEBUG 2025-03-11 11:57:58,158 ws_protocol WebSocket incoming frame on ['127.0.0.1', 63207]
+DEBUG 2025-03-11 11:57:58,160 ws_protocol Sent WebSocket packet to client for ['127.0.0.1', 63207]
+DEBUG 2025-03-11 11:57:58,406 ws_protocol WebSocket incoming frame on ['127.0.0.1', 63207]
+DEBUG 2025-03-11 11:57:58,409 ws_protocol Sent WebSocket packet to client for ['127.0.0.1', 63207]
+DEBUG 2025-03-11 11:57:58,654 ws_protocol WebSocket incoming frame on ['127.0.0.1', 63207]
+DEBUG 2025-03-11 11:57:58,656 ws_protocol Sent WebSocket packet to client for ['127.0.0.1', 63207]
+DEBUG 2025-03-11 11:57:58,902 ws_protocol WebSocket incoming frame on ['127.0.0.1', 63207]
+DEBUG 2025-03-11 11:57:58,904 ws_protocol Sent WebSocket packet to client for ['127.0.0.1', 63207]
+DEBUG 2025-03-11 11:57:59,145 ws_protocol WebSocket incoming frame on ['127.0.0.1', 63207]
+DEBUG 2025-03-11 11:57:59,148 ws_protocol Sent WebSocket packet to client for ['127.0.0.1', 63207]
+DEBUG 2025-03-11 11:57:59,390 ws_protocol WebSocket incoming frame on ['127.0.0.1', 63207]
+DEBUG 2025-03-11 11:57:59,392 ws_protocol Sent WebSocket packet to client for ['127.0.0.1', 63207]
+DEBUG 2025-03-11 11:57:59,645 ws_protocol WebSocket incoming frame on ['127.0.0.1', 63207]
+DEBUG 2025-03-11 11:57:59,648 ws_protocol Sent WebSocket packet to client for ['127.0.0.1', 63207]
+DEBUG 2025-03-11 11:57:59,895 ws_protocol WebSocket incoming frame on ['127.0.0.1', 63207]
+DEBUG 2025-03-11 11:57:59,898 ws_protocol Sent WebSocket packet to client for ['127.0.0.1', 63207]
+DEBUG 2025-03-11 11:58:00,144 ws_protocol WebSocket incoming frame on ['127.0.0.1', 63207]
+DEBUG 2025-03-11 11:58:00,146 ws_protocol Sent WebSocket packet to client for ['127.0.0.1', 63207]
+DEBUG 2025-03-11 11:58:00,398 ws_protocol WebSocket incoming frame on ['127.0.0.1', 63207]
+DEBUG 2025-03-11 11:58:00,401 ws_protocol Sent WebSocket packet to client for ['127.0.0.1', 63207]
+DEBUG 2025-03-11 11:58:00,668 ws_protocol WebSocket incoming frame on ['127.0.0.1', 63207]
+DEBUG 2025-03-11 11:58:00,670 ws_protocol Sent WebSocket packet to client for ['127.0.0.1', 63207]
+DEBUG 2025-03-11 11:58:00,927 ws_protocol WebSocket incoming frame on ['127.0.0.1', 63207]
+DEBUG 2025-03-11 11:58:00,930 ws_protocol Sent WebSocket packet to client for ['127.0.0.1', 63207]
+DEBUG 2025-03-11 11:58:01,179 ws_protocol WebSocket incoming frame on ['127.0.0.1', 63207]
+DEBUG 2025-03-11 11:58:01,181 ws_protocol Sent WebSocket packet to client for ['127.0.0.1', 63207]
+DEBUG 2025-03-11 11:58:01,424 ws_protocol WebSocket incoming frame on ['127.0.0.1', 63207]
+DEBUG 2025-03-11 11:58:01,426 ws_protocol Sent WebSocket packet to client for ['127.0.0.1', 63207]
+DEBUG 2025-03-11 11:58:01,669 ws_protocol WebSocket incoming frame on ['127.0.0.1', 63207]
+DEBUG 2025-03-11 11:58:01,671 ws_protocol Sent WebSocket packet to client for ['127.0.0.1', 63207]
+DEBUG 2025-03-11 11:58:01,921 ws_protocol WebSocket incoming frame on ['127.0.0.1', 63207]
+DEBUG 2025-03-11 11:58:01,923 ws_protocol Sent WebSocket packet to client for ['127.0.0.1', 63207]
+DEBUG 2025-03-11 11:58:02,471 ws_protocol WebSocket incoming frame on ['127.0.0.1', 63207]
+DEBUG 2025-03-11 11:58:02,473 ws_protocol Sent WebSocket packet to client for ['127.0.0.1', 63207]
+DEBUG 2025-03-11 11:58:02,734 ws_protocol WebSocket incoming frame on ['127.0.0.1', 63207]
+DEBUG 2025-03-11 11:58:02,736 ws_protocol Sent WebSocket packet to client for ['127.0.0.1', 63207]
+DEBUG 2025-03-11 11:58:02,996 ws_protocol WebSocket incoming frame on ['127.0.0.1', 63207]
+DEBUG 2025-03-11 11:58:02,999 ws_protocol Sent WebSocket packet to client for ['127.0.0.1', 63207]
+DEBUG 2025-03-11 11:58:03,268 ws_protocol WebSocket incoming frame on ['127.0.0.1', 63207]
+DEBUG 2025-03-11 11:58:03,270 ws_protocol Sent WebSocket packet to client for ['127.0.0.1', 63207]
+DEBUG 2025-03-11 11:58:03,537 ws_protocol WebSocket incoming frame on ['127.0.0.1', 63207]
+DEBUG 2025-03-11 11:58:03,538 ws_protocol Sent WebSocket packet to client for ['127.0.0.1', 63207]
+DEBUG 2025-03-11 11:58:03,803 ws_protocol WebSocket incoming frame on ['127.0.0.1', 63207]
+DEBUG 2025-03-11 11:58:03,805 ws_protocol Sent WebSocket packet to client for ['127.0.0.1', 63207]
+DEBUG 2025-03-11 11:58:04,112 ws_protocol WebSocket incoming frame on ['127.0.0.1', 63207]
+DEBUG 2025-03-11 11:58:04,114 ws_protocol Sent WebSocket packet to client for ['127.0.0.1', 63207]
+DEBUG 2025-03-11 11:58:04,405 ws_protocol WebSocket incoming frame on ['127.0.0.1', 63207]
+DEBUG 2025-03-11 11:58:04,407 ws_protocol Sent WebSocket packet to client for ['127.0.0.1', 63207]
+DEBUG 2025-03-11 11:58:04,707 ws_protocol WebSocket incoming frame on ['127.0.0.1', 63207]
+DEBUG 2025-03-11 11:58:04,709 ws_protocol Sent WebSocket packet to client for ['127.0.0.1', 63207]
+DEBUG 2025-03-11 11:58:04,981 ws_protocol WebSocket incoming frame on ['127.0.0.1', 63207]
+DEBUG 2025-03-11 11:58:04,984 ws_protocol Sent WebSocket packet to client for ['127.0.0.1', 63207]
+DEBUG 2025-03-11 11:58:05,247 ws_protocol WebSocket incoming frame on ['127.0.0.1', 63207]
+DEBUG 2025-03-11 11:58:05,250 ws_protocol Sent WebSocket packet to client for ['127.0.0.1', 63207]
+DEBUG 2025-03-11 11:58:05,503 ws_protocol WebSocket incoming frame on ['127.0.0.1', 63207]
+DEBUG 2025-03-11 11:58:05,505 ws_protocol Sent WebSocket packet to client for ['127.0.0.1', 63207]
+DEBUG 2025-03-11 11:58:08,051 ws_protocol WebSocket incoming frame on ['127.0.0.1', 63207]
+DEBUG 2025-03-11 11:58:08,054 ws_protocol Sent WebSocket packet to client for ['127.0.0.1', 63207]
+DEBUG 2025-03-11 11:58:08,319 ws_protocol WebSocket incoming frame on ['127.0.0.1', 63207]
+DEBUG 2025-03-11 11:58:08,322 ws_protocol Sent WebSocket packet to client for ['127.0.0.1', 63207]
+DEBUG 2025-03-11 11:58:08,577 ws_protocol WebSocket incoming frame on ['127.0.0.1', 63207]
+DEBUG 2025-03-11 11:58:08,577 ws_protocol Sent WebSocket packet to client for ['127.0.0.1', 63207]
+DEBUG 2025-03-11 11:58:08,860 ws_protocol WebSocket incoming frame on ['127.0.0.1', 63207]
+DEBUG 2025-03-11 11:58:08,863 ws_protocol Sent WebSocket packet to client for ['127.0.0.1', 63207]
+DEBUG 2025-03-11 11:58:09,156 ws_protocol WebSocket incoming frame on ['127.0.0.1', 63207]
+DEBUG 2025-03-11 11:58:09,158 ws_protocol Sent WebSocket packet to client for ['127.0.0.1', 63207]
+DEBUG 2025-03-11 11:58:09,430 ws_protocol WebSocket incoming frame on ['127.0.0.1', 63207]
+DEBUG 2025-03-11 11:58:09,432 ws_protocol Sent WebSocket packet to client for ['127.0.0.1', 63207]
+DEBUG 2025-03-11 11:58:12,263 ws_protocol WebSocket closed for ['127.0.0.1', 63207]
+INFO 2025-03-11 11:58:30,691 server Killed 0 pending application instances
+INFO 2025-03-11 12:08:14,362 autoreload Watching for file changes with StatReloader
+WARNING 2025-03-11 12:08:28,482 log Not Found: /ws/sohbet/1/
+INFO 2025-03-11 12:09:09,292 autoreload Watching for file changes with StatReloader
+ERROR 2025-03-11 12:11:05,336 log Internal Server Error: /mesajlar/
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/contrib/auth/decorators.py", line 60, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/Users/umutaraz/Desktop/teklif_yonetim/offerManagement/mesajlar/views.py", line 43, in sohbet_listesi
+    return render(request, 'mesajlar/sohbet_listesi.html', {
+        'sohbetler': sohbetler,
+    })
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/backends/django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/base.py", line 969, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/base.py", line 969, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/defaulttags.py", line 327, in render
+    return nodelist.render(context)
+           ~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/base.py", line 969, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/urls/base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/urls/resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'websocket_test' not found. 'websocket_test' is not a valid view function or pattern name.
+ERROR 2025-03-11 12:12:30,195 log Internal Server Error: /mesajlar/
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/contrib/auth/decorators.py", line 60, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/Users/umutaraz/Desktop/teklif_yonetim/offerManagement/mesajlar/views.py", line 43, in sohbet_listesi
+    return render(request, 'mesajlar/sohbet_listesi.html', {
+        'sohbetler': sohbetler,
+    })
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/backends/django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/base.py", line 969, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/base.py", line 969, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/defaulttags.py", line 327, in render
+    return nodelist.render(context)
+           ~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/base.py", line 969, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/urls/base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/urls/resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'websocket_test' not found. 'websocket_test' is not a valid view function or pattern name.
+ERROR 2025-03-11 12:12:35,278 log Internal Server Error: /mesajlar/
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/contrib/auth/decorators.py", line 60, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/Users/umutaraz/Desktop/teklif_yonetim/offerManagement/mesajlar/views.py", line 43, in sohbet_listesi
+    return render(request, 'mesajlar/sohbet_listesi.html', {
+        'sohbetler': sohbetler,
+    })
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/backends/django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/base.py", line 969, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/base.py", line 969, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/defaulttags.py", line 327, in render
+    return nodelist.render(context)
+           ~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/base.py", line 969, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/urls/base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/urls/resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'websocket_test' not found. 'websocket_test' is not a valid view function or pattern name.
+WARNING 2025-03-11 12:13:11,924 log Not Found: /ws/sohbet/1/
+WARNING 2025-03-11 12:13:16,485 log Not Found: /ws/sohbet/1/
+INFO 2025-03-11 12:18:24,617 autoreload Watching for file changes with StatReloader
+INFO 2025-03-11 12:18:28,077 basehttp "GET / HTTP/1.1" 302 0
+INFO 2025-03-11 12:18:28,100 basehttp "GET /firma-sahibi-paneli/ HTTP/1.1" 200 56027
+INFO 2025-03-11 12:18:34,149 basehttp "GET /mesajlar/ HTTP/1.1" 200 12683
+INFO 2025-03-11 12:18:35,859 basehttp "GET /mesajlar/sohbet/1/ HTTP/1.1" 200 17130
+WARNING 2025-03-11 12:18:35,884 log Not Found: /ws/sohbet/1/
+WARNING 2025-03-11 12:18:35,885 basehttp "GET /ws/sohbet/1/ HTTP/1.1" 404 5225
+INFO 2025-03-11 12:18:35,886 basehttp - Broken pipe from ('127.0.0.1', 63926)
+INFO 2025-03-11 12:18:41,323 basehttp "GET /mesajlar/sohbet/1/ HTTP/1.1" 200 17130
+WARNING 2025-03-11 12:18:41,345 log Not Found: /ws/sohbet/1/
+WARNING 2025-03-11 12:18:41,346 basehttp "GET /ws/sohbet/1/ HTTP/1.1" 404 5225
+INFO 2025-03-11 12:18:41,346 basehttp - Broken pipe from ('127.0.0.1', 63932)
+INFO 2025-03-11 12:18:43,820 basehttp "GET /mesajlar/sohbet/1/ HTTP/1.1" 200 17130
+WARNING 2025-03-11 12:18:43,846 log Not Found: /ws/sohbet/1/
+WARNING 2025-03-11 12:18:43,847 basehttp "GET /ws/sohbet/1/ HTTP/1.1" 404 5225
+INFO 2025-03-11 12:18:43,848 basehttp - Broken pipe from ('127.0.0.1', 63933)
+INFO 2025-03-11 12:19:07,456 autoreload Watching for file changes with StatReloader
+INFO 2025-03-11 12:20:58,808 autoreload Watching for file changes with StatReloader
+WARNING 2025-03-11 12:21:46,512 log Not Found: /ws/sohbet/1/
+WARNING 2025-03-11 12:21:46,512 basehttp "GET /ws/sohbet/1/ HTTP/1.1" 404 5225
+INFO 2025-03-11 12:21:46,512 basehttp - Broken pipe from ('127.0.0.1', 64227)
+WARNING 2025-03-11 12:21:48,349 log Not Found: /ws/sohbet/1/
+WARNING 2025-03-11 12:21:48,350 basehttp "GET /ws/sohbet/1/ HTTP/1.1" 404 5225
+INFO 2025-03-11 12:21:48,350 basehttp - Broken pipe from ('127.0.0.1', 64231)
+WARNING 2025-03-11 12:21:48,984 log Not Found: /ws/sohbet/1/
+WARNING 2025-03-11 12:21:48,985 basehttp "GET /ws/sohbet/1/ HTTP/1.1" 404 5225
+INFO 2025-03-11 12:21:48,985 basehttp - Broken pipe from ('127.0.0.1', 64233)
+WARNING 2025-03-11 12:21:49,168 log Not Found: /ws/sohbet/1/
+WARNING 2025-03-11 12:21:49,169 basehttp "GET /ws/sohbet/1/ HTTP/1.1" 404 5225
+INFO 2025-03-11 12:21:49,169 basehttp - Broken pipe from ('127.0.0.1', 64235)
+WARNING 2025-03-11 12:21:49,313 log Not Found: /ws/sohbet/1/
+WARNING 2025-03-11 12:21:49,313 basehttp "GET /ws/sohbet/1/ HTTP/1.1" 404 5225
+INFO 2025-03-11 12:21:49,314 basehttp - Broken pipe from ('127.0.0.1', 64237)
+WARNING 2025-03-11 12:21:49,469 log Not Found: /ws/sohbet/1/
+WARNING 2025-03-11 12:21:49,469 basehttp "GET /ws/sohbet/1/ HTTP/1.1" 404 5225
+INFO 2025-03-11 12:21:49,469 basehttp - Broken pipe from ('127.0.0.1', 64239)
+WARNING 2025-03-11 12:21:49,628 log Not Found: /ws/sohbet/1/
+WARNING 2025-03-11 12:21:49,629 basehttp "GET /ws/sohbet/1/ HTTP/1.1" 404 5225
+INFO 2025-03-11 12:21:49,629 basehttp - Broken pipe from ('127.0.0.1', 64241)
+INFO 2025-03-11 12:30:56,834 autoreload Watching for file changes with StatReloader
+INFO 2025-03-11 12:32:53,624 autoreload Watching for file changes with StatReloader
+INFO 2025-03-11 12:32:55,782 basehttp "GET / HTTP/1.1" 302 0
+INFO 2025-03-11 12:32:55,809 basehttp "GET /firma-sahibi-paneli/ HTTP/1.1" 200 56027
+INFO 2025-03-11 12:34:09,205 basehttp "GET /firma-sahibi-paneli/ HTTP/1.1" 200 56292
+INFO 2025-03-11 12:34:15,623 basehttp "GET /bildirimler/ HTTP/1.1" 302 0
+INFO 2025-03-11 12:34:15,629 basehttp "GET / HTTP/1.1" 302 0
+INFO 2025-03-11 12:34:15,643 basehttp "GET /firma-sahibi-paneli/ HTTP/1.1" 200 56292
+INFO 2025-03-11 12:34:17,145 basehttp "GET /dashboard/ HTTP/1.1" 200 16267
+INFO 2025-03-11 12:34:20,940 basehttp "GET /bildirimler/ HTTP/1.1" 302 0
+INFO 2025-03-11 12:34:20,947 basehttp "GET / HTTP/1.1" 302 0
+INFO 2025-03-11 12:34:20,966 basehttp "GET /firma-sahibi-paneli/ HTTP/1.1" 200 56292
+INFO 2025-03-11 12:34:22,592 basehttp "GET /mesajlar/kullanicilar/ HTTP/1.1" 200 15045

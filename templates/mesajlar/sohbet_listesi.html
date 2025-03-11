@@ -1,0 +1,125 @@
+{% extends 'base.html' %}
+
+{% block title %}Mesajlar{% endblock %}
+
+{% block extra_head %}
+<style>
+    .sohbet-listesi {
+        max-width: 800px;
+        margin: 0 auto;
+    }
+    .sohbet-item {
+        transition: all 0.3s ease;
+        border-left: 4px solid transparent;
+    }
+    .sohbet-item:hover {
+        transform: translateX(5px);
+        border-left: 4px solid var(--bs-primary);
+    }
+    .sohbet-item.okunmamis {
+        background-color: rgba(var(--bs-primary-rgb), 0.1);
+    }
+    .son-mesaj {
+        max-width: 250px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+    .mesaj-zamani {
+        font-size: 0.8rem;
+        color: var(--bs-gray);
+    }
+    .okunmamis-rozet {
+        font-size: 0.7rem;
+        padding: 0.25rem 0.5rem;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+    <div class="sohbet-listesi">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <h2><i class="fas fa-comments me-2"></i>Sohbetlerim</h2>
+            <div class="d-flex">
+                <div class="input-group me-2" style="max-width: 300px;">
+                    <input type="text" class="form-control" id="sohbetArama" placeholder="Sohbet ara...">
+                    <span class="input-group-text">
+                        <i class="fas fa-search"></i>
+                    </span>
+                </div>
+                <a href="{% url 'mesajlar:kullanici_listesi' %}" class="btn btn-primary">
+                    <i class="fas fa-plus me-1"></i> Yeni Sohbet
+                </a>
+            </div>
+        </div>
+
+        <div class="list-group shadow-sm">
+            {% for sohbet in sohbetler %}
+                <a href="{% url 'mesajlar:sohbet_detay' sohbet.id %}" 
+                   class="list-group-item list-group-item-action sohbet-item {% if sohbet.okunmamis_mesaj_sayisi > 0 %}okunmamis{% endif %}">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div class="d-flex align-items-center">
+                            <div class="rounded-circle bg-primary text-white d-flex align-items-center justify-content-center me-3" 
+                                 style="width: 45px; height: 45px;">
+                                {{ sohbet.diger_katilimci.get_full_name|default:sohbet.diger_katilimci.username|make_list|first|upper }}
+                            </div>
+                            <div>
+                                <h5 class="mb-1">{{ sohbet.diger_katilimci.get_full_name|default:sohbet.diger_katilimci.username }}</h5>
+                                <p class="mb-1 text-muted son-mesaj">
+                                    {% if sohbet.son_mesaj %}
+                                        {% if sohbet.son_mesaj.gonderen_id == user.id %}
+                                            <small class="text-muted">Siz: </small>
+                                        {% endif %}
+                                        {{ sohbet.son_mesaj.icerik }}
+                                    {% else %}
+                                        Henüz mesaj yok
+                                    {% endif %}
+                                </p>
+                            </div>
+                        </div>
+                        <div class="text-end">
+                            <div class="mesaj-zamani">
+                                {% if sohbet.son_mesaj %}
+                                    {{ sohbet.son_mesaj.gonderilme_tarihi|date:"d.m.Y H:i" }}
+                                {% endif %}
+                            </div>
+                            {% if sohbet.okunmamis_mesaj_sayisi > 0 %}
+                                <span class="badge bg-primary rounded-pill okunmamis-rozet">
+                                    {{ sohbet.okunmamis_mesaj_sayisi }}
+                                </span>
+                            {% endif %}
+                        </div>
+                    </div>
+                </a>
+            {% empty %}
+                <div class="text-center py-5">
+                    <i class="fas fa-comments text-muted mb-3" style="font-size: 3rem;"></i>
+                    <p class="text-muted">Henüz hiç sohbetiniz bulunmuyor.</p>
+                    <a href="{% url 'mesajlar:kullanici_listesi' %}" class="btn btn-primary">
+                        <i class="fas fa-plus me-2"></i>Yeni Sohbet Başlat
+                    </a>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+<script>
+document.getElementById('sohbetArama').addEventListener('input', function(e) {
+    const aramaMetni = e.target.value.toLowerCase();
+    const sohbetler = document.querySelectorAll('.sohbet-item');
+    
+    sohbetler.forEach(sohbet => {
+        const isim = sohbet.querySelector('h5').textContent.toLowerCase();
+        const sonMesaj = sohbet.querySelector('.son-mesaj').textContent.toLowerCase();
+        
+        if (isim.includes(aramaMetni) || sonMesaj.includes(aramaMetni)) {
+            sohbet.style.display = '';
+        } else {
+            sohbet.style.display = 'none';
+        }
+    });
+});
+</script>
+{% endblock %}
