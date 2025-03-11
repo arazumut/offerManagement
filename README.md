@@ -20,6 +20,7 @@ Bu proje, firmaların müşterilerine teklif verme sürecini dijitalleştiren ve
   - Revizyon
 - **PDF Çıktısı**: Tekliflerin PDF formatında çıktısını alma
 - **E-posta Bildirimleri**: Teklif durumu değişikliklerinde otomatik bildirimler
+- **Teklif Detayları**: Tekliflerin detaylı bilgilerini görüntüleme
 
 ### 💼 Firma Sahibi Paneli
 - **Teklif Listesi**: Tüm tekliflerin görüntülenmesi
@@ -29,19 +30,27 @@ Bu proje, firmaların müşterilerine teklif verme sürecini dijitalleştiren ve
   - Revizyon İsteme
   - Düzenleme
 - **Müşteri Yönetimi**: Müşteri bilgilerinin takibi
+- **Teklif Analitiği**: Tekliflerin performansını analiz etme
 
 ### 🎨 Kullanıcı Arayüzü
 - **Responsive Tasarım**: Mobil uyumlu arayüz
 - **Modern UI**: Bootstrap 5 ile geliştirilmiş kullanıcı dostu arayüz
 - **Bildirimler**: İşlem durumları için anlık bildirimler
+- **Tema Desteği**: Karanlık ve aydınlık tema seçenekleri
 
 ### 📊 Dashboard
 - **Performans Metrikleri**: Toplam teklif, onay oranı, ortalama yanıt süresi
 - **Grafikler**: Aylık teklif istatistikleri, sektörel dağılım
 - **En Aktif Müşteriler**: En çok teklif talebi oluşturan müşteriler
+- **Gerçek Zamanlı Veriler**: Anlık veri güncellemeleri
 
 ### 📈 Raporlama
 - **Excel Raporu**: Teklif raporlarını Excel formatında indirme
+- **Detaylı Analitikler**: Teklif performansını izleme ve analiz etme
+
+### 💬 Mesajlaşma Sistemi
+- **Kullanıcılar Arası Mesajlaşma**: Firma sahipleri ve müşteriler arasında mesajlaşma
+- **WebSocket Desteği**: Gerçek zamanlı mesajlaşma
 
 ## 🛠 Teknolojiler
 
