@@ -234,19 +234,15 @@
                         Hızlı Erişim
                     </h5>
                     <div class="action-buttons d-flex flex-wrap justify-content-center gap-4">
-                        <a href="{% url 'dashboard' %}" class="action-button primary rounded-4">
+                        <a href="{% url 'dashboard' %}" class="btn btn-success">
                             <i class="fas fa-chart-line mb-3"></i>
                             <span>Dashboard</span>
                         </a>
-                        <a href="{% url 'export_rapor' %}" class="action-button success rounded-4">
-                            <i class="fas fa-file-export mb-3"></i>
-                            <span>Rapor Al</span>
-                        </a>
-                        <a href="{% url 'bildirimler' %}" class="action-button warning rounded-4">
+                        <a href="{% url 'bildirimler' %}" class="btn btn-primary">
                             <i class="fas fa-bell mb-3"></i>
                             <span>Bildirimler</span>
                         </a>
-                        <a href="{% url 'mesajlar:kullanici_listesi' %}" class="action-button info rounded-4">
+                        <a href="{% url 'mesajlar:kullanici_listesi' %}" class="btn btn-info">
                             <i class="fas fa-comments mb-3"></i>
                             <span>Müşterilerle Mesajlaş</span>
                         </a>

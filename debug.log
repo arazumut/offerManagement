@@ -1758,3 +1758,130 @@ INFO 2025-03-11 12:34:20,940 basehttp "GET /bildirimler/ HTTP/1.1" 302 0
 INFO 2025-03-11 12:34:20,947 basehttp "GET / HTTP/1.1" 302 0
 INFO 2025-03-11 12:34:20,966 basehttp "GET /firma-sahibi-paneli/ HTTP/1.1" 200 56292
 INFO 2025-03-11 12:34:22,592 basehttp "GET /mesajlar/kullanicilar/ HTTP/1.1" 200 15045
+INFO 2025-03-11 12:46:28,205 autoreload Watching for file changes with StatReloader
+INFO 2025-03-11 12:46:30,360 basehttp "GET / HTTP/1.1" 302 0
+INFO 2025-03-11 12:46:30,387 basehttp "GET /firma-sahibi-paneli/ HTTP/1.1" 200 56234
+WARNING 2025-03-11 12:46:30,475 log Not Found: /favicon.ico
+WARNING 2025-03-11 12:46:30,476 basehttp "GET /favicon.ico HTTP/1.1" 404 5222
+INFO 2025-03-11 12:46:34,265 basehttp "POST /logout/ HTTP/1.1" 302 0
+INFO 2025-03-11 12:46:34,268 basehttp "GET /logout-success/ HTTP/1.1" 200 10079
+INFO 2025-03-11 12:46:36,001 basehttp "GET / HTTP/1.1" 200 21412
+INFO 2025-03-11 12:46:41,171 basehttp "GET /login/ HTTP/1.1" 200 12266
+INFO 2025-03-11 12:46:46,265 basehttp "POST /login/ HTTP/1.1" 302 0
+INFO 2025-03-11 12:46:46,271 basehttp "GET / HTTP/1.1" 302 0
+INFO 2025-03-11 12:46:46,277 basehttp "GET /musteri-paneli/ HTTP/1.1" 200 36504
+INFO 2025-03-11 12:46:51,660 basehttp "GET /talep-formu/ HTTP/1.1" 200 12026
+INFO 2025-03-11 12:46:54,687 basehttp "GET /talep-formu/ HTTP/1.1" 200 12026
+INFO 2025-03-11 12:46:57,900 basehttp "GET /mesajlar/kullanicilar/ HTTP/1.1" 200 11841
+INFO 2025-03-11 12:47:00,667 basehttp "GET /mesajlar/sohbet/yeni/2/ HTTP/1.1" 302 0
+INFO 2025-03-11 12:47:00,679 basehttp "GET /mesajlar/sohbet/2/ HTTP/1.1" 200 16226
+WARNING 2025-03-11 12:47:00,703 log Not Found: /ws/sohbet/2/
+WARNING 2025-03-11 12:47:00,704 basehttp "GET /ws/sohbet/2/ HTTP/1.1" 404 5225
+INFO 2025-03-11 12:47:00,704 basehttp - Broken pipe from ('127.0.0.1', 65454)
+INFO 2025-03-11 12:47:03,462 basehttp "GET /mesajlar/sohbet/2/ HTTP/1.1" 200 16226
+WARNING 2025-03-11 12:47:03,482 log Not Found: /ws/sohbet/2/
+WARNING 2025-03-11 12:47:03,482 basehttp "GET /ws/sohbet/2/ HTTP/1.1" 404 5225
+INFO 2025-03-11 12:47:03,483 basehttp - Broken pipe from ('127.0.0.1', 65456)
+INFO 2025-03-11 12:47:04,367 basehttp "GET /mesajlar/ HTTP/1.1" 200 12324
+INFO 2025-03-11 12:47:13,034 basehttp "POST /logout/ HTTP/1.1" 302 0
+INFO 2025-03-11 12:47:13,037 basehttp "GET /logout-success/ HTTP/1.1" 200 10079
+INFO 2025-03-11 12:47:14,798 basehttp "GET /login/ HTTP/1.1" 200 12266
+INFO 2025-03-11 12:47:19,860 basehttp "POST /login/ HTTP/1.1" 302 0
+INFO 2025-03-11 12:47:19,865 basehttp "GET / HTTP/1.1" 302 0
+INFO 2025-03-11 12:47:19,872 basehttp "GET /firma-sahibi-paneli/ HTTP/1.1" 200 56234
+INFO 2025-03-11 12:49:35,133 basehttp "GET /firma-sahibi-paneli/ HTTP/1.1" 200 56128
+INFO 2025-03-11 12:50:15,926 basehttp "GET /dashboard/ HTTP/1.1" 200 16267
+INFO 2025-03-11 12:50:19,484 basehttp "GET / HTTP/1.1" 302 0
+INFO 2025-03-11 12:50:19,500 basehttp "GET /firma-sahibi-paneli/ HTTP/1.1" 200 56128
+INFO 2025-03-11 12:51:31,733 basehttp "GET /firma-sahibi-paneli/ HTTP/1.1" 200 56913
+INFO 2025-03-11 12:52:04,985 basehttp "GET /firma-sahibi-paneli/ HTTP/1.1" 200 56234
+INFO 2025-03-11 12:54:08,929 basehttp "GET /firma-sahibi-paneli/ HTTP/1.1" 200 56189
+INFO 2025-03-11 12:54:42,151 basehttp "POST /logout/ HTTP/1.1" 302 0
+INFO 2025-03-11 12:54:42,154 basehttp "GET /logout-success/ HTTP/1.1" 200 10079
+INFO 2025-03-11 12:55:20,422 basehttp "GET /login/ HTTP/1.1" 200 12266
+INFO 2025-03-11 12:55:21,908 basehttp "POST /login/ HTTP/1.1" 302 0
+INFO 2025-03-11 12:55:21,913 basehttp "GET / HTTP/1.1" 302 0
+INFO 2025-03-11 12:55:21,925 basehttp "GET /firma-sahibi-paneli/ HTTP/1.1" 200 56218
+INFO 2025-03-11 12:55:45,366 basehttp "GET /firma-sahibi-paneli/ HTTP/1.1" 200 56199
+INFO 2025-03-11 12:56:18,617 basehttp "GET /firma-sahibi-paneli/ HTTP/1.1" 200 56183
+INFO 2025-03-11 12:56:31,306 basehttp "POST /logout/ HTTP/1.1" 302 0
+INFO 2025-03-11 12:56:31,310 basehttp "GET /logout-success/ HTTP/1.1" 200 10079
+INFO 2025-03-11 12:56:34,471 basehttp "GET /register/ HTTP/1.1" 200 16272
+INFO 2025-03-11 12:56:38,651 basehttp "GET /register/ HTTP/1.1" 200 16272
+INFO 2025-03-11 12:56:40,161 basehttp "GET /login/ HTTP/1.1" 200 12266
+INFO 2025-03-11 12:56:46,229 basehttp "GET /login/ HTTP/1.1" 200 12266
+INFO 2025-03-11 12:56:47,307 basehttp "GET /register/ HTTP/1.1" 200 16272
+INFO 2025-03-11 12:56:49,000 basehttp "GET /login/ HTTP/1.1" 200 12266
+INFO 2025-03-11 12:56:51,094 basehttp "GET /register/ HTTP/1.1" 200 16272
+INFO 2025-03-11 12:56:51,944 basehttp "GET /login/ HTTP/1.1" 200 12266
+INFO 2025-03-11 12:56:56,139 basehttp "POST /login/ HTTP/1.1" 302 0
+INFO 2025-03-11 12:56:56,145 basehttp "GET / HTTP/1.1" 302 0
+INFO 2025-03-11 12:56:56,152 basehttp "GET /musteri-paneli/ HTTP/1.1" 200 36504
+INFO 2025-03-11 12:58:01,785 basehttp "GET /musteri-paneli/ HTTP/1.1" 200 36504
+INFO 2025-03-11 12:58:06,741 basehttp "POST /logout/ HTTP/1.1" 302 0
+INFO 2025-03-11 12:58:06,745 basehttp "GET /logout-success/ HTTP/1.1" 200 10079
+INFO 2025-03-11 12:58:08,587 basehttp "GET /login/ HTTP/1.1" 200 12266
+INFO 2025-03-11 12:58:37,612 basehttp "POST /login/ HTTP/1.1" 302 0
+INFO 2025-03-11 12:58:37,617 basehttp "GET / HTTP/1.1" 302 0
+INFO 2025-03-11 12:58:37,621 basehttp "GET /musteri-paneli/ HTTP/1.1" 200 36504
+INFO 2025-03-11 12:58:39,907 basehttp "POST /logout/ HTTP/1.1" 302 0
+INFO 2025-03-11 12:58:39,910 basehttp "GET /logout-success/ HTTP/1.1" 200 10079
+INFO 2025-03-11 12:59:02,867 basehttp "GET /login/ HTTP/1.1" 200 12266
+INFO 2025-03-11 12:59:08,339 basehttp "POST /login/ HTTP/1.1" 302 0
+INFO 2025-03-11 12:59:08,344 basehttp "GET / HTTP/1.1" 302 0
+INFO 2025-03-11 12:59:08,352 basehttp "GET /firma-sahibi-paneli/ HTTP/1.1" 200 56169
+INFO 2025-03-11 12:59:22,152 basehttp "GET /bildirimler/ HTTP/1.1" 302 0
+INFO 2025-03-11 12:59:22,160 basehttp "GET / HTTP/1.1" 302 0
+INFO 2025-03-11 12:59:22,171 basehttp "GET /firma-sahibi-paneli/ HTTP/1.1" 200 56169
+ERROR 2025-03-11 12:59:23,171 log Internal Server Error: /export-rapor/
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/contrib/auth/decorators.py", line 60, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/Users/umutaraz/Desktop/teklif_yonetim/offerManagement/musteri/views.py", line 308, in export_rapor
+    df.to_excel(response, index=False)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/pandas/util/_decorators.py", line 333, in wrapper
+    return func(*args, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/pandas/core/generic.py", line 2417, in to_excel
+    formatter.write(
+    ~~~~~~~~~~~~~~~^
+        excel_writer,
+        ^^^^^^^^^^^^^
+    ...<6 lines>...
+        engine_kwargs=engine_kwargs,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/pandas/io/formats/excel.py", line 952, in write
+    writer._write_cells(
+    ~~~~~~~~~~~~~~~~~~~^
+        formatted_cells,
+        ^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+        freeze_panes=freeze_panes,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/pandas/io/excel/_openpyxl.py", line 486, in _write_cells
+    for cell in cells:
+                ^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/pandas/io/formats/excel.py", line 890, in get_formatted_cells
+    cell.val = self._format_value(cell.val)
+               ~~~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/pandas/io/formats/excel.py", line 607, in _format_value
+    raise ValueError(
+    ...<3 lines>...
+    )
+ValueError: Excel does not support datetimes with timezones. Please ensure that datetimes are timezone unaware before writing to Excel.
+ERROR 2025-03-11 12:59:23,177 basehttp "GET /export-rapor/ HTTP/1.1" 500 117214
+INFO 2025-03-11 12:59:44,293 basehttp "GET /firma-sahibi-paneli/ HTTP/1.1" 200 55949
+INFO 2025-03-11 13:00:01,833 basehttp "GET /firma-sahibi-paneli/ HTTP/1.1" 200 55949
+INFO 2025-03-11 13:00:02,615 basehttp "GET /mesajlar/ HTTP/1.1" 200 13929
+INFO 2025-03-11 13:00:08,491 basehttp "POST /logout/ HTTP/1.1" 302 0
+INFO 2025-03-11 13:00:08,495 basehttp "GET /logout-success/ HTTP/1.1" 200 10079
+INFO 2025-03-11 13:00:10,262 basehttp "GET /register/ HTTP/1.1" 200 16272
+INFO 2025-03-11 13:00:12,983 basehttp "GET /login/ HTTP/1.1" 200 12266
