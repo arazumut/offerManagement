@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 """
 
 from pathlib import Path
+from decouple import config
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -97,6 +98,7 @@ INSTALLED_APPS = [
     'corsheaders',
     'crispy_forms',
     'crispy_bootstrap4',
+    'django_recaptcha',
     
     # Local apps
     'teklifler',
@@ -225,3 +227,13 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 LOGIN_REDIRECT_URL = 'anasayfa'
 LOGOUT_REDIRECT_URL = 'anasayfa'
+
+
+RECAPTCHA_PUBLIC_KEY = '6LfSB_AqAAAAAMSG9Aby5buydYGN777cx4c6tSzV'
+RECAPTCHA_PRIVATE_KEY = '6LfSB_AqAAAAAKGcki_9sF--7oB5nADhiZz-endy'
+RECAPTCHA_DEFAULT_ACTION = 'generic'
+RECAPTCHA_DOMAIN = 'localhost'  # Alternatif domain yerine google.com kullanın
+RECAPTCHA_USE_SSL = True
+
+# Opsiyonel ayarlar
+RECAPTCHA_REQUIRED_SCORE = 0.85  #skor eşiği

@@ -1,6 +1,8 @@
 from django import forms
 from django.contrib.auth.models import User
 from .models import Musteri, Profile
+from django_recaptcha.fields import ReCaptchaField
+from django_recaptcha.widgets import ReCaptchaV2Checkbox
 
 class MusteriTalepFormu(forms.ModelForm):
     class Meta:
@@ -75,3 +77,23 @@ class UserRegistrationForm(forms.ModelForm):
                     self.add_error(field, f'{label} alanı müşteri kaydı için zorunludur.')
         
         return cleaned_data 
+    
+
+
+
+
+
+class LoginForm(forms.Form):
+    username = forms.CharField(label='Kullanıcı Adı')
+    password = forms.CharField(label='Şifre', widget=forms.PasswordInput)
+    captcha = ReCaptchaField(
+        widget=ReCaptchaV2Checkbox(
+            api_params={
+                'sitekey': '6LfSB_AqAAAAAMSG9Aby5buydYGN777cx4c6tSzV',
+            },
+            attrs={
+                'data-theme': 'light',
+                'data-size': 'normal',
+            }
+        )
+    )
