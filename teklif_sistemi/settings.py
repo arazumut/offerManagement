@@ -21,7 +21,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-9i84!-od_)1aop!nz*#im7z0d&ej+89$3$2rv(-ycu95re4459'
+SECRET_KEY = 'django-i4459'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -130,7 +130,7 @@ EMAIL_PORT = 465  # SSL için
 EMAIL_USE_TLS = False
 EMAIL_USE_SSL = True
 EMAIL_HOST_USER = 'arazumut349@gmail.com'
-EMAIL_HOST_PASSWORD = 'ulzh tkyv hbha yage' #burayı düzelt güvenlik sebebi ile değiştirdim
+EMAIL_HOST_PASSWORD = 'ulzh ' #burayı düzelt güvenlik sebebi ile değiştirdim
 DEFAULT_FROM_EMAIL = 'Teklif Sistemi <arazumut349@gmail.com>'
 
 
@@ -229,8 +229,8 @@ LOGIN_REDIRECT_URL = 'anasayfa'
 LOGOUT_REDIRECT_URL = 'anasayfa'
 
 
-RECAPTCHA_PUBLIC_KEY = '6LfSB_AqAAAAAMSG9Aby5buydYGN777cx4c6tSzV'
-RECAPTCHA_PRIVATE_KEY = '6LfSB_AqAAAAAKGcki_9sF--7oB5nADhiZz-endy'
+RECAPTCHA_PUBLIC_KEY = '6LfSB_AqAAAAAMSG9tSzV'
+RECAPTCHA_PRIVATE_KEY = '6L--7oB5nADhiZz-endy'
 RECAPTCHA_DEFAULT_ACTION = 'generic'
 RECAPTCHA_DOMAIN = 'localhost'  # Alternatif domain yerine google.com kullanın
 RECAPTCHA_USE_SSL = True
