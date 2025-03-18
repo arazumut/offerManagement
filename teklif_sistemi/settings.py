@@ -130,7 +130,7 @@ EMAIL_PORT = 465  # SSL için
 EMAIL_USE_TLS = False
 EMAIL_USE_SSL = True
 EMAIL_HOST_USER = 'arazumut349@gmail.com'
-EMAIL_HOST_PASSWORD = 'ulzh ' #burayı düzelt güvenlik sebebi ile değiştirdim
+EMAIL_HOST_PASSWORD = 'xach ghjb tdeo drhv ' #burayı düzelt güvenlik sebebi ile değiştirdim
 DEFAULT_FROM_EMAIL = 'Teklif Sistemi <arazumut349@gmail.com>'
 
 

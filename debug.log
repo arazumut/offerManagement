@@ -94,3 +94,257 @@ INFO 2025-03-11 18:42:22,260 basehttp "GET /login/ HTTP/1.1" 200 11934
 INFO 2025-03-11 18:42:29,040 basehttp "POST /login/ HTTP/1.1" 302 0
 INFO 2025-03-11 18:42:29,044 basehttp "GET / HTTP/1.1" 302 0
 INFO 2025-03-11 18:42:29,051 basehttp "GET /firma-sahibi-paneli/ HTTP/1.1" 200 58105
+INFO 2025-03-12 01:04:19,906 autoreload Watching for file changes with StatReloader
+INFO 2025-03-12 01:04:23,638 basehttp "GET / HTTP/1.1" 200 21492
+WARNING 2025-03-12 01:04:23,907 log Not Found: /favicon.ico
+WARNING 2025-03-12 01:04:23,907 basehttp "GET /favicon.ico HTTP/1.1" 404 5222
+INFO 2025-03-12 01:04:28,615 basehttp "GET /login/ HTTP/1.1" 200 11934
+INFO 2025-03-12 01:04:32,539 basehttp "POST /login/ HTTP/1.1" 302 0
+INFO 2025-03-12 01:04:32,543 basehttp "GET / HTTP/1.1" 302 0
+INFO 2025-03-12 01:04:32,551 basehttp "GET /musteri-paneli/ HTTP/1.1" 200 36584
+INFO 2025-03-12 01:04:36,511 basehttp "POST /logout/ HTTP/1.1" 302 0
+INFO 2025-03-12 01:04:36,515 basehttp "GET /logout-success/ HTTP/1.1" 200 10159
+INFO 2025-03-12 01:04:38,558 basehttp "GET / HTTP/1.1" 200 21492
+INFO 2025-03-12 15:34:01,539 autoreload Watching for file changes with StatReloader
+INFO 2025-03-12 15:34:05,406 basehttp "GET / HTTP/1.1" 200 21492
+WARNING 2025-03-12 15:34:07,440 log Not Found: /favicon.ico
+WARNING 2025-03-12 15:34:07,440 basehttp "GET /favicon.ico HTTP/1.1" 404 5222
+INFO 2025-03-12 15:34:13,998 basehttp "GET /login/ HTTP/1.1" 200 11934
+INFO 2025-03-14 14:52:37,870 autoreload Watching for file changes with StatReloader
+INFO 2025-03-14 14:52:41,520 basehttp "GET / HTTP/1.1" 200 21492
+INFO 2025-03-14 14:52:44,679 basehttp "GET /login/ HTTP/1.1" 200 11934
+INFO 2025-03-14 14:52:49,749 basehttp "POST /login/ HTTP/1.1" 200 12215
+INFO 2025-03-14 14:52:55,873 basehttp "POST /login/ HTTP/1.1" 200 12218
+INFO 2025-03-14 14:52:59,725 basehttp "GET /register/ HTTP/1.1" 200 16352
+INFO 2025-03-14 18:53:18,503 autoreload Watching for file changes with StatReloader
+INFO 2025-03-14 18:53:22,393 basehttp "GET / HTTP/1.1" 200 21492
+INFO 2025-03-14 18:53:24,321 basehttp "GET /register/ HTTP/1.1" 200 16352
+INFO 2025-03-14 18:53:29,132 basehttp "GET /login/ HTTP/1.1" 200 11934
+INFO 2025-03-14 18:53:34,936 basehttp "POST /login/ HTTP/1.1" 200 12218
+INFO 2025-03-14 18:53:39,660 basehttp "GET /register/ HTTP/1.1" 200 16352
+INFO 2025-03-14 18:54:08,735 basehttp "POST /register/ HTTP/1.1" 302 0
+INFO 2025-03-14 18:54:08,738 basehttp "GET / HTTP/1.1" 302 0
+INFO 2025-03-14 18:54:08,745 basehttp "GET /musteri-paneli/ HTTP/1.1" 200 22211
+INFO 2025-03-14 18:54:15,344 basehttp "GET /mesajlar/kullanicilar/ HTTP/1.1" 200 11378
+INFO 2025-03-14 18:54:20,202 basehttp "GET /mesajlar/ HTTP/1.1" 200 11598
+INFO 2025-03-14 18:54:22,148 basehttp "GET /mesajlar/kullanicilar/ HTTP/1.1" 200 11378
+INFO 2025-03-14 18:54:24,062 basehttp "GET /mesajlar/ HTTP/1.1" 200 11598
+INFO 2025-03-14 18:54:25,980 basehttp "POST /logout/ HTTP/1.1" 302 0
+INFO 2025-03-14 18:54:25,985 basehttp "GET /logout-success/ HTTP/1.1" 200 10159
+INFO 2025-03-14 18:54:27,909 basehttp "GET / HTTP/1.1" 200 21492
+INFO 2025-03-14 18:54:31,715 basehttp "GET /register/ HTTP/1.1" 200 16352
+INFO 2025-03-14 18:54:33,309 basehttp "GET /login/ HTTP/1.1" 200 11934
+INFO 2025-03-14 18:54:35,450 basehttp "GET /register/ HTTP/1.1" 200 16352
+INFO 2025-03-14 18:55:08,888 basehttp "POST /register/ HTTP/1.1" 302 0
+INFO 2025-03-14 18:55:08,893 basehttp "GET / HTTP/1.1" 302 0
+INFO 2025-03-14 18:55:08,898 basehttp "GET /firma-sahibi-paneli/ HTTP/1.1" 200 25641
+INFO 2025-03-14 18:55:12,987 basehttp "GET /dashboard/ HTTP/1.1" 200 15825
+INFO 2025-03-14 18:55:20,008 basehttp "GET /firma-sahibi-paneli/ HTTP/1.1" 200 25332
+INFO 2025-03-14 18:55:23,200 basehttp "GET /bildirimler/ HTTP/1.1" 302 0
+INFO 2025-03-14 18:55:23,207 basehttp "GET / HTTP/1.1" 302 0
+INFO 2025-03-14 18:55:23,214 basehttp "GET /firma-sahibi-paneli/ HTTP/1.1" 200 25332
+INFO 2025-03-14 18:55:24,443 basehttp "GET /bildirimler/ HTTP/1.1" 302 0
+INFO 2025-03-14 18:55:24,447 basehttp "GET / HTTP/1.1" 302 0
+INFO 2025-03-14 18:55:24,453 basehttp "GET /firma-sahibi-paneli/ HTTP/1.1" 200 25332
+INFO 2025-03-14 18:55:29,328 basehttp "POST /logout/ HTTP/1.1" 302 0
+INFO 2025-03-14 18:55:29,330 basehttp "GET /logout-success/ HTTP/1.1" 200 10159
+INFO 2025-03-14 18:55:30,661 basehttp "GET /login/ HTTP/1.1" 200 11934
+INFO 2025-03-14 18:55:35,667 basehttp "POST /login/ HTTP/1.1" 302 0
+INFO 2025-03-14 18:55:35,671 basehttp "GET / HTTP/1.1" 302 0
+INFO 2025-03-14 18:55:35,677 basehttp "GET /musteri-paneli/ HTTP/1.1" 200 21902
+INFO 2025-03-14 18:55:38,426 basehttp "GET /talep-formu/ HTTP/1.1" 200 12105
+INFO 2025-03-14 18:55:43,925 basehttp "POST /talep-formu/ HTTP/1.1" 302 0
+INFO 2025-03-14 18:55:43,942 basehttp "GET /musteri-paneli/ HTTP/1.1" 200 23222
+INFO 2025-03-14 18:56:20,219 basehttp "GET /talep-formu/ HTTP/1.1" 200 12105
+INFO 2025-03-14 18:56:25,493 basehttp "POST /talep-formu/ HTTP/1.1" 302 0
+INFO 2025-03-14 18:56:25,502 basehttp "GET /musteri-paneli/ HTTP/1.1" 200 24638
+INFO 2025-03-14 18:56:30,012 basehttp "GET /teklif-detay/2/ HTTP/1.1" 200 297
+INFO 2025-03-14 18:56:33,286 basehttp "POST /logout/ HTTP/1.1" 302 0
+INFO 2025-03-14 18:56:33,289 basehttp "GET /logout-success/ HTTP/1.1" 200 10159
+INFO 2025-03-14 18:56:35,718 basehttp "GET /login/ HTTP/1.1" 200 11934
+INFO 2025-03-14 18:56:42,653 basehttp "POST /login/ HTTP/1.1" 302 0
+INFO 2025-03-14 18:56:42,657 basehttp "GET / HTTP/1.1" 302 0
+INFO 2025-03-14 18:56:42,661 basehttp "GET /firma-sahibi-paneli/ HTTP/1.1" 200 29424
+INFO 2025-03-14 18:56:45,326 basehttp "GET /teklif-detay/2/ HTTP/1.1" 200 297
+INFO 2025-03-14 18:57:46,874 basehttp "GET /teklif-detay/2/ HTTP/1.1" 200 297
+INFO 2025-03-14 18:57:56,511 basehttp "POST /teklif/2/revizyon/ HTTP/1.1" 200 179
+INFO 2025-03-14 18:57:58,539 basehttp "GET /firma-sahibi-paneli/ HTTP/1.1" 200 29375
+INFO 2025-03-14 18:58:04,622 basehttp "POST /logout/ HTTP/1.1" 302 0
+INFO 2025-03-14 18:58:04,625 basehttp "GET /logout-success/ HTTP/1.1" 200 10159
+INFO 2025-03-14 18:58:07,119 basehttp "GET /login/ HTTP/1.1" 200 11934
+INFO 2025-03-14 18:58:19,086 basehttp "POST /login/ HTTP/1.1" 302 0
+INFO 2025-03-14 18:58:19,091 basehttp "GET / HTTP/1.1" 302 0
+INFO 2025-03-14 18:58:19,096 basehttp "GET /musteri-paneli/ HTTP/1.1" 200 24011
+INFO 2025-03-14 18:58:21,831 basehttp "GET /teklif-detay/2/ HTTP/1.1" 200 408
+INFO 2025-03-14 23:25:00,878 autoreload Watching for file changes with StatReloader
+INFO 2025-03-14 23:25:03,576 basehttp "GET / HTTP/1.1" 302 0
+INFO 2025-03-14 23:25:03,588 basehttp "GET /musteri-paneli/ HTTP/1.1" 200 24011
+WARNING 2025-03-14 23:25:03,918 log Not Found: /favicon.ico
+WARNING 2025-03-14 23:25:03,919 basehttp "GET /favicon.ico HTTP/1.1" 404 5222
+INFO 2025-03-14 23:25:42,907 basehttp "POST /logout/ HTTP/1.1" 302 0
+INFO 2025-03-14 23:25:42,910 basehttp "GET /logout-success/ HTTP/1.1" 200 10159
+INFO 2025-03-14 23:25:44,637 basehttp "GET /login/ HTTP/1.1" 200 11934
+INFO 2025-03-14 23:25:46,850 basehttp "POST /login/ HTTP/1.1" 302 0
+INFO 2025-03-14 23:25:46,854 basehttp "GET / HTTP/1.1" 302 0
+INFO 2025-03-14 23:25:46,861 basehttp "GET /musteri-paneli/ HTTP/1.1" 200 24011
+INFO 2025-03-14 23:25:49,105 basehttp "POST /logout/ HTTP/1.1" 302 0
+INFO 2025-03-14 23:25:49,108 basehttp "GET /logout-success/ HTTP/1.1" 200 10159
+INFO 2025-03-14 23:25:51,385 basehttp "GET /register/ HTTP/1.1" 200 16352
+INFO 2025-03-14 23:25:53,782 basehttp "GET /register/ HTTP/1.1" 200 16352
+INFO 2025-03-14 23:28:15,552 basehttp "GET /login/ HTTP/1.1" 200 11934
+INFO 2025-03-14 23:28:20,705 basehttp "POST /login/ HTTP/1.1" 302 0
+INFO 2025-03-14 23:28:20,710 basehttp "GET / HTTP/1.1" 302 0
+INFO 2025-03-14 23:28:20,714 basehttp "GET /musteri-paneli/ HTTP/1.1" 200 24011
+INFO 2025-03-14 23:28:23,628 basehttp "GET /talep-formu/ HTTP/1.1" 200 12105
+INFO 2025-03-14 23:28:31,980 basehttp "POST /talep-formu/ HTTP/1.1" 302 0
+INFO 2025-03-14 23:28:31,995 basehttp "GET /musteri-paneli/ HTTP/1.1" 200 25993
+INFO 2025-03-14 23:30:52,479 autoreload /Users/umutaraz/Desktop/teklif_yonetim/offerManagement/teklif_sistemi/settings.py changed, reloading.
+INFO 2025-03-14 23:30:52,972 autoreload Watching for file changes with StatReloader
+INFO 2025-03-14 23:30:58,287 basehttp "GET /talep-formu/ HTTP/1.1" 200 12105
+INFO 2025-03-14 23:31:04,962 basehttp "POST /talep-formu/ HTTP/1.1" 302 0
+INFO 2025-03-14 23:31:04,976 basehttp "GET /musteri-paneli/ HTTP/1.1" 200 27409
+INFO 2025-03-14 23:31:22,445 basehttp "POST /logout/ HTTP/1.1" 302 0
+INFO 2025-03-14 23:31:22,450 basehttp "GET /logout-success/ HTTP/1.1" 200 10159
+INFO 2025-03-14 23:31:24,187 basehttp "GET /login/ HTTP/1.1" 200 11934
+INFO 2025-03-14 23:31:29,178 basehttp "POST /login/ HTTP/1.1" 302 0
+INFO 2025-03-14 23:31:29,183 basehttp "GET / HTTP/1.1" 302 0
+INFO 2025-03-14 23:31:29,189 basehttp "GET /firma-sahibi-paneli/ HTTP/1.1" 200 33467
+INFO 2025-03-14 23:31:45,109 basehttp "GET /dashboard/ HTTP/1.1" 200 15908
+INFO 2025-03-14 23:31:50,373 basehttp "GET /firma-sahibi-paneli/ HTTP/1.1" 200 33467
+INFO 2025-03-14 23:32:05,082 basehttp "POST /teklif/4/red/ HTTP/1.1" 200 74
+INFO 2025-03-14 23:32:07,111 basehttp "GET /firma-sahibi-paneli/ HTTP/1.1" 200 33491
+INFO 2025-03-14 23:32:14,680 basehttp "GET /teklif-detay/4/ HTTP/1.1" 200 386
+INFO 2025-03-14 23:32:20,247 basehttp "GET /teklif-detay/3/ HTTP/1.1" 200 306
+INFO 2025-03-14 23:32:23,009 basehttp "GET /teklif-detay/4/ HTTP/1.1" 200 386
+INFO 2025-03-14 23:32:27,955 basehttp "GET /mesajlar/kullanicilar/ HTTP/1.1" 200 12289
+INFO 2025-03-14 23:32:30,694 basehttp "GET /mesajlar/sohbet/yeni/1/ HTTP/1.1" 302 0
+INFO 2025-03-14 23:32:30,704 basehttp "GET /mesajlar/sohbet/1/ HTTP/1.1" 200 16667
+WARNING 2025-03-14 23:32:30,724 log Not Found: /ws/sohbet/1/
+WARNING 2025-03-14 23:32:30,724 basehttp "GET /ws/sohbet/1/ HTTP/1.1" 404 5225
+INFO 2025-03-14 23:32:30,725 basehttp - Broken pipe from ('127.0.0.1', 55808)
+INFO 2025-03-14 23:32:34,690 basehttp "GET /firma-sahibi-paneli/ HTTP/1.1" 200 33491
+INFO 2025-03-15 14:10:35,266 autoreload Watching for file changes with StatReloader
+INFO 2025-03-15 14:10:39,371 basehttp "GET / HTTP/1.1" 200 21492
+INFO 2025-03-15 14:10:50,756 basehttp "GET /login/ HTTP/1.1" 200 11934
+INFO 2025-03-15 14:11:09,484 basehttp "POST /login/ HTTP/1.1" 302 0
+INFO 2025-03-15 14:11:09,490 basehttp "GET / HTTP/1.1" 302 0
+INFO 2025-03-15 14:11:09,501 basehttp "GET /firma-sahibi-paneli/ HTTP/1.1" 200 33491
+INFO 2025-03-15 14:11:19,149 basehttp "GET /teklif-detay/4/ HTTP/1.1" 200 386
+INFO 2025-03-15 14:11:28,219 basehttp "POST /logout/ HTTP/1.1" 302 0
+INFO 2025-03-15 14:11:28,223 basehttp "GET /logout-success/ HTTP/1.1" 200 10159
+INFO 2025-03-15 14:11:29,967 basehttp "GET /login/ HTTP/1.1" 200 11934
+INFO 2025-03-15 14:11:36,468 basehttp "POST /login/ HTTP/1.1" 302 0
+INFO 2025-03-15 14:11:36,471 basehttp "GET / HTTP/1.1" 302 0
+INFO 2025-03-15 14:11:36,477 basehttp "GET /musteri-paneli/ HTTP/1.1" 200 27221
+INFO 2025-03-15 14:12:00,199 basehttp "GET /talep-formu/ HTTP/1.1" 200 12105
+INFO 2025-03-15 14:12:16,720 basehttp "POST /talep-formu/ HTTP/1.1" 302 0
+INFO 2025-03-15 14:12:16,733 basehttp "GET /musteri-paneli/ HTTP/1.1" 200 29203
+INFO 2025-03-15 14:12:27,669 basehttp "POST /logout/ HTTP/1.1" 302 0
+INFO 2025-03-15 14:12:27,672 basehttp "GET /logout-success/ HTTP/1.1" 200 10159
+INFO 2025-03-15 14:12:29,245 basehttp "GET /login/ HTTP/1.1" 200 11934
+INFO 2025-03-15 14:12:33,660 basehttp "POST /login/ HTTP/1.1" 302 0
+INFO 2025-03-15 14:12:33,665 basehttp "GET / HTTP/1.1" 302 0
+INFO 2025-03-15 14:12:33,670 basehttp "GET /firma-sahibi-paneli/ HTTP/1.1" 200 35537
+INFO 2025-03-15 14:12:36,626 basehttp "GET /teklif-detay/5/ HTTP/1.1" 200 312
+INFO 2025-03-15 14:12:56,537 basehttp "GET /firma-sahibi-paneli/ HTTP/1.1" 200 35537
+INFO 2025-03-15 14:12:58,689 basehttp "GET /dashboard/ HTTP/1.1" 200 15915
+INFO 2025-03-15 14:13:16,059 basehttp "GET /dashboard/ HTTP/1.1" 200 15915
+INFO 2025-03-15 14:13:31,821 basehttp "POST /logout/ HTTP/1.1" 302 0
+INFO 2025-03-15 14:13:31,825 basehttp "GET /logout-success/ HTTP/1.1" 200 10159
+INFO 2025-03-16 17:22:01,795 autoreload Watching for file changes with StatReloader
+INFO 2025-03-16 17:22:06,603 basehttp "GET / HTTP/1.1" 200 21492
+WARNING 2025-03-16 17:22:07,121 log Not Found: /favicon.ico
+WARNING 2025-03-16 17:22:07,121 basehttp "GET /favicon.ico HTTP/1.1" 404 4393
+INFO 2025-03-16 17:22:41,892 basehttp "GET /register/ HTTP/1.1" 200 16352
+INFO 2025-03-16 17:22:43,606 basehttp "GET /login/ HTTP/1.1" 200 11934
+INFO 2025-03-16 17:22:53,019 basehttp "POST /login/ HTTP/1.1" 302 0
+INFO 2025-03-16 17:22:53,025 basehttp "GET / HTTP/1.1" 302 0
+INFO 2025-03-16 17:22:53,035 basehttp "GET /musteri-paneli/ HTTP/1.1" 200 28637
+INFO 2025-03-16 17:23:04,086 basehttp "GET /teklif-detay/5/ HTTP/1.1" 200 312
+INFO 2025-03-16 17:23:16,850 basehttp "GET /talep-formu/ HTTP/1.1" 200 12105
+INFO 2025-03-16 17:24:10,488 basehttp "POST /talep-formu/ HTTP/1.1" 302 0
+INFO 2025-03-16 17:24:10,502 basehttp "GET /musteri-paneli/ HTTP/1.1" 200 30619
+INFO 2025-03-16 17:24:31,412 basehttp "POST /logout/ HTTP/1.1" 302 0
+INFO 2025-03-16 17:24:31,416 basehttp "GET /logout-success/ HTTP/1.1" 200 10159
+INFO 2025-03-16 17:24:34,836 basehttp "GET /login/ HTTP/1.1" 200 11934
+INFO 2025-03-16 17:24:41,778 basehttp "POST /login/ HTTP/1.1" 302 0
+INFO 2025-03-16 17:24:41,783 basehttp "GET / HTTP/1.1" 302 0
+INFO 2025-03-16 17:24:41,791 basehttp "GET /firma-sahibi-paneli/ HTTP/1.1" 200 37583
+INFO 2025-03-16 17:24:45,283 basehttp "GET /teklif-detay/6/ HTTP/1.1" 200 338
+INFO 2025-03-16 17:24:55,542 basehttp "GET /dashboard/ HTTP/1.1" 200 15915
+INFO 2025-03-16 17:25:15,012 basehttp "GET /firma-sahibi-paneli/ HTTP/1.1" 200 37583
+INFO 2025-03-16 17:26:22,056 basehttp "POST /teklif/6/onay/ HTTP/1.1" 200 126
+INFO 2025-03-16 17:26:24,089 basehttp "GET /firma-sahibi-paneli/ HTTP/1.1" 200 37612
+INFO 2025-03-16 17:27:52,922 basehttp "POST /logout/ HTTP/1.1" 302 0
+INFO 2025-03-16 17:27:52,926 basehttp "GET /logout-success/ HTTP/1.1" 200 10159
+INFO 2025-03-16 17:27:55,221 basehttp "GET /login/ HTTP/1.1" 200 11934
+INFO 2025-03-16 17:28:10,485 basehttp "POST /login/ HTTP/1.1" 302 0
+INFO 2025-03-16 17:28:10,491 basehttp "GET / HTTP/1.1" 302 0
+INFO 2025-03-16 17:28:10,501 basehttp "GET /musteri-paneli/ HTTP/1.1" 200 30056
+INFO 2025-03-16 17:28:16,234 basehttp "GET /teklif-detay/6/ HTTP/1.1" 200 451
+INFO 2025-03-16 17:28:30,460 basehttp "GET /mesajlar/kullanicilar/ HTTP/1.1" 200 11921
+INFO 2025-03-16 17:28:33,041 basehttp "GET /mesajlar/sohbet/yeni/2/ HTTP/1.1" 302 0
+INFO 2025-03-16 17:28:33,053 basehttp "GET /mesajlar/sohbet/1/ HTTP/1.1" 200 16306
+WARNING 2025-03-16 17:28:33,082 log Not Found: /ws/sohbet/1/
+WARNING 2025-03-16 17:28:33,082 basehttp "GET /ws/sohbet/1/ HTTP/1.1" 404 4396
+INFO 2025-03-16 17:28:33,082 basehttp - Broken pipe from ('127.0.0.1', 49363)
+INFO 2025-03-16 17:29:07,762 basehttp "GET /mesajlar/sohbet/1/ HTTP/1.1" 200 16306
+WARNING 2025-03-16 17:29:07,801 log Not Found: /ws/sohbet/1/
+WARNING 2025-03-16 17:29:07,801 basehttp "GET /ws/sohbet/1/ HTTP/1.1" 404 4396
+INFO 2025-03-16 17:29:07,802 basehttp - Broken pipe from ('127.0.0.1', 49781)
+INFO 2025-03-16 17:29:10,568 basehttp "GET /mesajlar/sohbet/1/ HTTP/1.1" 200 16306
+WARNING 2025-03-16 17:29:10,601 log Not Found: /ws/sohbet/1/
+WARNING 2025-03-16 17:29:10,602 basehttp "GET /ws/sohbet/1/ HTTP/1.1" 404 4396
+INFO 2025-03-16 17:29:10,602 basehttp - Broken pipe from ('127.0.0.1', 49822)
+INFO 2025-03-16 17:29:11,487 basehttp "GET /mesajlar/ HTTP/1.1" 200 12404
+INFO 2025-03-16 17:29:14,316 basehttp "GET /mesajlar/kullanicilar/ HTTP/1.1" 200 11921
+INFO 2025-03-16 17:29:21,799 basehttp "POST /logout/ HTTP/1.1" 302 0
+INFO 2025-03-16 17:29:21,802 basehttp "GET /logout-success/ HTTP/1.1" 200 10159
+INFO 2025-03-18 10:34:58,119 autoreload Watching for file changes with StatReloader
+INFO 2025-03-18 10:35:04,066 basehttp "GET / HTTP/1.1" 200 21492
+WARNING 2025-03-18 10:35:04,840 log Not Found: /favicon.ico
+WARNING 2025-03-18 10:35:04,840 basehttp "GET /favicon.ico HTTP/1.1" 404 4393
+INFO 2025-03-18 10:39:01,673 basehttp "GET / HTTP/1.1" 200 17109
+INFO 2025-03-18 10:40:51,739 basehttp "GET /login/ HTTP/1.1" 200 11934
+INFO 2025-03-18 10:40:53,589 basehttp "POST /login/ HTTP/1.1" 200 12222
+INFO 2025-03-18 10:41:11,026 basehttp "POST /login/ HTTP/1.1" 200 12217
+INFO 2025-03-18 10:41:19,136 basehttp "POST /login/ HTTP/1.1" 302 0
+INFO 2025-03-18 10:41:19,141 basehttp "GET / HTTP/1.1" 302 0
+INFO 2025-03-18 10:41:19,152 basehttp "GET /firma-sahibi-paneli/ HTTP/1.1" 200 37612
+INFO 2025-03-18 10:41:23,840 basehttp "GET /dashboard/ HTTP/1.1" 200 15917
+INFO 2025-03-18 10:41:25,726 basehttp "GET /firma-sahibi-paneli/ HTTP/1.1" 200 37612
+INFO 2025-03-18 10:41:27,336 basehttp "GET /mesajlar/kullanicilar/ HTTP/1.1" 200 12289
+INFO 2025-03-18 10:41:28,694 basehttp "GET /mesajlar/sohbet/yeni/1/ HTTP/1.1" 302 0
+INFO 2025-03-18 10:41:28,704 basehttp "GET /mesajlar/sohbet/1/ HTTP/1.1" 200 16667
+WARNING 2025-03-18 10:41:28,727 log Not Found: /ws/sohbet/1/
+WARNING 2025-03-18 10:41:28,728 basehttp "GET /ws/sohbet/1/ HTTP/1.1" 404 4396
+INFO 2025-03-18 10:41:28,728 basehttp - Broken pipe from ('127.0.0.1', 53589)
+INFO 2025-03-18 10:41:30,993 basehttp "GET /mesajlar/sohbet/1/ HTTP/1.1" 200 16667
+WARNING 2025-03-18 10:41:31,015 log Not Found: /ws/sohbet/1/
+WARNING 2025-03-18 10:41:31,017 basehttp "GET /ws/sohbet/1/ HTTP/1.1" 404 4396
+INFO 2025-03-18 10:41:31,017 basehttp - Broken pipe from ('127.0.0.1', 53594)
+INFO 2025-03-18 10:41:33,711 basehttp "GET /mesajlar/sohbet/1/ HTTP/1.1" 200 16667
+WARNING 2025-03-18 10:41:33,734 log Not Found: /ws/sohbet/1/
+WARNING 2025-03-18 10:41:33,734 basehttp "GET /ws/sohbet/1/ HTTP/1.1" 404 4396
+INFO 2025-03-18 10:41:33,734 basehttp - Broken pipe from ('127.0.0.1', 53595)
+INFO 2025-03-18 10:41:34,403 basehttp "GET /mesajlar/ HTTP/1.1" 200 12771
+INFO 2025-03-18 10:41:35,040 basehttp "GET /firma-sahibi-paneli/ HTTP/1.1" 200 37612
+INFO 2025-03-18 10:41:40,268 basehttp "POST /logout/ HTTP/1.1" 302 0
+INFO 2025-03-18 10:41:40,271 basehttp "GET /logout-success/ HTTP/1.1" 200 10159
+INFO 2025-03-18 10:41:41,781 basehttp "GET /login/ HTTP/1.1" 200 11934
+INFO 2025-03-18 10:41:59,197 basehttp "GET /login/ HTTP/1.1" 200 11934
+INFO 2025-03-18 10:42:02,321 basehttp "GET / HTTP/1.1" 200 17239
+INFO 2025-03-18 10:42:45,390 basehttp "GET / HTTP/1.1" 200 17239
+INFO 2025-03-18 10:42:58,896 basehttp "GET / HTTP/1.1" 200 17239
+INFO 2025-03-18 10:42:59,488 basehttp "GET / HTTP/1.1" 200 17239
+INFO 2025-03-18 10:43:07,477 basehttp "GET / HTTP/1.1" 200 17239
+INFO 2025-03-18 10:43:08,003 basehttp "GET / HTTP/1.1" 200 17239
+INFO 2025-03-18 10:43:08,151 basehttp "GET / HTTP/1.1" 200 17239
+INFO 2025-03-18 10:43:08,316 basehttp "GET / HTTP/1.1" 200 17239
+INFO 2025-03-18 10:43:21,757 basehttp "GET / HTTP/1.1" 200 17239
+INFO 2025-03-18 10:44:17,854 basehttp "GET / HTTP/1.1" 200 17239
+INFO 2025-03-18 10:44:22,046 basehttp "GET / HTTP/1.1" 200 17239
+INFO 2025-03-18 10:44:35,085 basehttp "GET /login/ HTTP/1.1" 200 11934
+INFO 2025-03-18 10:44:37,683 basehttp "POST /login/ HTTP/1.1" 302 0
+INFO 2025-03-18 10:44:37,688 basehttp "GET / HTTP/1.1" 302 0
+INFO 2025-03-18 10:44:37,694 basehttp "GET /firma-sahibi-paneli/ HTTP/1.1" 200 37612
