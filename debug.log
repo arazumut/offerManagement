@@ -348,3 +348,271 @@ INFO 2025-03-18 10:44:35,085 basehttp "GET /login/ HTTP/1.1" 200 11934
 INFO 2025-03-18 10:44:37,683 basehttp "POST /login/ HTTP/1.1" 302 0
 INFO 2025-03-18 10:44:37,688 basehttp "GET / HTTP/1.1" 302 0
 INFO 2025-03-18 10:44:37,694 basehttp "GET /firma-sahibi-paneli/ HTTP/1.1" 200 37612
+INFO 2025-03-18 10:45:44,198 autoreload Watching for file changes with StatReloader
+INFO 2025-03-18 10:45:46,486 basehttp "GET / HTTP/1.1" 302 0
+INFO 2025-03-18 10:45:46,498 basehttp "GET /firma-sahibi-paneli/ HTTP/1.1" 200 37612
+INFO 2025-03-18 10:45:50,532 basehttp "POST /logout/ HTTP/1.1" 302 0
+INFO 2025-03-18 10:45:50,536 basehttp "GET /logout-success/ HTTP/1.1" 200 10159
+INFO 2025-03-18 10:45:52,008 basehttp "GET / HTTP/1.1" 200 17239
+INFO 2025-03-18 10:46:27,321 basehttp "GET / HTTP/1.1" 200 17239
+INFO 2025-03-18 10:49:31,344 basehttp "GET /login/ HTTP/1.1" 200 11934
+INFO 2025-03-18 10:49:37,559 basehttp "GET /login/ HTTP/1.1" 200 11934
+INFO 2025-03-18 10:50:06,715 basehttp "POST /login/ HTTP/1.1" 302 0
+INFO 2025-03-18 10:50:06,722 basehttp "GET / HTTP/1.1" 302 0
+INFO 2025-03-18 10:50:06,733 basehttp "GET /firma-sahibi-paneli/ HTTP/1.1" 200 37612
+INFO 2025-03-18 10:50:16,046 basehttp "POST /logout/ HTTP/1.1" 302 0
+INFO 2025-03-18 10:50:16,051 basehttp "GET /logout-success/ HTTP/1.1" 200 10159
+INFO 2025-03-18 10:50:19,730 basehttp "GET /login/ HTTP/1.1" 200 11934
+INFO 2025-03-18 10:52:45,389 autoreload Watching for file changes with StatReloader
+INFO 2025-03-18 10:52:47,962 basehttp "GET / HTTP/1.1" 200 17239
+INFO 2025-03-18 10:52:51,122 basehttp "GET /login/ HTTP/1.1" 200 11929
+INFO 2025-03-18 10:52:54,877 basehttp "GET /login/ HTTP/1.1" 200 11929
+INFO 2025-03-18 10:53:32,071 basehttp "GET /login/ HTTP/1.1" 200 11934
+INFO 2025-03-18 10:54:09,587 basehttp "GET /register/ HTTP/1.1" 200 16352
+INFO 2025-03-18 10:54:12,295 basehttp "GET /login/ HTTP/1.1" 200 11934
+INFO 2025-03-18 10:58:19,994 autoreload Watching for file changes with StatReloader
+INFO 2025-03-18 10:58:22,261 basehttp "GET / HTTP/1.1" 200 17239
+INFO 2025-03-18 10:58:24,123 basehttp "GET /login/ HTTP/1.1" 200 11314
+INFO 2025-03-18 10:58:33,858 basehttp "GET /login/ HTTP/1.1" 200 11934
+INFO 2025-03-18 10:59:58,267 basehttp "GET /login/ HTTP/1.1" 200 11646
+INFO 2025-03-18 11:01:12,186 basehttp "GET /login/ HTTP/1.1" 200 13593
+INFO 2025-03-18 11:02:32,086 basehttp "GET / HTTP/1.1" 200 17239
+INFO 2025-03-18 11:02:37,891 basehttp "GET / HTTP/1.1" 200 17239
+INFO 2025-03-18 11:02:46,586 basehttp "GET / HTTP/1.1" 200 17239
+INFO 2025-03-18 11:02:47,871 basehttp "GET /login/ HTTP/1.1" 200 13848
+INFO 2025-03-18 11:03:08,735 basehttp "GET /register/ HTTP/1.1" 200 16352
+INFO 2025-03-18 11:04:19,733 basehttp "POST /login/ HTTP/1.1" 302 0
+INFO 2025-03-18 11:04:19,737 basehttp "GET / HTTP/1.1" 302 0
+INFO 2025-03-18 11:04:19,748 basehttp "GET /firma-sahibi-paneli/ HTTP/1.1" 200 37612
+INFO 2025-03-18 11:04:26,800 basehttp "POST /logout/ HTTP/1.1" 302 0
+INFO 2025-03-18 11:04:26,804 basehttp "GET /logout-success/ HTTP/1.1" 200 10159
+INFO 2025-03-18 11:04:28,678 basehttp "GET /login/ HTTP/1.1" 200 13848
+INFO 2025-03-18 11:04:38,992 basehttp "GET /register/ HTTP/1.1" 200 16352
+INFO 2025-03-18 11:04:39,504 basehttp "GET /login/ HTTP/1.1" 200 13848
+INFO 2025-03-18 11:04:40,241 basehttp "GET / HTTP/1.1" 200 17239
+INFO 2025-03-18 11:04:46,890 basehttp "GET /login/ HTTP/1.1" 200 13848
+INFO 2025-03-18 11:07:46,377 autoreload Watching for file changes with StatReloader
+INFO 2025-03-18 11:07:48,478 basehttp "GET / HTTP/1.1" 200 17239
+INFO 2025-03-18 11:07:49,982 basehttp "GET /login/ HTTP/1.1" 200 13176
+INFO 2025-03-18 11:08:01,827 basehttp "GET /register/ HTTP/1.1" 200 16352
+INFO 2025-03-18 11:08:03,253 basehttp "GET /login/ HTTP/1.1" 200 13176
+INFO 2025-03-18 11:11:56,526 autoreload Watching for file changes with StatReloader
+INFO 2025-03-18 11:11:59,649 basehttp "GET / HTTP/1.1" 200 17239
+INFO 2025-03-18 11:12:01,843 basehttp "GET /login/ HTTP/1.1" 200 13189
+INFO 2025-03-18 11:12:11,884 basehttp "GET /login/ HTTP/1.1" 200 13171
+INFO 2025-03-18 11:12:15,736 basehttp "GET / HTTP/1.1" 200 17239
+INFO 2025-03-18 11:12:26,828 basehttp "GET / HTTP/1.1" 200 17239
+ERROR 2025-03-18 11:12:28,204 log Internal Server Error: /login/
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/core/handlers/base.py", line 220, in _get_response
+    response = response.render()
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/base.py", line 175, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/template/defaulttags.py", line 471, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/urls/base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/urls/resolvers.py", line 828, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'welcome' not found. 'welcome' is not a valid view function or pattern name.
+ERROR 2025-03-18 11:12:28,208 basehttp "GET /login/ HTTP/1.1" 500 113429
+INFO 2025-03-18 11:12:35,605 basehttp "GET /login/ HTTP/1.1" 200 13848
+INFO 2025-03-18 11:13:00,434 basehttp "GET /login/ HTTP/1.1" 200 13848
+INFO 2025-03-18 11:13:03,122 basehttp "POST /login/ HTTP/1.1" 200 14203
+INFO 2025-03-18 11:13:11,659 basehttp "GET / HTTP/1.1" 200 17239
+INFO 2025-03-18 11:13:13,677 basehttp "GET /login/ HTTP/1.1" 200 13848
+INFO 2025-03-18 11:13:15,133 basehttp "GET / HTTP/1.1" 200 17239
+INFO 2025-03-18 11:13:24,249 basehttp "GET / HTTP/1.1" 200 17239
+INFO 2025-03-18 11:13:25,638 basehttp "GET /login/ HTTP/1.1" 200 11934
+INFO 2025-03-18 11:13:27,999 basehttp "POST /login/ HTTP/1.1" 200 12222
+INFO 2025-03-18 11:13:33,068 basehttp "POST /login/ HTTP/1.1" 302 0
+INFO 2025-03-18 11:13:33,073 basehttp "GET / HTTP/1.1" 302 0
+INFO 2025-03-18 11:13:33,080 basehttp "GET /firma-sahibi-paneli/ HTTP/1.1" 200 37612
+INFO 2025-03-23 10:07:33,082 autoreload Watching for file changes with StatReloader
+INFO 2025-03-23 10:07:36,787 basehttp "GET / HTTP/1.1" 200 17239
+INFO 2025-03-23 10:07:39,318 basehttp "GET /register/ HTTP/1.1" 200 16352
+INFO 2025-03-23 10:07:41,243 basehttp "GET /login/ HTTP/1.1" 200 11934
+INFO 2025-03-23 10:07:46,607 basehttp "GET /admin/ HTTP/1.1" 302 0
+INFO 2025-03-23 10:07:46,628 basehttp "GET /admin/login/?next=/admin/ HTTP/1.1" 200 4160
+INFO 2025-03-23 10:07:46,660 basehttp "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 200 2810
+INFO 2025-03-23 10:07:46,661 basehttp "GET /static/admin/css/login.css HTTP/1.1" 200 951
+INFO 2025-03-23 10:07:46,661 basehttp "GET /static/admin/css/dark_mode.css HTTP/1.1" 200 2804
+INFO 2025-03-23 10:07:46,662 basehttp "GET /static/admin/css/base.css HTTP/1.1" 200 22092
+INFO 2025-03-23 10:07:46,662 basehttp "GET /static/admin/js/theme.js HTTP/1.1" 200 1653
+INFO 2025-03-23 10:07:46,662 basehttp "GET /static/admin/css/responsive.css HTTP/1.1" 200 17972
+INFO 2025-03-23 10:07:46,670 basehttp "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 200 3063
+INFO 2025-03-23 10:07:48,550 basehttp "POST /admin/login/?next=/admin/ HTTP/1.1" 200 4324
+INFO 2025-03-23 10:08:40,588 autoreload Watching for file changes with StatReloader
+INFO 2025-03-23 10:08:42,083 basehttp "GET / HTTP/1.1" 200 17239
+INFO 2025-03-23 10:08:47,333 basehttp "GET /admin/ HTTP/1.1" 302 0
+INFO 2025-03-23 10:08:47,355 basehttp "GET /admin/login/?next=/admin/ HTTP/1.1" 200 4160
+INFO 2025-03-23 10:08:49,583 basehttp "POST /admin/login/?next=/admin/ HTTP/1.1" 302 0
+INFO 2025-03-23 10:08:49,592 basehttp "GET /admin/ HTTP/1.1" 200 9550
+INFO 2025-03-23 10:08:49,616 basehttp "GET /static/admin/css/dashboard.css HTTP/1.1" 200 441
+INFO 2025-03-23 10:08:49,627 basehttp "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 200 331
+INFO 2025-03-23 10:08:49,627 basehttp "GET /static/admin/img/icon-changelink.svg HTTP/1.1" 200 380
+WARNING 2025-03-23 10:10:50,239 basehttp "GET /static/frontend/img/icons/phone-2.svg HTTP/1.1" 404 1904
+INFO 2025-03-23 11:45:16,321 autoreload Watching for file changes with StatReloader
+INFO 2025-03-23 11:45:18,617 basehttp "GET / HTTP/1.1" 200 17766
+INFO 2025-03-23 11:45:42,202 basehttp "GET /admin/ HTTP/1.1" 200 9550
+INFO 2025-03-23 11:45:42,223 basehttp "GET /static/admin/css/base.css HTTP/1.1" 304 0
+INFO 2025-03-23 11:45:42,226 basehttp "GET /static/admin/css/dark_mode.css HTTP/1.1" 304 0
+INFO 2025-03-23 11:45:42,230 basehttp "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 304 0
+INFO 2025-03-23 11:45:42,231 basehttp "GET /static/admin/css/dashboard.css HTTP/1.1" 304 0
+INFO 2025-03-23 11:45:42,235 basehttp "GET /static/admin/css/responsive.css HTTP/1.1" 304 0
+INFO 2025-03-23 11:45:42,237 basehttp "GET /static/admin/js/theme.js HTTP/1.1" 304 0
+INFO 2025-03-23 11:45:42,241 basehttp "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 304 0
+INFO 2025-03-23 11:45:42,249 basehttp "GET /static/admin/img/icon-changelink.svg HTTP/1.1" 304 0
+INFO 2025-03-23 11:45:42,250 basehttp "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 304 0
+INFO 2025-03-23 11:45:54,237 basehttp "POST /admin/logout/ HTTP/1.1" 302 0
+INFO 2025-03-23 11:45:54,240 basehttp "GET / HTTP/1.1" 200 17239
+INFO 2025-03-23 11:45:59,642 basehttp "GET /admin/ HTTP/1.1" 302 0
+INFO 2025-03-23 11:45:59,668 basehttp "GET /admin/login/?next=/admin/ HTTP/1.1" 200 4160
+INFO 2025-03-23 11:45:59,687 basehttp "GET /static/admin/css/login.css HTTP/1.1" 304 0
+INFO 2025-03-23 11:46:20,222 basehttp "POST /admin/login/?next=/admin/ HTTP/1.1" 302 0
+INFO 2025-03-23 11:46:20,228 basehttp "GET /admin/ HTTP/1.1" 200 9550
+INFO 2025-03-23 11:48:51,201 autoreload Watching for file changes with StatReloader
+INFO 2025-03-23 11:48:53,649 basehttp "GET / HTTP/1.1" 200 17239
+INFO 2025-03-23 11:49:00,063 basehttp "GET /api/ HTTP/1.1" 200 5553
+INFO 2025-03-23 11:49:00,078 basehttp "GET /static/rest_framework/css/prettify.css HTTP/1.1" 200 817
+INFO 2025-03-23 11:49:00,080 basehttp "GET /static/rest_framework/css/bootstrap-tweaks.css HTTP/1.1" 200 3426
+INFO 2025-03-23 11:49:00,081 basehttp "GET /static/rest_framework/css/bootstrap.min.css HTTP/1.1" 200 121457
+INFO 2025-03-23 11:49:00,095 basehttp "GET /static/rest_framework/js/ajax-form.js HTTP/1.1" 200 3796
+INFO 2025-03-23 11:49:00,096 basehttp "GET /static/rest_framework/css/default.css HTTP/1.1" 200 1152
+INFO 2025-03-23 11:49:00,097 basehttp "GET /static/rest_framework/js/jquery-3.7.1.min.js HTTP/1.1" 200 87533
+INFO 2025-03-23 11:49:00,119 basehttp "GET /static/rest_framework/img/grid.png HTTP/1.1" 200 1458
+INFO 2025-03-23 11:49:00,120 basehttp "GET /static/rest_framework/js/csrf.js HTTP/1.1" 200 1793
+INFO 2025-03-23 11:49:00,120 basehttp "GET /static/rest_framework/js/bootstrap.min.js HTTP/1.1" 200 39680
+INFO 2025-03-23 11:49:00,124 basehttp "GET /static/rest_framework/js/load-ajax-form.js HTTP/1.1" 200 59
+INFO 2025-03-23 11:49:00,124 basehttp "GET /static/rest_framework/js/prettify-min.js HTTP/1.1" 200 13632
+INFO 2025-03-23 11:49:00,125 basehttp "GET /static/rest_framework/js/default.js HTTP/1.1" 200 1268
+INFO 2025-03-23 17:37:12,742 autoreload Watching for file changes with StatReloader
+INFO 2025-03-23 17:37:25,238 basehttp "GET / HTTP/1.1" 200 17239
+INFO 2025-03-23 17:37:30,916 basehttp "GET /login/ HTTP/1.1" 200 11934
+INFO 2025-03-23 17:37:33,105 basehttp "POST /login/ HTTP/1.1" 302 0
+INFO 2025-03-23 17:37:33,111 basehttp "GET / HTTP/1.1" 200 17766
+INFO 2025-03-23 17:37:37,803 basehttp "POST /logout/ HTTP/1.1" 302 0
+INFO 2025-03-23 17:37:37,807 basehttp "GET /logout-success/ HTTP/1.1" 200 10159
+INFO 2025-03-23 17:37:39,256 basehttp "GET /register/ HTTP/1.1" 200 16352
+INFO 2025-03-23 17:38:46,411 autoreload /Users/umutaraz/Desktop/teklif_yonetim/offerManagement/teklif_sistemi/settings.py changed, reloading.
+INFO 2025-03-23 17:38:47,179 autoreload Watching for file changes with StatReloader
+INFO 2025-03-23 17:40:06,640 basehttp "POST /register/ HTTP/1.1" 302 0
+INFO 2025-03-23 17:40:06,647 basehttp "GET / HTTP/1.1" 302 0
+INFO 2025-03-23 17:40:06,664 basehttp "GET /firma-sahibi-paneli/ HTTP/1.1" 200 37921
+INFO 2025-03-23 17:40:23,389 basehttp "GET /teklif-detay/5/ HTTP/1.1" 200 312
+INFO 2025-03-23 17:40:28,217 basehttp "GET /dashboard/ HTTP/1.1" 200 15917
+INFO 2025-03-23 17:40:43,008 basehttp "GET / HTTP/1.1" 302 0
+INFO 2025-03-23 17:40:43,020 basehttp "GET /firma-sahibi-paneli/ HTTP/1.1" 200 37612
+INFO 2025-03-23 17:40:45,657 basehttp "GET /teklif-detay/5/ HTTP/1.1" 200 312
+INFO 2025-03-23 17:41:05,679 basehttp "POST /logout/ HTTP/1.1" 302 0
+INFO 2025-03-23 17:41:05,685 basehttp "GET /logout-success/ HTTP/1.1" 200 10159
+INFO 2025-03-23 17:41:07,000 basehttp "GET /login/ HTTP/1.1" 200 11934
+INFO 2025-03-23 17:41:12,226 basehttp "GET /register/ HTTP/1.1" 200 16352
+INFO 2025-03-23 17:41:53,106 basehttp "POST /register/ HTTP/1.1" 200 16791
+INFO 2025-03-23 17:42:05,111 basehttp "GET /login/ HTTP/1.1" 200 11934
+INFO 2025-03-23 17:42:07,562 basehttp "POST /login/ HTTP/1.1" 302 0
+INFO 2025-03-23 17:42:07,569 basehttp "GET / HTTP/1.1" 302 0
+INFO 2025-03-23 17:42:07,580 basehttp "GET /firma-sahibi-paneli/ HTTP/1.1" 200 37612
+INFO 2025-03-23 17:42:11,419 basehttp "GET /teklif-detay/5/ HTTP/1.1" 200 312
+INFO 2025-03-23 17:42:20,915 basehttp "POST /teklif/5/revizyon/ HTTP/1.1" 200 204
+INFO 2025-03-23 17:42:22,954 basehttp "GET /firma-sahibi-paneli/ HTTP/1.1" 200 37563
+INFO 2025-03-23 17:42:44,878 basehttp "GET /bildirimler/ HTTP/1.1" 302 0
+INFO 2025-03-23 17:42:44,883 basehttp "GET / HTTP/1.1" 302 0
+INFO 2025-03-23 17:42:44,892 basehttp "GET /firma-sahibi-paneli/ HTTP/1.1" 200 37563
+INFO 2025-03-23 17:42:46,496 basehttp "GET /mesajlar/ HTTP/1.1" 200 11962
+INFO 2025-03-23 17:42:50,811 basehttp "GET /mesajlar/kullanicilar/ HTTP/1.1" 200 13319
+INFO 2025-03-23 17:43:29,250 basehttp "GET /firma-sahibi-paneli/ HTTP/1.1" 200 37563
+INFO 2025-03-23 17:43:31,097 basehttp "GET /dashboard/ HTTP/1.1" 200 15917
+INFO 2025-03-23 17:43:49,367 basehttp "POST /logout/ HTTP/1.1" 302 0
+INFO 2025-03-23 17:43:49,370 basehttp "GET /logout-success/ HTTP/1.1" 200 10159
+INFO 2025-03-23 17:43:50,532 basehttp "GET /login/ HTTP/1.1" 200 11934
+INFO 2025-03-23 17:43:54,329 basehttp "POST /login/ HTTP/1.1" 200 12218
+INFO 2025-03-23 17:44:00,635 basehttp "POST /login/ HTTP/1.1" 200 12209
+INFO 2025-03-23 17:44:07,525 basehttp "POST /login/ HTTP/1.1" 200 12209
+ERROR 2025-03-23 18:31:10,858 log Internal Server Error: /firma-sahibi-paneli/
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/contrib/auth/decorators.py", line 60, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/Users/umutaraz/Desktop/teklif_yonetim/offerManagement/musteri/views.py", line 191, in firma_sahibi_paneli
+    if not request.user.profile.is_firma_sahibi:
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/utils/functional.py", line 253, in inner
+    return func(_wrapped, *args)
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/db/models/fields/related_descriptors.py", line 531, in __get__
+    raise self.RelatedObjectDoesNotExist(
+    ...<2 lines>...
+    )
+django.contrib.auth.models.User.profile.RelatedObjectDoesNotExist: User has no profile.
+WARNING 2025-03-23 18:31:12,059 log Forbidden: /teklif-sil/1/
+ERROR 2025-03-23 18:31:40,745 log Internal Server Error: /firma-sahibi-paneli/
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/contrib/auth/decorators.py", line 60, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/Users/umutaraz/Desktop/teklif_yonetim/offerManagement/musteri/views.py", line 191, in firma_sahibi_paneli
+    if not request.user.profile.is_firma_sahibi:
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/utils/functional.py", line 253, in inner
+    return func(_wrapped, *args)
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/django/db/models/fields/related_descriptors.py", line 531, in __get__
+    raise self.RelatedObjectDoesNotExist(
+    ...<2 lines>...
+    )
+django.contrib.auth.models.User.profile.RelatedObjectDoesNotExist: User has no profile.
+WARNING 2025-03-23 18:31:41,947 log Forbidden: /teklif-sil/1/
+INFO 2025-03-25 13:00:56,585 autoreload Watching for file changes with StatReloader
+INFO 2025-03-25 13:01:01,069 basehttp "GET / HTTP/1.1" 200 17239
+INFO 2025-03-25 13:01:07,013 basehttp "GET /login/ HTTP/1.1" 200 11934
+INFO 2025-03-25 13:01:15,505 basehttp "POST /login/ HTTP/1.1" 302 0
+INFO 2025-03-25 13:01:15,511 basehttp "GET / HTTP/1.1" 200 17766
+INFO 2025-03-25 13:01:20,240 basehttp "GET /mesajlar/ HTTP/1.1" 200 11598
+INFO 2025-03-25 13:01:22,084 basehttp "GET /mesajlar/kullanicilar/ HTTP/1.1" 200 12811
+INFO 2025-03-25 13:01:24,999 basehttp "GET /mesajlar/sohbet/yeni/2/ HTTP/1.1" 302 0
+INFO 2025-03-25 13:01:25,013 basehttp "GET /mesajlar/sohbet/2/ HTTP/1.1" 200 16298
+WARNING 2025-03-25 13:01:25,043 log Not Found: /ws/sohbet/2/
+WARNING 2025-03-25 13:01:25,043 basehttp "GET /ws/sohbet/2/ HTTP/1.1" 404 5225
+INFO 2025-03-25 13:01:25,043 basehttp - Broken pipe from ('127.0.0.1', 51683)
+INFO 2025-03-25 13:01:31,535 basehttp "GET / HTTP/1.1" 200 17766
+INFO 2025-04-03 10:51:08,390 autoreload Watching for file changes with StatReloader
+INFO 2025-04-03 10:51:11,783 basehttp "GET / HTTP/1.1" 200 17239
+INFO 2025-04-03 10:51:33,528 basehttp "GET /login/ HTTP/1.1" 200 11934
+INFO 2025-04-03 10:51:35,622 basehttp "POST /login/ HTTP/1.1" 302 0
+INFO 2025-04-03 10:51:35,628 basehttp "GET / HTTP/1.1" 200 17766
+INFO 2025-04-03 10:51:38,673 basehttp "POST /logout/ HTTP/1.1" 302 0
+INFO 2025-04-03 10:51:38,678 basehttp "GET /logout-success/ HTTP/1.1" 200 10159
+INFO 2025-04-03 10:51:41,438 basehttp "GET /register/ HTTP/1.1" 200 16352
+INFO 2025-04-03 10:53:32,615 basehttp "GET /register/ HTTP/1.1" 200 16352
+INFO 2025-04-03 10:53:39,463 basehttp "GET / HTTP/1.1" 200 17239
+INFO 2025-04-06 11:15:20,426 autoreload Watching for file changes with StatReloader
+INFO 2025-04-06 11:15:24,297 basehttp "GET / HTTP/1.1" 200 17239
+WARNING 2025-04-06 11:15:25,077 log Not Found: /favicon.ico
+WARNING 2025-04-06 11:15:25,077 basehttp "GET /favicon.ico HTTP/1.1" 404 5222
